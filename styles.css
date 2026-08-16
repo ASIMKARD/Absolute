@@ -383,14 +383,14 @@ img,svg,pre,table{max-width:100%}
    PULL LIST SKIN  (Settings > Layout > classic)
    Recreates the X-Men app's look on the same markup: cream page,
    Anton uppercase display, monospace metadata, black tab bar,
-   and big notched era banners. Palette is per-franchise — a
+   and big notched era banners. Palette is Spider-Man's own — a
    red-to-blue ramp across the eight periods instead of X-Men's
    gold/crimson/purple. Everything is scoped to [data-skin="pull"],
    so the compact and tabbed layouts are untouched.
    ================================================================ */
 :root[data-skin="pull"]{
-  --surface:#1A0E2B; --tint:#241338; --ink:#EDE4F5; --ink-soft:#A48FC0;
-  --rule:#3A2454; --action:#B36BFF; --accent:#E8123C; --radius:8px;
+  --surface:#EDE7DB; --tint:#E6DFD0; --ink:#191712; --ink-soft:#6B6459;
+  --rule:#CFC6B4; --action:#1E4C8A; --accent:#B3202E; --radius:8px;
   --p0:#C0392B; --p1:#96302B; --p2:#2E2A36; --p3:#7A2E5C;
   --p4:#1F4E79; --p5:#1959A7; --p6:#166B7A; --p7:#C81E2B;
 }
@@ -401,13 +401,13 @@ img,svg,pre,table{max-width:100%}
 :root[data-skin="pull"] .ptitle{font-size:34px;letter-spacing:.005em}
 :root[data-skin="pull"] .psub{font-size:13.5px}
 :root[data-skin="pull"] .pmeta{font-family:var(--mark);font-size:13px}
-:root[data-skin="pull"] .pbar2{height:11px;background:var(--rule)}
-:root[data-skin="pull"] .pbar2 i{background:var(--ink-soft)}
+:root[data-skin="pull"] .pbar2{height:11px;background:#D8D0BE}
+:root[data-skin="pull"] .pbar2 i{background:#B9B1A0}
 :root[data-skin="pull"] .pstats{font-family:var(--mark);font-size:13px}
 
 /* tab bar: black, uppercase, letter-spaced, blue active underline */
-:root[data-skin="pull"] .tabs{background:var(--bg);border-bottom:0}
-:root[data-skin="pull"] .tab{color:var(--rule);text-transform:uppercase;letter-spacing:.09em;
+:root[data-skin="pull"] .tabs{background:#141210;border-bottom:0}
+:root[data-skin="pull"] .tab{color:#CFC8BC;text-transform:uppercase;letter-spacing:.09em;
   font-size:13px;font-weight:600;padding:15px 4px;border-bottom:3px solid transparent}
 :root[data-skin="pull"] .tab[aria-selected="true"]{color:#fff;border-bottom-color:var(--action)}
 
@@ -415,12 +415,12 @@ img,svg,pre,table{max-width:100%}
 :root[data-skin="pull"] .filters{background:var(--surface);border-bottom:1px solid var(--rule)}
 :root[data-skin="pull"] .chip{border-radius:999px;border:1.5px solid var(--ink);
   background:var(--surface);color:var(--ink);padding:9px 16px;font-size:14px}
-:root[data-skin="pull"] .chip[aria-pressed="true"]{background:var(--bg);color:#fff;border-color:var(--bg)}
+:root[data-skin="pull"] .chip[aria-pressed="true"]{background:#141210;color:#fff;border-color:#141210}
 :root[data-skin="pull"] .seg{border-radius:999px;border:1.5px solid var(--ink);overflow:hidden}
 :root[data-skin="pull"] .seg button{padding:9px 15px;font-size:14px;background:var(--surface);color:var(--ink)}
-:root[data-skin="pull"] .seg button[aria-pressed="true"]{background:var(--bg);color:#fff}
+:root[data-skin="pull"] .seg button[aria-pressed="true"]{background:#141210;color:#fff}
 :root[data-skin="pull"] .search{border-radius:999px;border:1.5px solid var(--rule);
-  background:var(--surface);padding:12px 16px;font-size:15px}
+  background:#F3EEE4;padding:12px 16px;font-size:15px}
 :root[data-skin="pull"] .flabel{font-family:var(--mark);font-size:11.5px;
   text-transform:uppercase;letter-spacing:.07em}
 
@@ -441,20 +441,20 @@ img,svg,pre,table{max-width:100%}
 :root[data-skin="pull"] .period[data-p="5"] .period-head{background:var(--p5)}
 :root[data-skin="pull"] .period[data-p="6"] .period-head{background:var(--p6)}
 :root[data-skin="pull"] .period[data-p="7"] .period-head{background:var(--p7)}
-:root[data-skin="pull"] .period-intro{background:var(--surface);border-radius:0 0 var(--radius) var(--radius);
+:root[data-skin="pull"] .period-intro{background:#F3EEE4;border-radius:0 0 var(--radius) var(--radius);
   border:1px solid var(--rule);border-top:0}
 :root[data-skin="pull"] .period-body{background:transparent}
 
 /* second-tier era headers stay quiet inside a banner */
-:root[data-skin="pull"] .period .era-head{background:var(--surface);border-left:3px solid var(--rule);
+:root[data-skin="pull"] .period .era-head{background:#F3EEE4;border-left:3px solid var(--rule);
   margin-top:8px;border-radius:var(--radius)}
-:root[data-skin="pull"] .row{background:var(--surface);border-top:1px solid var(--rule)}
+:root[data-skin="pull"] .row{background:#F3EEE4;border-top:1px solid var(--rule)}
 
 /* reading stepper */
 :root[data-skin="pull"] .rtitle{font-size:30px}
 :root[data-skin="pull"] .rpill{font-size:13px;padding:6px 16px}
 :root[data-skin="pull"] .rbtn{border-radius:var(--radius);padding:17px 8px;font-size:16px}
-:root[data-skin="pull"] .rbtn.solid{background:var(--bg);border-color:var(--bg);color:var(--surface)}
+:root[data-skin="pull"] .rbtn.solid{background:#141210;border-color:#141210;color:#F3EEE4}
 :root[data-skin="pull"] .rcount{font-family:var(--mark)}
 
 /* settings: monospace uppercase section labels */
@@ -489,7 +489,7 @@ img,svg,pre,table{max-width:100%}
 :root[data-skin="pull"] .filters .frow:has(#search) .search{flex:1 1 100%;min-width:0}
 
 /* Elseworlds story eras (35-44): one plum family, distinct from the eight periods */
-:root{--e35-t:#3D0D20;--e35-a:#E8123C;--e35-d:#EDE4F5;--e36-t:#3D0D20;--e36-a:#E8123C;--e36-d:#EDE4F5;--e37-t:#3D0D20;--e37-a:#E8123C;--e37-d:#EDE4F5;--e38-t:#3D0D20;--e38-a:#E8123C;--e38-d:#EDE4F5;--e39-t:#3D0D20;--e39-a:#E8123C;--e39-d:#EDE4F5;--e40-t:#3D0D20;--e40-a:#E8123C;--e40-d:#EDE4F5;--e41-t:#3D0D20;--e41-a:#E8123C;--e41-d:#EDE4F5;--e42-t:#3D0D20;--e42-a:#E8123C;--e42-d:#EDE4F5;--e43-t:#3D0D20;--e43-a:#E8123C;--e43-d:#EDE4F5;--e44-t:#3D0D20;--e44-a:#E8123C;--e44-d:#EDE4F5}
+:root{--e35-t:#F6F2F7;--e35-a:#8A5298;--e35-d:#4D3154;--e36-t:#F6F2F7;--e36-a:#895298;--e36-d:#4C3154;--e37-t:#F6F2F7;--e37-a:#875298;--e37-d:#4B3154;--e38-t:#F6F2F7;--e38-a:#855298;--e38-d:#4A3154;--e39-t:#F6F2F7;--e39-a:#835298;--e39-d:#493154;--e40-t:#F6F2F7;--e40-a:#815298;--e40-d:#483154;--e41-t:#F6F2F7;--e41-a:#7F5298;--e41-d:#473154;--e42-t:#F5F2F7;--e42-a:#7E5298;--e42-d:#463154;--e43-t:#F5F2F7;--e43-a:#7C5298;--e43-d:#453154;--e44-t:#F5F2F7;--e44-a:#7A5298;--e44-d:#453154}
 
 /* Version beacon: lets the app detect at runtime whether this stylesheet is
    new enough to contain the classic skin, instead of failing silently. */
@@ -585,3 +585,148 @@ img,svg,pre,table{max-width:100%}
 :root[data-bg="4"]{--surface:#170D26;--tint:#27173B}
 :root[data-bg="5"]{--surface:#1C0F2E;--tint:#2A183F}
 :root[data-bg="6"]{--surface:#221235;--tint:#2D1A43}
+
+
+/* ================================================================
+   CLASSIC (pull) ERA RAMP — restored verbatim from the Spider-Man /
+   X-Men stylesheet. Appended last and scoped to [data-skin="pull"]
+   so the dark Darkseid ramp on the default/tabbed skin is untouched.
+   ================================================================ */
+:root[data-skin="pull"]{
+  --e0-t:#FFE9CF;
+  --e0-a:#CC7A20;
+  --e0-d:#774200;
+  --e1-t:#FFE6C6;
+  --e1-a:#BD7C00;
+  --e1-d:#6C4200;
+  --e2-t:#FEEFCB;
+  --e2-a:#B48A00;
+  --e2-d:#684D00;
+  --e3-t:#F2ECC6;
+  --e3-a:#A08C00;
+  --e3-d:#5A4D00;
+  --e4-t:#F0F4CE;
+  --e4-a:#939814;
+  --e4-d:#535600;
+  --e5-t:#E1F2CE;
+  --e5-a:#739B32;
+  --e5-d:#3C560F;
+  --e6-t:#DEF9DA;
+  --e6-a:#5AA652;
+  --e6-d:#2D5E28;
+  --e7-t:#D0F5DE;
+  --e7-a:#21A46A;
+  --e7-d:#005C37;
+  --e8-t:#CEFCEF;
+  --e8-a:#00AB8D;
+  --e8-d:#00624F;
+  --e9-t:#C5F6F5;
+  --e9-a:#00A4A7;
+  --e9-d:#005C5E;
+  --e10-t:#CBFAFF;
+  --e10-a:#00A5C4;
+  --e10-d:#005E72;
+  --e11-t:#CAF1FF;
+  --e11-a:#0098D1;
+  --e11-d:#005479;
+  --e12-t:#D9F3FF;
+  --e12-a:#4994E3;
+  --e12-d:#225386;
+  --e13-t:#E0E9FF;
+  --e13-a:#7283E0;
+  --e13-d:#3C4682;
+  --e14-t:#F3EAFF;
+  --e14-a:#997DDC;
+  --e14-d:#574481;
+  --e15-t:#FAE0FF;
+  --e15-a:#B06DC0;
+  --e15-d:#64386E;
+  --e16-t:#FFE1DF;
+  --e16-a:#D56666;
+  --e16-d:#7C3435;
+  --e17-t:#FFDBE1;
+  --e17-a:#CD6078;
+  --e17-d:#752F3F;
+  --e18-t:#FFE1F6;
+  --e18-a:#C468A8;
+  --e18-d:#71365F;
+  --e19-t:#EBE1FF;
+  --e19-a:#9673D0;
+  --e19-d:#533B77;
+  --e20-t:#CCF4FF;
+  --e20-a:#009ECC;
+  --e20-d:#005876;
+  --e21-t:#C4F1F3;
+  --e21-a:#00A0AA;
+  --e21-d:#00595F;
+  --e22-t:#DFECFF;
+  --e22-a:#6988E2;
+  --e22-d:#374A85;
+  --e23-t:#FFDFCC;
+  --e23-a:#C96C2B;
+  --e23-d:#733707;
+  --e24-t:#F5EDCB;
+  --e24-a:#A78C00;
+  --e24-d:#5F4D00;
+  --e25-t:#FFDED1;
+  --e25-a:#CD6742;
+  --e25-d:#75331B;
+  --e26-t:#FED6D2;
+  --e26-a:#C56257;
+  --e26-d:#69342E;
+  --e27-t:#FFD5D0;
+  --e27-a:#C66055;
+  --e27-d:#69332D;
+  --e28-t:#FFD4CF;
+  --e28-a:#C75E53;
+  --e28-d:#69322C;
+  --e29-t:#FFD3CE;
+  --e29-a:#C75C51;
+  --e29-d:#69312B;
+  --e30-t:#FFD2CC;
+  --e30-a:#C85B50;
+  --e30-d:#69312B;
+  --e31-t:#FFD0CB;
+  --e31-a:#C9594E;
+  --e31-d:#692F29;
+  --e32-t:#FFCFCA;
+  --e32-a:#CA574C;
+  --e32-d:#692E29;
+  --e33-t:#FFCEC8;
+  --e33-a:#CB5348;
+  --e33-d:#682C27;
+  --e34-t:#FFCDC7;
+  --e34-a:#CB5348;
+  --e34-d:#682C27;
+  --e35-t:#F6F2F7;
+  --e35-a:#8A5298;
+  --e35-d:#4D3154;
+  --e36-t:#F6F2F7;
+  --e36-a:#895298;
+  --e36-d:#4C3154;
+  --e37-t:#F6F2F7;
+  --e37-a:#875298;
+  --e37-d:#4B3154;
+  --e38-t:#F6F2F7;
+  --e38-a:#855298;
+  --e38-d:#4A3154;
+  --e39-t:#F6F2F7;
+  --e39-a:#835298;
+  --e39-d:#493154;
+  --e40-t:#F6F2F7;
+  --e40-a:#815298;
+  --e40-d:#483154;
+  --e41-t:#F6F2F7;
+  --e41-a:#7F5298;
+  --e41-d:#473154;
+  --e42-t:#F5F2F7;
+  --e42-a:#7E5298;
+  --e42-d:#463154;
+  --e43-t:#F5F2F7;
+  --e43-a:#7C5298;
+  --e43-d:#453154;
+  --e44-t:#F5F2F7;
+  --e44-a:#7A5298;
+  --e44-d:#453154;
+  --gap-bg:#E8E2D6;
+  --gap-ink:#6E665C}
