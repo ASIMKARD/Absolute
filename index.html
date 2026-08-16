@@ -31,7 +31,7 @@
 <header class="phead" id="phead" hidden>
   <h1 class="ptitle">The Pull List</h1>
   <p class="psub">Offline Edition &mdash; progress saves in this browser only, no account needed</p>
-  <p class="pmeta"><span id="strapline"></span> &middot; <b id="buildtag">build v5</b></p>
+  <p class="pmeta"><span id="strapline"></span> &middot; <b id="buildtag">build v6</b></p>
   <div class="pbar2"><i id="pfill2" style="width:0%"></i></div>
   <div class="pstats"><span id="pread">0 / 0 read</span><span id="premain">&mdash;</span></div>
 </header>
@@ -1064,7 +1064,7 @@
       [['box', '\u2610 \u2713'], ['dot', '\u25CB \u25CF'], ['web', '\u00B7 \u2716']],
       function () { return view.mark; }, function (v) { view.mark = v; repaintMarks(); });
     seg(document.getElementById('segEraScheme'),
-      [['split', 'red + blue'], ['mono', 'all red']],
+      [['split', 'violet + red'], ['mono', 'all red']],
       function () { return state.settings.eraScheme; },
       function (v) { state.settings.eraScheme = v; document.documentElement.dataset.erascheme = v; save(K.settings, state.settings); });
     seg(document.getElementById('segPace'),
