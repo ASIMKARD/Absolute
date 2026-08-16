@@ -228,6 +228,30 @@ function run(){
   ok('layout seg has 3 buttons', segBtns.length === 3);
   const pull = segBtns.find(b => /classic/i.test(b.textContent));
   pull && pull.click();
+  // ---- absolute skin (the signature layout) ----
+  {
+    const css = require('fs').readFileSync('styles.css','utf8');
+    const opts = qa('#segLayout button').map(b => b.textContent.trim().toLowerCase());
+    ok('layout picker offers absolute', opts.indexOf('absolute') !== -1);
+    ok('compact layout is gone', opts.indexOf('compact') === -1);
+    ok('absolute row is a grid manifest', /\[data-skin="abs"\] \.row\{[^}]*display:grid/.test(css));
+    ok('absolute uses bracketed status tokens', /content:'\[X\]'/.test(css) && /content:'\[ \]'/.test(css));
+    ok('absolute covers the layout axis', css.indexOf('[data-skin="abs"][data-layout="tabs"]') !== -1);
+    ok('absolute keeps zero radius', /\[data-skin="abs"\]\{[^}]*--radius:0px/.test(css));
+    const bA = qa('#segLayout button').find(b => /absolute/i.test(b.textContent));
+    bA.click();
+    const root = dom.window.document.documentElement;
+    ok('absolute sets data-skin=abs', root.getAttribute('data-skin') === 'abs');
+    ok('absolute keeps the tabbed shell', root.getAttribute('data-layout') === 'tabs'
+       && q('#tabs').hidden === false);
+    ok('absolute keeps every filter chip', qa('.chip').length > 0 && !!q('#filters') && !!q('#panel'));
+    ok('absolute still renders every row', qa('.row').length === D.issues.length);
+    // hand state back to the classic/pull skin: the assertions that follow
+    // run after the earlier classic click and expect that state.
+    const bC = qa('#segLayout button').find(b => /classic/i.test(b.textContent));
+    bC.click();
+  }
+
   ok('skin beacon present in styles.css', require('fs').readFileSync('styles.css','utf8').indexOf('--skin-ok') !== -1);
   ok('classic option = pull skin', root.dataset.skin === 'pull');
   ok('pull skin keeps the tab shell', root.dataset.layout === 'tabs');
@@ -241,25 +265,22 @@ function run(){
   ok('phead visible in tabs', q('#phead') && !q('#phead').hidden);
   ok('topbar hidden in tabs', q('.topbar') && q('.topbar').hidden === true);
 
-  // ---- switch to classic ----
-  const classic = segBtns.find(b => /compact/i.test(b.textContent));
-  classic && classic.click();
-  ok('click classic -> data-layout classic', root.dataset.layout === 'classic');
-  ok('classic: topbar visible', q('.topbar').hidden === false);
-  ok('classic: tabs nav hidden', q('#tabs').hidden === true);
-  ok('classic: phead hidden', q('#phead').hidden === true);
-  ok('classic: checklist visible', q('#app') && q('#app').hidden === false);
+  // ---- switch to the absolute skin (replaces the removed compact shell) ----
+  const absBtn = segBtns.find(b => /absolute/i.test(b.textContent));
+  absBtn && absBtn.click();
+  ok('click absolute -> data-layout stays tabs', root.dataset.layout === 'tabs');
+  ok('absolute: data-skin is abs', root.dataset.skin === 'abs');
+  ok('absolute: topbar hidden', q('.topbar').hidden === true);
+  ok('absolute: tabs nav visible', q('#tabs').hidden === false);
+  ok('absolute: phead visible', q('#phead').hidden === false);
+  ok('absolute: checklist visible', q('#app') && q('#app').hidden === false);
+  ok('absolute: settings panel reachable', !!q('#panel'));
 
-  // ---- classic: open settings via the gear, then switch back ----
-  const gear = q('#setBtn');
-  ok('classic: gear button exists', !!gear);
-  gear && gear.click();
-  ok('classic: gear opens settings', q('#panel').hidden === false);
-  ok('classic: gear aria-expanded true', gear && gear.getAttribute('aria-expanded') === 'true');
+  // ---- back to tabbed ----
   const tabbed = segBtns.find(b => /tabbed/i.test(b.textContent));
   tabbed && tabbed.click();
-  ok('classic -> tabbed via seg works', root.dataset.layout === 'tabs');
-  ok('tabs: gear hidden again', q('#setBtn').hidden === true);
+  ok('absolute -> tabbed via seg works', root.dataset.layout === 'tabs');
+  ok('leaving absolute clears the skin', !root.hasAttribute('data-skin'));
 
   // ---- walk the tabs ----
   dom.window.addEventListener('error', e => errs.push('winerr: ' + e.message));
