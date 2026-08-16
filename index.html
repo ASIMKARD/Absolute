@@ -31,7 +31,7 @@
 <header class="phead" id="phead" hidden>
   <h1 class="ptitle">The Pull List</h1>
   <p class="psub">Offline Edition &mdash; progress saves in this browser only, no account needed</p>
-  <p class="pmeta"><span id="strapline"></span> &middot; <b id="buildtag">build v4</b></p>
+  <p class="pmeta"><span id="strapline"></span> &middot; <b id="buildtag">build v5</b></p>
   <div class="pbar2"><i id="pfill2" style="width:0%"></i></div>
   <div class="pstats"><span id="pread">0 / 0 read</span><span id="premain">&mdash;</span></div>
 </header>
@@ -880,7 +880,7 @@
 
   function isTabbed() {
     var l = state.settings.layout;
-    return l === 'tabs' || l === 'pull';
+    return l === 'tabs' || l === 'pull' || l === 'abs';
   }
 
   // The skin is pure CSS. If styles.css on the server predates v16 the rules
@@ -898,10 +898,11 @@
 
   function applyLayout() {
     var lay = state.settings.layout;
-    var tabs = (lay === 'tabs' || lay === 'pull');
+    var tabs = (lay === 'tabs' || lay === 'pull' || lay === 'abs');
     document.documentElement.dataset.layout = tabs ? 'tabs' : 'classic';
     // 'pull' is the X-Men Pull List look: same tab structure, different skin
     if (lay === 'pull') document.documentElement.dataset.skin = 'pull';
+    else if (lay === 'abs') document.documentElement.dataset.skin = 'abs';
     else document.documentElement.removeAttribute('data-skin');
     document.getElementById('tabs').hidden = !tabs;
     document.getElementById('phead').hidden = !tabs;
@@ -1042,7 +1043,7 @@
 
   function buildSettingsUI() {
     seg(document.getElementById('segLayout'),
-      [['compact', 'compact'], ['tabs', 'tabbed'], ['pull', 'classic']],
+      [['abs', 'absolute'], ['tabs', 'tabbed'], ['pull', 'classic']],
       function () { return state.settings.layout; },
       function (v) {
         state.settings.layout = v;
@@ -1620,11 +1621,13 @@
       var savedSettings = r[1] || {};
       state.settings = Object.assign(state.settings, savedSettings);
       // layout vocabulary changed: 'classic' used to mean the topbar+dropdown
-      // shell, which is now 'compact'; 'classic' is the Pull List skin.
+      // shell, which is now the 'absolute' skin; 'pull' is the Pull List skin.
       // Test the RAW saved object — the defaults already carry lv:2, so the
       // merged value would always look migrated.
       if (savedSettings.lv !== 2) {
-        if (state.settings.layout === 'classic') state.settings.layout = 'compact';
+        if (state.settings.layout === 'classic') state.settings.layout = 'abs';
+        // the compact shell is gone; it became the 'absolute' skin
+        if (state.settings.layout === 'compact') state.settings.layout = 'abs';
         state.settings.lv = 2;
         save(K.settings, state.settings);
       }
