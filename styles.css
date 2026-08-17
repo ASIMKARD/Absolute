@@ -866,3 +866,10 @@ html:root[data-skin="abs"] .row.renum{background:none;color:var(--abs-dim);font-
 html:root[data-skin="abs"] .row.gap .title,
 html:root[data-skin="abs"] .row.renum .title{font-family:var(--mark),monospace;
   font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--abs-dim)}
+
+/* Depth tiers are DEFERRED per the build spec (flat list). The control is
+   hidden with !important because [hidden] is a UA rule and loses to any
+   author display: value. Every f.depth branch stays wired underneath, so
+   tiers can be enabled later without a rebuild. #tally shares this row and
+   must stay visible. */
+#l-depth,#depthChips{display:none !important}
