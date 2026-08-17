@@ -31,7 +31,7 @@
 <header class="phead" id="phead" hidden>
   <h1 class="ptitle">The Pull List</h1>
   <p class="psub">Offline Edition &mdash; progress saves in this browser only, no account needed</p>
-  <p class="pmeta"><span id="strapline"></span> &middot; <b id="buildtag">build v6</b></p>
+  <p class="pmeta"><span id="strapline"></span> &middot; <b id="buildtag">build v7</b></p>
   <div class="pbar2"><i id="pfill2" style="width:0%"></i></div>
   <div class="pstats"><span id="pread">0 / 0 read</span><span id="premain">&mdash;</span></div>
 </header>
@@ -46,6 +46,9 @@
 
 <section class="filters" id="filters" hidden aria-label="Filters">
   <div class="frow">
+    <!-- Depth is DEFERRED per the build spec (flat list, no tiers yet). The
+         control is hidden but every f.depth branch, the tiers array and the
+         chip builder stay wired, so tiers can be switched on without a rebuild. -->
     <span class="flabel" id="l-depth">Depth</span>
     <span role="group" aria-labelledby="l-depth" id="depthChips"></span>
     <span class="tally" id="tally">—</span>
@@ -1293,8 +1296,90 @@
         D.maintenance.forEach(function (m) {
           var p = el('p', null, m); p.style.margin = '2px 0'; box.appendChild(p);
         });
+
+        // ---- refresh-prompt pattern ----
+        // This line grows fast, so the tracker ships the prompt needed to update
+        // it. Built from the loaded data so it can never drift out of date.
+        var rh = el('p', null, 'Refresh prompt');
+        rh.style.cssText = 'margin:14px 0 2px;font-weight:600';
+        box.appendChild(rh);
+        var rp = el('p', null, 'Paste this into a new conversation when new issues have shipped.');
+        rp.style.cssText = 'margin:2px 0 6px;font-size:12px;opacity:.75';
+        box.appendChild(rp);
+
+        var ta = document.createElement('textarea');
+        ta.readOnly = true; ta.rows = 8;
+        ta.style.cssText = 'width:100%;font-family:var(--mark),monospace;font-size:11px;' +
+          'line-height:1.5;padding:8px;border-radius:var(--radius);background:var(--tint);' +
+          'color:var(--ink);border:1px solid var(--rule);resize:vertical';
+        ta.value = refreshPrompt();
+        box.appendChild(ta);
+
+        var cp = el('button', 'rbtn', 'Copy refresh prompt');
+        cp.style.cssText = 'margin-top:6px';
+        cp.addEventListener('click', function () {
+          ta.select();
+          var done = false;
+          try { done = document.execCommand('copy'); } catch (e) { done = false; }
+          if (!done && navigator.clipboard) {
+            navigator.clipboard.writeText(ta.value).then(function () { toast('Refresh prompt copied'); });
+            return;
+          }
+          toast(done ? 'Refresh prompt copied' : 'Select the text above and copy');
+        });
+        box.appendChild(cp);
       }
     });
+
+    // Builds the maintenance refresh prompt from live data, so the figures
+    // it quotes are always the ones actually loaded.
+    function refreshPrompt() {
+      var f = D.franchise || {};
+      var last = '', lastKey = 0;
+      D.issues.forEach(function (r) { if (r[0] > lastKey) { lastKey = r[0]; last = r[1]; } });
+      var ym = String(lastKey).slice(0, 4) + '-' + String(lastKey).slice(4, 6);
+      var titles = {};
+      D.issues.forEach(function (r) {
+        var m = /^(.*?)(?: #\d+| \d{4} Annual|:)/.exec(r[1]);
+        var k = (m ? m[1] : r[1]).trim();
+        if (!titles[k] || titles[k] < r[0]) titles[k] = r[0];
+      });
+      var lines = [];
+      lines.push('Refresh the ' + (f.wordmark || 'tracker') + ' reading-order tracker.');
+      lines.push('');
+      lines.push('CURRENT STATE');
+      lines.push('- ' + D.issues.length + ' issues, ' + D.arcs.length + ' arcs (one per cover month), '
+                 + D.eras.length + ' eras, ' + D.strands.length + ' title strands.');
+      lines.push('- Spine is sorted by COVER date. Sort key is YYYYMMNNN.');
+      lines.push('- Latest row: ' + last + ' (cover ' + ym + ').');
+      lines.push('- Titles tracked: ' + Object.keys(titles).sort().join('; ') + '.');
+      lines.push('');
+      lines.push('WHAT TO DO');
+      lines.push('1. Find every issue released since cover ' + ym + ' for the titles above.');
+      lines.push('2. Scope STRICTLY to what has actually shipped, not what is solicited.');
+      lines.push('   Reading-order guides list solicited issues as though released.');
+      lines.push('3. Cover date = on-sale month + 2. Validated repeatedly on this line,');
+      lines.push('   but re-check it per series before relying on it.');
+      lines.push('4. Interpolate a month only when two sourced anchors are exactly as many');
+      lines.push('   months apart as they are issues apart. Otherwise there is a real');
+      lines.push('   publication gap and each issue needs its own lookup.');
+      lines.push('5. Add a new arc per new cover month. Never write a date from memory.');
+      lines.push('6. Flag every derived value in that row\u2019s Note.');
+      lines.push('');
+      lines.push('SOURCES THAT WORK');
+      lines.push('- DC Universe Infinite SERIES pages: every issue + on-sale date in one page.');
+      lines.push('- DC Database per-issue pages: cover date and publication date both stated.');
+      lines.push('- Avoid League of Comic Geeks in bulk (variant floods, client-side lists).');
+      lines.push('');
+      lines.push('SCOPE DECISIONS TO RESPECT');
+      lines.push('- Absolute-original content only. DC K.O. is excluded entirely.');
+      lines.push('- Depth tiers are deliberately deferred; keep the flat list.');
+      lines.push('- New titles launched since this build are a scope decision, not an assumption.');
+      lines.push('');
+      lines.push('Then rebuild: python3 gen.py, node test.js, and bump the cache string in');
+      lines.push('sw.js and the build tag in index.html together.');
+      return lines.join('\n');
+    }
 
     document.getElementById('bmBtn').addEventListener('click', function () {
       if (!bookmarks.length) { alert('No bookmarks yet. Tap the \u2606 on any issue.'); return; }
