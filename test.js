@@ -228,6 +228,22 @@ function run(){
   ok('layout seg has 3 buttons', segBtns.length === 3);
   const pull = segBtns.find(b => /classic/i.test(b.textContent));
   pull && pull.click();
+  // ---- deferred depth tiers + refresh prompt + arc blurbs ----
+  {
+    const css  = require('fs').readFileSync('styles.css','utf8');
+    const html = require('fs').readFileSync('index.html','utf8');
+    ok('depth control hidden with !important', /#l-depth,#depthChips\{display:none !important\}/.test(css));
+    ok('depth machinery still wired', html.indexOf("f.depth === 'core'") !== -1
+       && html.indexOf('depthChips') !== -1);
+    ok('tiers array still present', Array.isArray(D.tiers) && D.tiers.length === 3);
+    ok('filter tally survives the depth hide', !!q('#tally'));
+    ok('refresh prompt builder exists', /function refreshPrompt/.test(html));
+    ok('refresh prompt names the sources', /DC Universe Infinite SERIES pages/.test(html));
+    ok('every arc has a blurb', D.arcs.every(a => a.b && a.b.length > 20));
+    ok('every era has an intro', D.eras.every(e => e.intro && e.intro.length > 20));
+    ok('blurbs render in the DOM', qa('.blurb').length === D.arcs.length);
+  }
+
   // ---- absolute skin (the signature layout) ----
   {
     const css = require('fs').readFileSync('styles.css','utf8');
