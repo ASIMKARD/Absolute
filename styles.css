@@ -1,875 +1,498 @@
-@font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/anton-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
-@font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/anton-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/ibm-plex-mono-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/ibm-plex-mono-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/ibm-plex-mono-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
-@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/ibm-plex-mono-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
-@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/ibm-plex-sans-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
-@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/ibm-plex-sans-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
-@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/ibm-plex-sans-500-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
-@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/ibm-plex-sans-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
-@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/ibm-plex-sans-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
-@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/ibm-plex-sans-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
- font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:var(--fs);line-height:1.45;
- -webkit-font-smoothing:antialiased}
-:root{
- --fs:15px; --dens:9px; --radius:6px;
- --mark:'IBM Plex Mono',ui-monospace,monospace;
+/* Pull List template v3 — styles.
+   ONE colour-token block (the :root rule below) is the single source of colour;
+   every other rule refers to the tokens. Skins (session 4) redefine tokens
+   only, never layout. Zero !important; specificity kept flat. */
+/* ---- fonts: the vendored woff2 files (precached by the service worker).
+   swap: text shows at once in the fallback and re-renders when the font lands. ---- */
+@font-face { font-family: 'Anton'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('./fonts/anton-400-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Anton'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('./fonts/anton-400-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('./fonts/ibm-plex-sans-400-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('./fonts/ibm-plex-sans-400-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url('./fonts/ibm-plex-sans-500-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url('./fonts/ibm-plex-sans-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('./fonts/ibm-plex-sans-600-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('./fonts/ibm-plex-sans-600-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('./fonts/ibm-plex-mono-400-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('./fonts/ibm-plex-mono-400-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url('./fonts/ibm-plex-mono-500-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url('./fonts/ibm-plex-mono-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
- --bg:#0D0616;--surface:#1A0E2B;--ink:#EDE4F5;--ink-soft:#A48FC0;
- --accent:#E8123C;--action:#B36BFF;--rule:#3A2454;
- --gap-bg:#160A22;--gap-ink:#8E79AB;--e0-t:#1A0E2B;--e0-a:#B36BFF;--e0-d:#EDE4F5;--e1-t:#3D0D20;--e1-a:#E8123C;--e1-d:#EDE4F5;--e2-t:#3D0D20;--e2-a:#E8123C;--e2-d:#EDE4F5;--e3-t:#3D0D20;--e3-a:#E8123C;--e3-d:#EDE4F5;--e4-t:#3D0D20;--e4-a:#E8123C;--e4-d:#EDE4F5;--e5-t:#3D0D20;--e5-a:#E8123C;--e5-d:#EDE4F5;--e6-t:#3D0D20;--e6-a:#E8123C;--e6-d:#EDE4F5;--e7-t:#3D0D20;--e7-a:#E8123C;--e7-d:#EDE4F5;--e8-t:#3D0D20;--e8-a:#E8123C;--e8-d:#EDE4F5;--e9-t:#3D0D20;--e9-a:#E8123C;--e9-d:#EDE4F5;--e10-t:#3D0D20;--e10-a:#E8123C;--e10-d:#EDE4F5;--e11-t:#3D0D20;--e11-a:#E8123C;--e11-d:#EDE4F5;--e12-t:#3D0D20;--e12-a:#E8123C;--e12-d:#EDE4F5;--e13-t:#3D0D20;--e13-a:#E8123C;--e13-d:#EDE4F5;--e14-t:#3D0D20;--e14-a:#E8123C;--e14-d:#EDE4F5;--e15-t:#3D0D20;--e15-a:#E8123C;--e15-d:#EDE4F5;--e16-t:#3D0D20;--e16-a:#E8123C;--e16-d:#EDE4F5;--e17-t:#3D0D20;--e17-a:#E8123C;--e17-d:#EDE4F5;--e18-t:#3D0D20;--e18-a:#E8123C;--e18-d:#EDE4F5;--e19-t:#3D0D20;--e19-a:#E8123C;--e19-d:#EDE4F5;--e20-t:#3D0D20;--e20-a:#E8123C;--e20-d:#EDE4F5;--e21-t:#3D0D20;--e21-a:#E8123C;--e21-d:#EDE4F5;--e22-t:#3D0D20;--e22-a:#E8123C;--e22-d:#EDE4F5;--e23-t:#3D0D20;--e23-a:#E8123C;--e23-d:#EDE4F5;--e24-t:#3D0D20;--e24-a:#E8123C;--e24-d:#EDE4F5;--e25-t:#3D0D20;--e25-a:#E8123C;--e25-d:#EDE4F5;--e26-t:#3D0D20;--e26-a:#E8123C;--e26-d:#EDE4F5;--e27-t:#3D0D20;--e27-a:#E8123C;--e27-d:#EDE4F5;--e28-t:#3D0D20;--e28-a:#E8123C;--e28-d:#EDE4F5;--e29-t:#3D0D20;--e29-a:#E8123C;--e29-d:#EDE4F5;--e30-t:#3D0D20;--e30-a:#E8123C;--e30-d:#EDE4F5;--e31-t:#3D0D20;--e31-a:#E8123C;--e31-d:#EDE4F5;--e32-t:#3D0D20;--e32-a:#E8123C;--e32-d:#EDE4F5;--e33-t:#3D0D20;--e33-a:#E8123C;--e33-d:#EDE4F5;--e34-t:#3D0D20;--e34-a:#E8123C;--e34-d:#EDE4F5}
-:root[data-erascheme="mono"]{--e0-t:#240A12;--e0-a:#9B0C22;--e0-d:#EDE4F5;--e1-t:#3D0D20;--e1-a:#E8123C;--e1-d:#EDE4F5;--e2-t:#3D0D20;--e2-a:#E8123C;--e2-d:#EDE4F5;--e3-t:#3D0D20;--e3-a:#E8123C;--e3-d:#EDE4F5;--e4-t:#3D0D20;--e4-a:#E8123C;--e4-d:#EDE4F5;--e5-t:#3D0D20;--e5-a:#E8123C;--e5-d:#EDE4F5;--e6-t:#3D0D20;--e6-a:#E8123C;--e6-d:#EDE4F5;--e7-t:#3D0D20;--e7-a:#E8123C;--e7-d:#EDE4F5;--e8-t:#3D0D20;--e8-a:#E8123C;--e8-d:#EDE4F5;--e9-t:#3D0D20;--e9-a:#E8123C;--e9-d:#EDE4F5;--e10-t:#3D0D20;--e10-a:#E8123C;--e10-d:#EDE4F5;--e11-t:#3D0D20;--e11-a:#E8123C;--e11-d:#EDE4F5;--e12-t:#3D0D20;--e12-a:#E8123C;--e12-d:#EDE4F5;--e13-t:#3D0D20;--e13-a:#E8123C;--e13-d:#EDE4F5;--e14-t:#3D0D20;--e14-a:#E8123C;--e14-d:#EDE4F5;--e15-t:#3D0D20;--e15-a:#E8123C;--e15-d:#EDE4F5;--e16-t:#3D0D20;--e16-a:#E8123C;--e16-d:#EDE4F5;--e17-t:#3D0D20;--e17-a:#E8123C;--e17-d:#EDE4F5;--e18-t:#3D0D20;--e18-a:#E8123C;--e18-d:#EDE4F5;--e19-t:#3D0D20;--e19-a:#E8123C;--e19-d:#EDE4F5;--e20-t:#3D0D20;--e20-a:#E8123C;--e20-d:#EDE4F5;--e21-t:#3D0D20;--e21-a:#E8123C;--e21-d:#EDE4F5;--e22-t:#3D0D20;--e22-a:#E8123C;--e22-d:#EDE4F5;--e23-t:#3D0D20;--e23-a:#E8123C;--e23-d:#EDE4F5;--e24-t:#3D0D20;--e24-a:#E8123C;--e24-d:#EDE4F5;--e25-t:#3D0D20;--e25-a:#E8123C;--e25-d:#EDE4F5;--e26-t:#3D0D20;--e26-a:#E8123C;--e26-d:#EDE4F5;--e27-t:#3D0D20;--e27-a:#E8123C;--e27-d:#EDE4F5;--e28-t:#3D0D20;--e28-a:#E8123C;--e28-d:#EDE4F5;--e29-t:#3D0D20;--e29-a:#E8123C;--e29-d:#EDE4F5;--e30-t:#3D0D20;--e30-a:#E8123C;--e30-d:#EDE4F5;--e31-t:#3D0D20;--e31-a:#E8123C;--e31-d:#EDE4F5;--e32-t:#3D0D20;--e32-a:#E8123C;--e32-d:#EDE4F5;--e33-t:#3D0D20;--e33-a:#E8123C;--e33-d:#EDE4F5;--e34-t:#3D0D20;--e34-a:#E8123C;--e34-d:#EDE4F5}
-:root[data-theme="newsprint"]{--e0-t:#1A0E2B;--e0-a:#B36BFF;--e0-d:#EDE4F5;--e1-t:#3D0D20;--e1-a:#E8123C;--e1-d:#EDE4F5;--e2-t:#3D0D20;--e2-a:#E8123C;--e2-d:#EDE4F5;--e3-t:#3D0D20;--e3-a:#E8123C;--e3-d:#EDE4F5;--e4-t:#3D0D20;--e4-a:#E8123C;--e4-d:#EDE4F5;--e5-t:#3D0D20;--e5-a:#E8123C;--e5-d:#EDE4F5;--e6-t:#3D0D20;--e6-a:#E8123C;--e6-d:#EDE4F5;--e7-t:#3D0D20;--e7-a:#E8123C;--e7-d:#EDE4F5;--e8-t:#3D0D20;--e8-a:#E8123C;--e8-d:#EDE4F5;--e9-t:#3D0D20;--e9-a:#E8123C;--e9-d:#EDE4F5;--e10-t:#3D0D20;--e10-a:#E8123C;--e10-d:#EDE4F5;--e11-t:#3D0D20;--e11-a:#E8123C;--e11-d:#EDE4F5;--e12-t:#3D0D20;--e12-a:#E8123C;--e12-d:#EDE4F5;--e13-t:#3D0D20;--e13-a:#E8123C;--e13-d:#EDE4F5;--e14-t:#3D0D20;--e14-a:#E8123C;--e14-d:#EDE4F5;--e15-t:#3D0D20;--e15-a:#E8123C;--e15-d:#EDE4F5;--e16-t:#3D0D20;--e16-a:#E8123C;--e16-d:#EDE4F5;--e17-t:#3D0D20;--e17-a:#E8123C;--e17-d:#EDE4F5;--e18-t:#3D0D20;--e18-a:#E8123C;--e18-d:#EDE4F5;--e19-t:#3D0D20;--e19-a:#E8123C;--e19-d:#EDE4F5;--e20-t:#3D0D20;--e20-a:#E8123C;--e20-d:#EDE4F5;--e21-t:#3D0D20;--e21-a:#E8123C;--e21-d:#EDE4F5;--e22-t:#3D0D20;--e22-a:#E8123C;--e22-d:#EDE4F5;--e23-t:#3D0D20;--e23-a:#E8123C;--e23-d:#EDE4F5;--e24-t:#3D0D20;--e24-a:#E8123C;--e24-d:#EDE4F5;--e25-t:#3D0D20;--e25-a:#E8123C;--e25-d:#EDE4F5;
- --bg:#0D0616;--surface:#1A0E2B;--ink:#EDE4F5;--ink-soft:#A48FC0;
- --accent:#E8123C;--action:#B36BFF;--rule:#3A2454;
- --gap-bg:#160A22;--gap-ink:#8E79AB;
-}
-.era[data-e="0"]{--tint:var(--e0-t);--acc:var(--e0-a);--deep:var(--e0-d)}
-.era[data-e="1"]{--tint:var(--e1-t);--acc:var(--e1-a);--deep:var(--e1-d)}
-.era[data-e="2"]{--tint:var(--e2-t);--acc:var(--e2-a);--deep:var(--e2-d)}
-.era[data-e="3"]{--tint:var(--e3-t);--acc:var(--e3-a);--deep:var(--e3-d)}
-.era[data-e="4"]{--tint:var(--e4-t);--acc:var(--e4-a);--deep:var(--e4-d)}
-.era[data-e="5"]{--tint:var(--e5-t);--acc:var(--e5-a);--deep:var(--e5-d)}
-.era[data-e="6"]{--tint:var(--e6-t);--acc:var(--e6-a);--deep:var(--e6-d)}
-.era[data-e="7"]{--tint:var(--e7-t);--acc:var(--e7-a);--deep:var(--e7-d)}
-.era[data-e="8"]{--tint:var(--e8-t);--acc:var(--e8-a);--deep:var(--e8-d)}
-.era[data-e="9"]{--tint:var(--e9-t);--acc:var(--e9-a);--deep:var(--e9-d)}
-.era[data-e="10"]{--tint:var(--e10-t);--acc:var(--e10-a);--deep:var(--e10-d)}
-.era[data-e="11"]{--tint:var(--e11-t);--acc:var(--e11-a);--deep:var(--e11-d)}
-.era[data-e="12"]{--tint:var(--e12-t);--acc:var(--e12-a);--deep:var(--e12-d)}
-.era[data-e="13"]{--tint:var(--e13-t);--acc:var(--e13-a);--deep:var(--e13-d)}
-.era[data-e="14"]{--tint:var(--e14-t);--acc:var(--e14-a);--deep:var(--e14-d)}
-.era[data-e="15"]{--tint:var(--e15-t);--acc:var(--e15-a);--deep:var(--e15-d)}
-.era[data-e="16"]{--tint:var(--e16-t);--acc:var(--e16-a);--deep:var(--e16-d)}
-.era[data-e="17"]{--tint:var(--e17-t);--acc:var(--e17-a);--deep:var(--e17-d)}
-.era[data-e="18"]{--tint:var(--e18-t);--acc:var(--e18-a);--deep:var(--e18-d)}
-.era[data-e="19"]{--tint:var(--e19-t);--acc:var(--e19-a);--deep:var(--e19-d)}
-.era[data-e="20"]{--tint:var(--e20-t);--acc:var(--e20-a);--deep:var(--e20-d)}
-.era[data-e="21"]{--tint:var(--e21-t);--acc:var(--e21-a);--deep:var(--e21-d)}
-.era[data-e="22"]{--tint:var(--e22-t);--acc:var(--e22-a);--deep:var(--e22-d)}
-.era[data-e="23"]{--tint:var(--e23-t);--acc:var(--e23-a);--deep:var(--e23-d)}
-.era[data-e="24"]{--tint:var(--e24-t);--acc:var(--e24-a);--deep:var(--e24-d)}
-.era[data-e="25"]{--tint:var(--e25-t);--acc:var(--e25-a);--deep:var(--e25-d)}
-/* ---------- chrome ---------- */
-.topbar{position:sticky;top:0;z-index:20;background:var(--action);color:#fff;
- display:flex;align-items:center;gap:12px;padding:10px 14px;box-shadow:0 1px 0 rgba(0,0,0,.12)}
-:root[data-theme="newsprint"] .topbar{background:var(--ink);color:var(--bg)}
-.wordmark{font-family:'Anton',Impact,sans-serif;font-size:20px;letter-spacing:.03em;
- text-transform:uppercase;white-space:nowrap}
-.count{font-family:var(--mark);font-size:12px;opacity:.9;white-space:nowrap}
-.pbar{flex:1;min-width:60px;height:6px;border-radius:3px;background:rgba(255,255,255,.28);
- position:relative;overflow:hidden}
-:root[data-theme="newsprint"] .pbar{background:rgba(242,236,224,.25)}
-.pbar>i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:3px;
- transition:width .25s ease}
-@media (prefers-reduced-motion:reduce){.pbar>i{transition:none}}
-.iconbtn{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:6px;
- border-radius:var(--radius);line-height:1;font-size:16px}
-.iconbtn:hover{background:rgba(255,255,255,.16)}
-main{max-width:960px;margin:0 auto;padding:0 0 40vh}
-/* ---------- era ---------- */
-.era-head{position:sticky;top:calc(44px + env(safe-area-inset-top,0px));z-index:10;display:flex;align-items:center;gap:10px;
- padding:8px 14px;background:var(--tint);color:var(--deep);border-left:4px solid var(--acc);
- border-top:1px solid var(--rule);cursor:pointer;width:100%;text-align:left;font:inherit}
-.era-head h2{margin:0;font-size:12.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
-.era-head .n{font-family:var(--mark);font-size:11.5px;opacity:.75;margin-left:auto;white-space:nowrap}
-.era-head .chev{transition:transform .18s ease;font-size:11px;opacity:.7}
-.era[aria-expanded="false"] .chev{transform:rotate(-90deg)}
-.era-intro{background:var(--tint);color:var(--deep);padding:2px 18px 12px;font-size:13.5px;
- border-left:4px solid var(--acc);font-style:italic}
-/* ---------- arc ---------- */
-.arc-head{background:var(--tint);border-left:4px solid var(--acc);padding:9px 14px 4px;
- display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.arc-head h3{margin:0;font-size:13.5px;font-weight:600;color:var(--deep)}
-.arc-meta{font-family:var(--mark);font-size:11px;color:var(--ink-soft)}
-.blurb{background:var(--tint);border-left:4px solid var(--acc);padding:0 14px 8px;
- font-size:13px;color:var(--ink);opacity:.85;max-width:74ch}
-/* ---------- rows ---------- */
-.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:var(--dens) 14px;background:var(--tint);
- border-left:4px solid var(--acc);border-top:1px solid rgba(0,0,0,.055);position:relative}
-.mark{font-family:var(--mark);font-size:16px;width:26px;min-height:26px;flex:none;display:grid;
- place-items:center;background:none;border:0;cursor:pointer;color:var(--ink-soft);
- border-radius:var(--radius);padding:0}
-.mark:hover{background:rgba(0,0,0,.06)}
-.row[data-s="read"] .mark{color:var(--accent)}
-.row[data-s="reading"] .mark{color:var(--action)}
-.row[data-s="skip"] .mark{color:var(--ink-soft);opacity:.55}
-.row[data-s="read"] .title,.row[data-s="skip"] .title{opacity:.55}
-.row[data-s="skip"] .title{text-decoration:line-through}
-.title{font-weight:500;flex:0 1 auto;min-width:0;overflow-wrap:anywhere}
-.arclab{font-size:12.5px;color:var(--ink-soft);flex:1;min-width:0;overflow:hidden;
- text-overflow:ellipsis;white-space:nowrap}
-.badges{display:flex;gap:5px;align-items:center;flex:0 1 auto;flex-wrap:wrap;min-width:0}
-.b{font-family:var(--mark);font-size:10.5px;padding:1px 6px;border-radius:3px;white-space:nowrap;
- border:1px solid transparent;background:none;cursor:default;color:var(--ink-soft)}
-.b.core{background:var(--accent);color:#fff;font-weight:500}
-.b.note{border-color:var(--acc);color:var(--deep);cursor:pointer}
-.b.mu{border-color:var(--rule);color:var(--action);text-decoration:none;background:var(--surface)}
-.b.mu:hover{border-color:var(--action)}
-.notepop{grid-column:1/-1;font-size:12.5px;color:var(--ink);background:var(--surface);
- border-left:3px solid var(--acc);margin:6px 0 0 36px;padding:7px 10px;border-radius:var(--radius);
- max-width:74ch}
-.row.gap{background:var(--gap-bg);color:var(--gap-ink);font-style:italic;font-size:13px;
- border-left-color:transparent;cursor:default}
-.row.gap .mark{opacity:.35;cursor:default}
-.subnote{font-size:12px;color:var(--ink-soft);margin-left:auto;flex:0 1 auto;
- min-width:0;overflow-wrap:anywhere}
-:where(a,button,[tabindex]):focus-visible{outline:2.5px solid var(--action);outline-offset:2px;
- border-radius:var(--radius)}
-:root[data-theme="newsprint"] :where(a,button):focus-visible{outline-color:var(--accent)}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-@media (max-width:600px){
- .arclab{display:none}
- .wordmark{font-size:17px}
- main{padding-bottom:50vh}
-}
-.cont{font-family:var(--mark);font-size:10px;letter-spacing:.08em;text-transform:lowercase;
- opacity:.6;border:1px solid currentColor;border-radius:3px;padding:0 4px}
-/* ---------- filter bar ---------- */
-.filters{position:sticky;top:calc(44px + env(safe-area-inset-top,0px));z-index:15;background:var(--surface);border-bottom:1px solid var(--rule);
- padding:8px 14px;display:grid;gap:8px}
-.filters[hidden]{display:none}
-.frow{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.flabel{font-family:var(--mark);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
- color:var(--ink-soft);flex:none;width:62px}
-.chip{font:inherit;font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--rule);
- background:var(--surface);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
-.chip[aria-pressed="true"]{background:var(--action);border-color:var(--action);color:#fff}
-.chip.strand[aria-pressed="true"]{background:var(--accent);border-color:var(--accent)}
-.chip:hover{border-color:var(--action)}
-.search{flex:1;min-width:140px;font:inherit;font-size:13.5px;padding:5px 10px;border-radius:var(--radius);
- border:1px solid var(--rule);background:var(--bg);color:var(--ink)}
-.search::placeholder{color:var(--ink-soft)}
-.linkbtn{background:none;border:0;font:inherit;font-size:12px;color:var(--action);cursor:pointer;
- text-decoration:underline;padding:2px 4px}
-.tally{font-family:var(--mark);font-size:11.5px;color:var(--ink-soft);margin-left:auto}
-.empty{padding:30px 14px;color:var(--ink-soft);font-style:italic}
-.arc[hidden],.era[hidden],.row[hidden]{display:none}
-mark{background:var(--accent);color:#fff;border-radius:2px;padding:0 2px}
-/* ---------- settings ---------- */
-.panel{position:sticky;top:calc(44px + env(safe-area-inset-top,0px));z-index:16;background:var(--surface);border-bottom:1px solid var(--rule);
- padding:10px 14px;display:grid;gap:9px;max-height:70vh;overflow:auto}
-.panel[hidden]{display:none}
-.seg{display:flex;gap:0;border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden}
-.seg button{font:inherit;font-size:12.5px;padding:4px 11px;border:0;border-right:1px solid var(--rule);
- background:var(--surface);color:var(--ink-soft);cursor:pointer}
-.seg button:last-child{border-right:0}
-.seg button[aria-pressed="true"]{background:var(--action);color:#fff}
-.pace{font-family:var(--mark);font-size:12px;color:var(--ink-soft)}
-.pace b{color:var(--ink);font-weight:500}
-.presetRow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.mini{position:sticky;top:calc(44px + env(safe-area-inset-top,0px));z-index:14;height:3px;background:var(--rule)}
-.mini>i{display:block;height:100%;background:var(--accent);transition:width .25s ease}
-@media (prefers-reduced-motion:reduce){.mini>i{transition:none}}
-/* row extras */
-.b.bm[aria-pressed="true"]{background:var(--action);color:#fff;border-color:var(--action)}
-.review{grid-column:1/-1;background:var(--surface);border-left:3px solid var(--acc);margin:6px 0 0 36px;
- padding:8px 10px;border-radius:var(--radius);max-width:74ch;display:grid;gap:6px}
-.stars{display:flex;gap:3px}
-.stars button{background:none;border:0;font-size:17px;cursor:pointer;color:var(--ink-soft);padding:0 2px;line-height:1}
-.stars button[aria-pressed="true"]{color:var(--accent)}
-.review textarea{font:inherit;font-size:13px;border:1px solid var(--rule);border-radius:var(--radius);
- padding:6px 8px;background:var(--bg);color:var(--ink);resize:vertical;min-height:52px}
-.reviewed .mark::after{content:'';position:absolute;width:5px;height:5px;border-radius:50%;
- background:var(--accent);transform:translate(11px,-9px)}
-/* variants */
-:root[data-dys="1"] body,:root[data-dys="1"] .search,:root[data-dys="1"] textarea{
- font-family:'Comic Sans MS','Trebuchet MS',Verdana,sans-serif;letter-spacing:.02em;word-spacing:.08em}
-:root[data-tap="1"] .mark{width:44px;min-height:44px}
-:root[data-tap="1"] .chip,:root[data-tap="1"] .seg button{padding-top:8px;padding-bottom:8px}
-:root[data-badges="0"] .badges{display:none}
-:root[data-table="1"] .blurb,:root[data-table="1"] .era-intro{display:none}
-:root[data-table="1"] .row{--dens:3px;font-size:13px}
-:root[data-table="1"] .arc-head{padding-top:5px;padding-bottom:2px}
-:root[data-table="1"] .arclab{display:inline;font-family:var(--mark);font-size:11px}
-.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:40;background:var(--ink);
- color:var(--bg);padding:9px 14px;border-radius:999px;font-size:13px;display:flex;gap:10px;align-items:center;
- box-shadow:0 4px 14px rgba(0,0,0,.22);max-width:92vw}
-.toast button{font:inherit;font-size:12.5px;background:var(--accent);color:#fff;border:0;
- border-radius:999px;padding:3px 11px;cursor:pointer}
-.toast[hidden]{display:none}
-.offline .topbar{filter:saturate(.6)}
-.offdot{width:7px;height:7px;border-radius:50%;background:var(--action);flex:none}
-.sync{display:grid;gap:8px;padding:10px 0}
-.sync svg{width:100%;max-width:280px;height:auto;background:#fff;padding:8px;border-radius:var(--radius)}
-.sync textarea{font-family:var(--mark);font-size:11px;min-height:70px;border:1px solid var(--rule);
- border-radius:var(--radius);padding:6px 8px;background:var(--bg);color:var(--ink);resize:vertical}
-.sync .warn{font-size:12.5px;color:var(--accent)}
-.row.renum{background:var(--surface);color:var(--ink-soft);font-size:12.5px;border-left:4px solid var(--acc);
- border-top:1px dashed var(--rule);cursor:default;font-style:normal}
-.row.renum .mark{opacity:.5;cursor:default;color:var(--acc)}
-.row.renum .title{font-weight:400;font-family:var(--mark);font-size:12px}
+:root {
+  /* ---- INPUTS: plain numbers. Skins, paper swatches and the Look settings
+     set these and nothing else, so every colour below follows them. ---- */
+  /* surfaces: hue and saturation come from the paper swatch (default: the skin's own) */
+  --base-paper-h: 45; --base-paper-s: 27%;
+  --paper-h: var(--base-paper-h); --paper-s: var(--base-paper-s);
+  --l-paper: 94%; --l-card: 100%; --l-line: 83%; --l-edge: 52%; --l-track: 87%; --l-bar: 94%;
+  /* text */
+  --ink-h: 227; --ink-s: 14%; --l-ink: 12%; --l-soft: 38%; --l-bar-ink: 12%; --l-bar-soft: 38%;
+  /* accent and states */
+  --accent-h: 215; --accent-s: 54%; --l-accent: 40%; --l-accent-ink: 100%; --l-wash: 93%; --l-bar-mark: 40%;
+  --l-good: 32%; --l-danger: 40%; --l-shadow: 10%;
+  /* per-role hue and saturation (session 5, for Pull). Each follows the
+     paper or the ink unless a skin says otherwise, so the other skins and the
+     paper swatches are unchanged */
+  --card-h: var(--paper-h); --card-s: var(--paper-s);
+  --line-h: var(--paper-h); --line-s: calc(var(--paper-s) * .5);
+  --bar-h: var(--paper-h); --bar-s: var(--paper-s);
+  --field-h: var(--paper-h); --field-s: var(--paper-s); --l-field: var(--l-paper);    /* the search box */
+  --inset-h: var(--paper-h); --inset-s: var(--paper-s); --l-inset: var(--l-paper); --inset-a: 0;   /* an open era's body: none by default */
+  --soft-h: var(--ink-h); --soft-s: calc(var(--ink-s) * .5);
+  --bar-soft-h: var(--ink-h); --bar-soft-s: calc(var(--ink-s) * .5);
+  --mark-edge-s: calc(var(--ink-s) * .5); --l-mark-edge: var(--l-edge);          /* a mark's outline: a control outline unless a skin says otherwise */
+  /* era ramp (OKLCH, so one lightness reads the same at every hue): pale
+     tints, readable text, hue stepped by the golden angle — no cap on eras */
+  --era-h0: 30; --era-step: 137.508; --era-mono-h: 258;
+  --era-tint-l: .955; --era-tint-c: .035; --era-ink-l: .40; --era-ink-c: .10;
+  --scheme: light;
 
-/* ---------- mobile: stop the topbar overflowing the viewport ----------
-   .topbar is a non-wrapping flex row of nowrap items; on narrow screens its
-   intrinsic width exceeded the viewport, which made the whole page pan
-   sideways. Vertical padding stays at 10px so the bar remains 44px tall and
-   the sticky offsets below it (top:calc(44px + env(safe-area-inset-top,0px))) still line up.
-   overflow-x:clip on body is a guard against any other stray overflow —
-   deliberately clip, not hidden, because hidden would create a scroll
-   container and break every position:sticky header in the app. */
-html,body{overflow-x:hidden;overflow-x:clip;max-width:100%}
-@media (max-width:600px){
-  .topbar{gap:8px;padding:10px}
-  .topbar>*{min-width:0}
-  .wordmark{font-size:16px}
-  .pbar{min-width:34px}
-  .iconbtn{padding:6px 4px;font-size:15px}
-}
-@media (max-width:430px){
-  .topbar{gap:6px}
-  .wordmark{font-size:15px}
-  #count{display:none}          /* the % readout already carries progress */
+  /* ---- COLOURS: the one place colour is written ---- */
+  --paper: hsl(var(--paper-h) var(--paper-s) var(--l-paper));
+  --card: hsl(var(--card-h) var(--card-s) var(--l-card));
+  --line: hsl(var(--line-h) var(--line-s) var(--l-line));                     /* dividers, card outlines */
+  --edge: hsl(var(--ink-h) calc(var(--ink-s) * .5) var(--l-edge));          /* control outlines: 3:1 on paper and card */
+  --mark-edge: hsl(var(--ink-h) var(--mark-edge-s) var(--l-mark-edge));
+  --track: hsl(var(--paper-h) calc(var(--paper-s) * .8) var(--l-track));
+  --bar: hsl(var(--bar-h) var(--bar-s) var(--l-bar));                       /* the tab bar */
+  --bar-ink: hsl(var(--ink-h) var(--ink-s) var(--l-bar-ink));
+  --bar-soft: hsl(var(--bar-soft-h) var(--bar-soft-s) var(--l-bar-soft));
+  --bar-mark: hsl(var(--accent-h) var(--accent-s) var(--l-bar-mark));
+  --ink: hsl(var(--ink-h) var(--ink-s) var(--l-ink));
+  --ink-soft: hsl(var(--soft-h) var(--soft-s) var(--l-soft));
+  --field: hsl(var(--field-h) var(--field-s) var(--l-field));
+  --inset: hsl(var(--inset-h) var(--inset-s) var(--l-inset) / var(--inset-a));
+  --accent: hsl(var(--accent-h) var(--accent-s) var(--l-accent));
+  --accent-ink: hsl(var(--accent-h) var(--accent-s) var(--l-accent-ink));
+  --accent-wash: hsl(var(--accent-h) var(--accent-s) var(--l-wash));
+  --good: hsl(145 46% var(--l-good));
+  --danger: hsl(6 59% var(--l-danger));
+  --shadow: hsl(var(--ink-h) var(--ink-s) var(--l-shadow) / .2);
+  --qr-paper: #ffffff;   /* a QR scans reliably only on white, whatever the skin */
+
+  /* ---- type, shape, space, motion ---- */
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-display: 'Anton', Impact, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-meta: var(--font-body);                  /* metadata lines: years, counts, meta */
+  --display-weight: 400; --display-case: none;    /* the title and band names */
+  --name-font: var(--font-body); --name-weight: 600; --name-case: none; --name-track: 0;   /* era names */
+  --tab-size: 15px; --tab-fit: 4.2vw; --tab-case: none; --tab-track: 0;   /* four tabs fit at 320 px */
+  /* type sizes per element (session 5, for Pull); each is multiplied by --scale */
+  --title-size: 28px; --title-track: .02em; --title-lh: normal; --meta-size: 13px;
+  --era-name-size: 17px; --era-meta-size: 13px; --intro-size: 14px; --intro-style: normal;
+  --arc-size: 15px; --arc-weight: 700; --row-size: 15px; --row-weight: 400; --search-size: 15px;
+  --body-track: 0; --word-space: 0;
+  --scale: 1;                                      /* text size (S-3): every font size is multiplied by it */
+  --fs: calc(15px * var(--scale));
+  --radius: 10px; --radius-sm: 6px; --gap: 10px;
+  --row-pad: 8px;                                  /* density (S-2) */
+  --tap: 34px; --tap-glyph: 18px; --b-min: 30px;   /* button size (S-20) */
+  --tap-dense: 24px;                               /* table view's targets: never under 24 px, 44 px with large buttons */
+  --mark-radius: var(--radius-sm);                 /* mark style (S-5) */
+  --stack-h: 0px;        /* the sticky stack's height, measured at runtime (F-58) */
+  --motion: 1;           /* every transition's duration is multiplied by this; reduced motion sets 0 */
+  --skin-ok: 3;          /* the skin beacon (F-57): app.js warns when the stylesheet it loaded is older */
 }
 
-
-/* ---------- standalone (added to home screen) ----------
-   apple-mobile-web-app-status-bar-style:black-translucent draws the page
-   under the status bar, so the topbar needs the safe-area inset added to
-   its padding, and every sticky offset below it has to follow. */
-.topbar{padding-top:calc(10px + env(safe-area-inset-top,0px))}
-body{padding-bottom:env(safe-area-inset-bottom,0px)}
-
-/* ---------- tabbed shell (opt-in: Settings > Layout > tabbed) ----------
-   Classic layout is unchanged and remains the default. In tabs mode the
-   settings panel stops being a sticky dropdown and becomes a tab pane, the
-   gear button is hidden, and every sticky offset gains the tab-bar height. */
-.tabs{position:sticky;top:calc(44px + env(safe-area-inset-top,0px));z-index:19;
-  display:flex;background:var(--surface);border-bottom:1px solid var(--rule)}
-.tabs[hidden]{display:none}
-.tab{flex:1;background:none;border:0;border-bottom:2px solid transparent;color:var(--ink-soft);
-  font:inherit;font-size:13px;padding:11px 4px;cursor:pointer;line-height:1;
-  white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
-.tab[aria-selected="true"]{color:var(--action);border-bottom-color:var(--action);font-weight:600}
-:root[data-theme="newsprint"] .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
-
-:root[data-layout="tabs"] .era-head,
-:root[data-layout="tabs"] .filters,
-:root[data-layout="tabs"] .mini{top:calc(84px + env(safe-area-inset-top,0px))}
-:root[data-layout="tabs"] .panel{position:static;max-height:none;border-bottom:0}
-
-.pane{padding:12px 14px 40vh;max-width:960px;margin:0 auto}
-.pane[hidden]{display:none}
-.plist{margin:0 0 22px}
-.plist h2{margin:0 0 8px;font-size:12px;font-weight:600;letter-spacing:.07em;
-  text-transform:uppercase;color:var(--ink-soft)}
-.pempty{margin:0;font-size:13px;color:var(--ink-soft);opacity:.8}
-.pitem{display:grid;gap:2px;width:100%;text-align:left;font:inherit;cursor:pointer;
-  background:var(--surface);border:0;border-top:1px solid var(--rule);padding:9px 2px}
-.pitem:hover{background:var(--tint)}
-.pt{font-size:14px;color:var(--ink)}
-.pa{font-size:12px;color:var(--ink-soft)}
-.pstars{font-size:12px;color:var(--accent);letter-spacing:.06em}
-.ptext{font-size:12.5px;color:var(--ink-soft);opacity:.9}
-
-/* ---------- Pull List header (tabs layout only) ----------
-   Replaces the sticky topbar in tabs mode. Everything here is block-level and
-   wraps, so unlike .topbar it cannot exceed the viewport at any width. */
-.phead{padding:calc(14px + env(safe-area-inset-top,0px)) 14px 10px;background:var(--tint);
-  border-bottom:1px solid var(--rule)}
-.phead[hidden]{display:none}
-.ptitle{margin:0;font-family:var(--display),system-ui,sans-serif;font-size:30px;line-height:1;
-  letter-spacing:.01em;text-transform:uppercase;color:var(--ink);overflow-wrap:anywhere}
-.psub{margin:5px 0 0;font-size:13px;color:var(--ink-soft);overflow-wrap:anywhere}
-.pmeta{margin:9px 0 0;font-family:var(--mark);font-size:13px;color:var(--ink-soft)}
-.pbar2{margin-top:10px;height:9px;border-radius:999px;background:var(--rule);overflow:hidden}
-.pbar2 i{display:block;height:100%;background:var(--action);transition:width .25s ease}
-.pstats{display:flex;justify-content:space-between;gap:10px;margin-top:6px;
-  font-family:var(--mark);font-size:12.5px;color:var(--ink-soft);flex-wrap:wrap}
-:root{--hud-h:30px}
-/* HUD: the progress readout pins with the tab bar instead of scrolling
-   half-under it, which is what made the top of the screen look clipped */
-:root[data-layout="tabs"] .pstats{position:sticky;top:0;z-index:21;margin:0;
-  padding:7px 14px;background:var(--tint);border-bottom:1px solid var(--rule)}
-:root[data-layout="tabs"] .tabs{top:var(--hud-h)}
-:root[data-layout="tabs"] .era-head,
-:root[data-layout="tabs"] .filters,
-:root[data-layout="tabs"] .mini{top:calc(var(--hud-h) + 40px)}
-
-/* ---------- Reading: focused stepper ---------- */
-.rdr{max-width:640px;margin:0 auto;padding:22px 16px;text-align:center}
-.rcount{margin:0 0 26px;font-family:var(--mark);font-size:13px;color:var(--ink-soft)}
-.rpillwrap{margin-bottom:14px}
-.rpill{display:inline-block;padding:5px 14px;border-radius:999px;color:#fff;
-  font-size:13px;font-weight:600}
-.rtitle{margin:0 0 6px;font-family:var(--display),system-ui,sans-serif;font-size:26px;
-  line-height:1.15;color:var(--ink);overflow-wrap:anywhere}
-.rmeta{margin:0;font-size:14px;color:var(--ink-soft);overflow-wrap:anywhere}
-.rnote{margin:14px 0 0;font-size:14.5px;font-style:italic;color:var(--ink-soft)}
-.rrule{border:0;border-top:1px dashed var(--rule);margin:22px 0}
-.rblurb{margin:0;font-size:15px;line-height:1.55;color:var(--ink)}
-.racts{display:flex;gap:12px;margin:32px 0 18px}
-.rbtn{flex:1;min-width:0;font:inherit;font-size:15px;font-weight:600;padding:15px 8px;
-  border-radius:var(--radius);cursor:pointer;overflow-wrap:anywhere}
-.rbtn.ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--ink)}
-.rbtn.solid{background:var(--ink);color:var(--surface);border:1.5px solid var(--ink)}
-.rnav{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.rlink{background:none;border:0;font:inherit;font-size:13.5px;color:var(--ink);
-  cursor:pointer;padding:6px 2px}
-.rlink:disabled{opacity:.35;cursor:default}
-
-/* ---------- hard guarantee: nothing may exceed the viewport ---------- */
-html{max-width:100%}
-img,svg,pre,table{max-width:100%}
-
-
-/* ---------- overflow guarantee ----------
-   The root cause of the iPhone side-scroll was .title{flex:none}: a flex item
-   that can neither shrink nor wrap forces its row as wide as its longest
-   string. Long issue titles overflow narrow screens without this. These rules make every
-   flex child shrinkable and let long strings break. */
-.row>*,.era-head>*,.arc-head>*,.frow>*,.pstats>*,.racts>*,.rnav>*{min-width:0}
-.title,.arclab,.rtitle,.rmeta,.ptitle,.psub{overflow-wrap:anywhere}
-.seg{flex-wrap:wrap}
-
-
-/* [hidden] is a UA rule (display:none) and loses to any author display rule,
-   so elements given display:flex must opt in explicitly or JS .hidden = true
-   silently does nothing. This is why the topbar stayed visible in tabs mode. */
-.topbar[hidden],.phead[hidden],.tabs[hidden],.pane[hidden],.panel[hidden],
-.filters[hidden],.period[hidden],.era[hidden],.arc[hidden],.row[hidden]{display:none !important}
-
-.era-head .n,.count{overflow:hidden;text-overflow:ellipsis}
-
-:root[data-layout="classic"] #panel{padding:0;max-width:none;margin:0}
-
-
-/* ---------- long-list performance ----------
-   4,683 rows plus ~5,000 sticky era/arc headers (the interleaved reading
-   order re-enters eras constantly, so a header is emitted at every
-   transition) meant the whole list was laid out and painted on every
-   frame. content-visibility:auto lets the engine skip everything
-   off-screen; contain-intrinsic-size(auto N) reserves an estimated height
-   and then remembers the real one, keeping the scrollbar stable. Browsers
-   without support simply ignore these lines. */
-.row,.arc-head,.era-head,.blurb{content-visibility:auto}
-.row{contain-intrinsic-size:auto 46px}
-.arc-head{contain-intrinsic-size:auto 42px}
-.era-head{contain-intrinsic-size:auto 46px}
-.blurb{contain-intrinsic-size:auto 96px}
-
-/* ---------- period bands (seven story-shift super-eras) ---------- */
-.period{border-bottom:2px solid var(--rule)}
-.period-head{display:flex;align-items:center;gap:10px;width:100%;text-align:left;
-  font:inherit;cursor:pointer;padding:13px 14px;background:var(--tint);border:0;
-  border-left:5px solid var(--action);position:sticky;top:0;z-index:12}
-:root[data-layout="tabs"] .period-head{top:calc(var(--hud-h) + 40px)}
-.period[aria-expanded="false"] .chev{transform:rotate(-90deg)}
-.ptext{display:grid;gap:2px;min-width:0;flex:1 1 auto}
-.pname{font-family:var(--display),system-ui,sans-serif;font-size:16px;letter-spacing:.02em;
-  text-transform:uppercase;color:var(--ink);overflow-wrap:anywhere;line-height:1.15}
-.pyears{font-family:var(--mark);font-size:11.5px;color:var(--ink-soft)}
-.period-head .n{font-family:var(--mark);font-size:11.5px;color:var(--ink-soft);
-  white-space:nowrap;flex:none}
-.period-body[hidden]{display:none}
-.period-intro{margin:0;padding:12px 14px;font-size:13.5px;line-height:1.5;
-  color:var(--ink-soft);font-style:italic;background:var(--surface)}
-/* era headers become second-tier inside a period */
-.period .era-head{padding-left:20px;font-size:12px}
-.period .era-head h2{font-size:11.5px;opacity:.9}
-:root[data-layout="tabs"] .period .era-head{top:calc(var(--hud-h) + 88px)}
-
-/* filters sit open on the Checklist in tabs mode (X-Men behaviour), so they
-   scroll with the list rather than pinning under the tab bar */
-:root[data-layout="tabs"] .filters{position:static;border-bottom:2px solid var(--rule)}
-:root[data-layout="tabs"] .filters .frow{align-items:flex-start}
-.filters .chip[data-kind="strand"]{font-size:11.5px}
-
-/* ================================================================
-   PULL LIST SKIN  (Settings > Layout > classic)
-   Recreates the X-Men app's look on the same markup: cream page,
-   Anton uppercase display, monospace metadata, black tab bar,
-   and big notched era banners. Palette is Spider-Man's own — a
-   red-to-blue ramp across the eight periods instead of X-Men's
-   gold/crimson/purple. Everything is scoped to [data-skin="pull"],
-   so the compact and tabbed layouts are untouched.
-   ================================================================ */
-:root[data-skin="pull"]{
-  --surface:#EDE7DB; --tint:#E6DFD0; --ink:#191712; --ink-soft:#6B6459;
-  --rule:#CFC6B4; --action:#1E4C8A; --accent:#B3202E; --radius:8px;
-  --p0:#C0392B; --p1:#96302B; --p2:#2E2A36; --p3:#7A2E5C;
-  --p4:#1F4E79; --p5:#1959A7; --p6:#166B7A; --p7:#C81E2B;
+/* ---- skins (V-5): token sets only. A skin never moves or hides a control,
+   so these blocks may set custom properties and nothing else (a guard checks).
+   Paper is the base above. ---- */
+:root[data-skin="newsprint"] {
+  --base-paper-h: 40; --base-paper-s: 28%;
+  --l-paper: 90%; --l-card: 96%; --l-line: 76%; --l-edge: 46%; --l-track: 82%; --l-bar: 10%;
+  --ink-h: 30; --ink-s: 10%; --l-ink: 9%; --l-soft: 33%; --l-bar-ink: 95%; --l-bar-soft: 76%;
+  --accent-h: 355; --accent-s: 70%; --l-accent: 36%; --l-wash: 92%; --l-bar-mark: 72%;
+  --era-tint-l: .94; --era-tint-c: .03; --era-ink-l: .38; --era-ink-c: .09; --era-mono-h: 25;
+  --font-display: Georgia, 'Times New Roman', serif; --display-weight: 700;
+  --radius: 4px; --radius-sm: 3px;
 }
-:root[data-skin="pull"] body{background:var(--surface);color:var(--ink)}
-
-/* header block */
-:root[data-skin="pull"] .phead{background:var(--surface);border-bottom:0;padding-bottom:6px}
-:root[data-skin="pull"] .ptitle{font-size:34px;letter-spacing:.005em}
-:root[data-skin="pull"] .psub{font-size:13.5px}
-:root[data-skin="pull"] .pmeta{font-family:var(--mark);font-size:13px}
-:root[data-skin="pull"] .pbar2{height:11px;background:#D8D0BE}
-:root[data-skin="pull"] .pbar2 i{background:#B9B1A0}
-:root[data-skin="pull"] .pstats{font-family:var(--mark);font-size:13px}
-
-/* tab bar: black, uppercase, letter-spaced, blue active underline */
-:root[data-skin="pull"] .tabs{background:#141210;border-bottom:0}
-:root[data-skin="pull"] .tab{color:#CFC8BC;text-transform:uppercase;letter-spacing:.09em;
-  font-size:13px;font-weight:600;padding:15px 4px;border-bottom:3px solid transparent}
-:root[data-skin="pull"] .tab[aria-selected="true"]{color:#fff;border-bottom-color:var(--action)}
-
-/* filters: pill chips, dark when active */
-:root[data-skin="pull"] .filters{background:var(--surface);border-bottom:1px solid var(--rule)}
-:root[data-skin="pull"] .chip{border-radius:999px;border:1.5px solid var(--ink);
-  background:var(--surface);color:var(--ink);padding:9px 16px;font-size:14px}
-:root[data-skin="pull"] .chip[aria-pressed="true"]{background:#141210;color:#fff;border-color:#141210}
-:root[data-skin="pull"] .seg{border-radius:999px;border:1.5px solid var(--ink);overflow:hidden}
-:root[data-skin="pull"] .seg button{padding:9px 15px;font-size:14px;background:var(--surface);color:var(--ink)}
-:root[data-skin="pull"] .seg button[aria-pressed="true"]{background:#141210;color:#fff}
-:root[data-skin="pull"] .search{border-radius:999px;border:1.5px solid var(--rule);
-  background:#F3EEE4;padding:12px 16px;font-size:15px}
-:root[data-skin="pull"] .flabel{font-family:var(--mark);font-size:11.5px;
-  text-transform:uppercase;letter-spacing:.07em}
-
-/* period banners — the X-Men era cards */
-:root[data-skin="pull"] .period{border-bottom:0;margin:14px 12px 0}
-:root[data-skin="pull"] .period-head{border-left:0;border-radius:var(--radius) var(--radius) 0 0;
-  padding:16px 18px 14px;position:static;color:#fff;
-  clip-path:polygon(0 0,100% 0,100% 62%,calc(100% - 34px) 100%,0 100%)}
-:root[data-skin="pull"] .period-head .chev{color:rgba(255,255,255,.75)}
-:root[data-skin="pull"] .pname{color:#fff;font-size:22px;letter-spacing:.015em;line-height:1.05}
-:root[data-skin="pull"] .pyears{color:rgba(255,255,255,.82);font-size:13px}
-:root[data-skin="pull"] .period-head .n{color:rgba(255,255,255,.9);font-size:12.5px;align-self:flex-end}
-:root[data-skin="pull"] .period[data-p="0"] .period-head{background:var(--p0)}
-:root[data-skin="pull"] .period[data-p="1"] .period-head{background:var(--p1)}
-:root[data-skin="pull"] .period[data-p="2"] .period-head{background:var(--p2)}
-:root[data-skin="pull"] .period[data-p="3"] .period-head{background:var(--p3)}
-:root[data-skin="pull"] .period[data-p="4"] .period-head{background:var(--p4)}
-:root[data-skin="pull"] .period[data-p="5"] .period-head{background:var(--p5)}
-:root[data-skin="pull"] .period[data-p="6"] .period-head{background:var(--p6)}
-:root[data-skin="pull"] .period[data-p="7"] .period-head{background:var(--p7)}
-:root[data-skin="pull"] .period-intro{background:#F3EEE4;border-radius:0 0 var(--radius) var(--radius);
-  border:1px solid var(--rule);border-top:0}
-:root[data-skin="pull"] .period-body{background:transparent}
-
-/* second-tier era headers stay quiet inside a banner */
-:root[data-skin="pull"] .period .era-head{background:#F3EEE4;border-left:3px solid var(--rule);
-  margin-top:8px;border-radius:var(--radius)}
-:root[data-skin="pull"] .row{background:#F3EEE4;border-top:1px solid var(--rule)}
-
-/* reading stepper */
-:root[data-skin="pull"] .rtitle{font-size:30px}
-:root[data-skin="pull"] .rpill{font-size:13px;padding:6px 16px}
-:root[data-skin="pull"] .rbtn{border-radius:var(--radius);padding:17px 8px;font-size:16px}
-:root[data-skin="pull"] .rbtn.solid{background:#141210;border-color:#141210;color:#F3EEE4}
-:root[data-skin="pull"] .rcount{font-family:var(--mark)}
-
-/* settings: monospace uppercase section labels */
-:root[data-skin="pull"] .panel .frow{padding:12px 14px;border-bottom:1px solid var(--rule)}
-
-/* ---------- filters, Pull List skin ---------- */
-:root[data-skin="pull"] .filters{background:var(--surface);border-bottom:1px solid var(--rule);
-  padding:10px 14px 12px}
-:root[data-skin="pull"] .flabel{font-family:var(--mark);font-size:10.5px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--ink-soft)}
-:root[data-skin="pull"] .filters .chip{border-radius:999px;border:1.5px solid var(--ink);
-  background:var(--surface);color:var(--ink);font-size:13px;font-weight:600;padding:7px 15px}
-:root[data-skin="pull"] .filters .chip[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
-:root[data-skin="pull"] .filters .chip[aria-pressed="false"]{opacity:.85}
-:root[data-skin="pull"] .search{border:1.5px solid var(--ink);border-radius:999px;
-  background:var(--surface);padding:9px 15px;font-size:14px}
-:root[data-skin="pull"] .search::placeholder{color:var(--ink-soft);opacity:.75}
-:root[data-skin="pull"] #depthChips .chip{border-radius:0;border-right-width:0}
-:root[data-skin="pull"] #depthChips .chip:first-child{border-radius:999px 0 0 999px}
-:root[data-skin="pull"] #depthChips .chip:last-child{border-radius:0 999px 999px 0;border-right-width:1.5px}
-:root[data-skin="pull"] .tally{font-family:var(--mark);font-size:11px;color:var(--ink-soft);margin-left:auto}
-:root[data-skin="pull"] .linkbtn{font-family:var(--mark);font-size:11px;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--ink-soft)}
-:root[data-skin="pull"] #eraSel{border:1.5px solid var(--ink);border-radius:999px;
-  background:var(--surface);padding:7px 12px;font-size:13px}
-
-
-/* Pull List skin: search leads the filter stack, as it does on X-Men */
-:root[data-skin="pull"] .filters{display:flex;flex-direction:column;gap:9px}
-:root[data-skin="pull"] .filters .frow:has(#search){order:-1}
-:root[data-skin="pull"] .filters .frow:has(#search) .flabel{display:none}
-:root[data-skin="pull"] .filters .frow:has(#search) .search{flex:1 1 100%;min-width:0}
-
-/* Elseworlds story eras (35-44): one plum family, distinct from the eight periods */
-:root{--e35-t:#F6F2F7;--e35-a:#8A5298;--e35-d:#4D3154;--e36-t:#F6F2F7;--e36-a:#895298;--e36-d:#4C3154;--e37-t:#F6F2F7;--e37-a:#875298;--e37-d:#4B3154;--e38-t:#F6F2F7;--e38-a:#855298;--e38-d:#4A3154;--e39-t:#F6F2F7;--e39-a:#835298;--e39-d:#493154;--e40-t:#F6F2F7;--e40-a:#815298;--e40-d:#483154;--e41-t:#F6F2F7;--e41-a:#7F5298;--e41-d:#473154;--e42-t:#F5F2F7;--e42-a:#7E5298;--e42-d:#463154;--e43-t:#F5F2F7;--e43-a:#7C5298;--e43-d:#453154;--e44-t:#F5F2F7;--e44-a:#7A5298;--e44-d:#453154}
-
-/* Version beacon: lets the app detect at runtime whether this stylesheet is
-   new enough to contain the classic skin, instead of failing silently. */
-[data-skinprobe]{--skin-ok:1}
-
-
-/* ---------- classic skin: filter panel sizing ----------
-   PRIORITY and FORMAT share one .frow, so their labels collided mid-row and
-   the last chip group was clipped by the sticky panel. Each label now takes a
-   full line, and the panel scrolls with the list rather than pinning over it —
-   it belongs to the checklist, not to every screen. */
-:root[data-skin="pull"] .filters{position:static;max-height:none;overflow:visible;
-  padding:12px 14px 16px}
-:root[data-skin="pull"] .frow{align-items:flex-start;gap:8px 6px}
-:root[data-skin="pull"] .flabel{flex:1 1 100%;width:auto;margin:2px 0 0}
-:root[data-skin="pull"] .filters .chip{padding:6px 13px;font-size:12.5px}
-:root[data-skin="pull"] .filters .chip[data-kind="strand"]{font-size:12px;padding:6px 11px}
-:root[data-skin="pull"] .tally{flex:1 1 100%;text-align:right;margin:0}
-
-
-/* ---------- classic skin: nothing follows the scroll ----------
-   The tab bar and the era/period headers were sticky, so they tracked down the
-   page as you read. In this skin everything scrolls away with the content. */
-:root[data-skin="pull"] .tabs,
-:root[data-skin="pull"] .pstats,
-:root[data-skin="pull"] .period-head,
-:root[data-skin="pull"] .era-head,
-:root[data-skin="pull"] .arc-head,
-:root[data-skin="pull"] .mini,
-:root[data-skin="pull"] .filters{position:static}
-
-/* ---------- classic skin: filter groups stack cleanly ---------- */
-:root[data-skin="pull"] .filters{display:block;padding:12px 14px 18px}
-:root[data-skin="pull"] .frow{display:block;margin:0 0 12px}
-:root[data-skin="pull"] .frow:last-child{margin-bottom:0}
-:root[data-skin="pull"] .flabel{display:block;width:auto;margin:0 0 6px}
-:root[data-skin="pull"] .frow > .chip,
-:root[data-skin="pull"] .frow > span[role="group"] > .chip{margin:0 5px 5px 0}
-:root[data-skin="pull"] span[role="group"]{display:block}
-:root[data-skin="pull"] .search{display:block;width:100%;margin:0 0 10px}
-:root[data-skin="pull"] .tally{display:block;text-align:right;margin:4px 0 0}
-
-
-/* ---------- tabbed mode: nothing follows the scroll either ----------
-   Same treatment as the classic skin. This selector covers both, since the
-   classic skin also runs on the tabbed shell. Compact keeps its sticky topbar. */
-:root[data-layout="tabs"] .tabs,
-:root[data-layout="tabs"] .pstats,
-:root[data-layout="tabs"] .period-head,
-:root[data-layout="tabs"] .era-head,
-:root[data-layout="tabs"] .arc-head,
-:root[data-layout="tabs"] .mini,
-:root[data-layout="tabs"] .filters{position:static}
-
-/* ---------- classic skin: depth control on one line ----------
-   "Barebones · 75 / Essential · 508 / Everything · 4,721" wrapped onto three
-   rows; as one segmented control the three share the width evenly instead. */
-:root[data-skin="pull"] #depthChips{display:flex;flex-wrap:nowrap;width:100%;gap:0}
-:root[data-skin="pull"] #depthChips .chip{flex:1 1 0;min-width:0;margin:0;
-  font-size:11px;letter-spacing:0;padding:8px 3px;text-align:center;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-/* ---------- settings sections ---------- */
-.shead{margin:18px 14px 6px;font-family:var(--mark);font-size:10.5px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink-soft);opacity:.85}
-.shead:first-child{margin-top:10px}
-.panel .shead + .frow{margin-top:0}
-
-/* combo badge: mark rows that are both bookmarked and read */
-:root[data-combo="1"] .row[data-s="read"] .bm[aria-pressed="true"]{
-  background:var(--accent);color:#fff;border-color:var(--accent)}
-
-/* tap-to-reveal notes: hide the inline note until the row is tapped */
-:root[data-reveal="1"] .subnote{display:none}
-:root[data-reveal="1"] .row:focus-within .subnote,
-:root[data-reveal="1"] .row:hover .subnote{display:inline}
-
-/* ---------- paper swatches ---------- */
-.swatches{display:flex;gap:7px;flex-wrap:wrap}
-.swatch{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--rule);
-  cursor:pointer;padding:0;background:var(--surface)}
-.swatch[aria-pressed="true"]{outline:2px solid var(--action);outline-offset:2px}
-.swatch[data-bg="0"]{background:#FFFFFF}
-.swatch[data-bg="1"]{background:var(--surface)}
-.swatch[data-bg="2"]{background:var(--rule)}
-.swatch[data-bg="3"]{background:var(--tint)}
-.swatch[data-bg="4"]{background:var(--tint)}
-.swatch[data-bg="5"]{background:var(--tint)}
-.swatch[data-bg="6"]{background:#EAE4F2}
-:root[data-bg="1"]{--surface:#150B24;--tint:#26163A}
-:root[data-bg="2"]{--surface:#1E1030;--tint:#2B1940}
-:root[data-bg="3"]{--surface:#241338;--tint:#2E1B45}
-:root[data-bg="4"]{--surface:#170D26;--tint:#27173B}
-:root[data-bg="5"]{--surface:#1C0F2E;--tint:#2A183F}
-:root[data-bg="6"]{--surface:#221235;--tint:#2D1A43}
-
-
-/* ================================================================
-   CLASSIC (pull) ERA RAMP — restored verbatim from the Spider-Man /
-   X-Men stylesheet. Appended last and scoped to [data-skin="pull"]
-   so the dark Darkseid ramp on the default/tabbed skin is untouched.
-   ================================================================ */
-:root[data-skin="pull"]{
-  --e0-t:#FFE9CF;
-  --e0-a:#CC7A20;
-  --e0-d:#774200;
-  --e1-t:#FFE6C6;
-  --e1-a:#BD7C00;
-  --e1-d:#6C4200;
-  --e2-t:#FEEFCB;
-  --e2-a:#B48A00;
-  --e2-d:#684D00;
-  --e3-t:#F2ECC6;
-  --e3-a:#A08C00;
-  --e3-d:#5A4D00;
-  --e4-t:#F0F4CE;
-  --e4-a:#939814;
-  --e4-d:#535600;
-  --e5-t:#E1F2CE;
-  --e5-a:#739B32;
-  --e5-d:#3C560F;
-  --e6-t:#DEF9DA;
-  --e6-a:#5AA652;
-  --e6-d:#2D5E28;
-  --e7-t:#D0F5DE;
-  --e7-a:#21A46A;
-  --e7-d:#005C37;
-  --e8-t:#CEFCEF;
-  --e8-a:#00AB8D;
-  --e8-d:#00624F;
-  --e9-t:#C5F6F5;
-  --e9-a:#00A4A7;
-  --e9-d:#005C5E;
-  --e10-t:#CBFAFF;
-  --e10-a:#00A5C4;
-  --e10-d:#005E72;
-  --e11-t:#CAF1FF;
-  --e11-a:#0098D1;
-  --e11-d:#005479;
-  --e12-t:#D9F3FF;
-  --e12-a:#4994E3;
-  --e12-d:#225386;
-  --e13-t:#E0E9FF;
-  --e13-a:#7283E0;
-  --e13-d:#3C4682;
-  --e14-t:#F3EAFF;
-  --e14-a:#997DDC;
-  --e14-d:#574481;
-  --e15-t:#FAE0FF;
-  --e15-a:#B06DC0;
-  --e15-d:#64386E;
-  --e16-t:#FFE1DF;
-  --e16-a:#D56666;
-  --e16-d:#7C3435;
-  --e17-t:#FFDBE1;
-  --e17-a:#CD6078;
-  --e17-d:#752F3F;
-  --e18-t:#FFE1F6;
-  --e18-a:#C468A8;
-  --e18-d:#71365F;
-  --e19-t:#EBE1FF;
-  --e19-a:#9673D0;
-  --e19-d:#533B77;
-  --e20-t:#CCF4FF;
-  --e20-a:#009ECC;
-  --e20-d:#005876;
-  --e21-t:#C4F1F3;
-  --e21-a:#00A0AA;
-  --e21-d:#00595F;
-  --e22-t:#DFECFF;
-  --e22-a:#6988E2;
-  --e22-d:#374A85;
-  --e23-t:#FFDFCC;
-  --e23-a:#C96C2B;
-  --e23-d:#733707;
-  --e24-t:#F5EDCB;
-  --e24-a:#A78C00;
-  --e24-d:#5F4D00;
-  --e25-t:#FFDED1;
-  --e25-a:#CD6742;
-  --e25-d:#75331B;
-  --e26-t:#FED6D2;
-  --e26-a:#C56257;
-  --e26-d:#69342E;
-  --e27-t:#FFD5D0;
-  --e27-a:#C66055;
-  --e27-d:#69332D;
-  --e28-t:#FFD4CF;
-  --e28-a:#C75E53;
-  --e28-d:#69322C;
-  --e29-t:#FFD3CE;
-  --e29-a:#C75C51;
-  --e29-d:#69312B;
-  --e30-t:#FFD2CC;
-  --e30-a:#C85B50;
-  --e30-d:#69312B;
-  --e31-t:#FFD0CB;
-  --e31-a:#C9594E;
-  --e31-d:#692F29;
-  --e32-t:#FFCFCA;
-  --e32-a:#CA574C;
-  --e32-d:#692E29;
-  --e33-t:#FFCEC8;
-  --e33-a:#CB5348;
-  --e33-d:#682C27;
-  --e34-t:#FFCDC7;
-  --e34-a:#CB5348;
-  --e34-d:#682C27;
-  --e35-t:#F6F2F7;
-  --e35-a:#8A5298;
-  --e35-d:#4D3154;
-  --e36-t:#F6F2F7;
-  --e36-a:#895298;
-  --e36-d:#4C3154;
-  --e37-t:#F6F2F7;
-  --e37-a:#875298;
-  --e37-d:#4B3154;
-  --e38-t:#F6F2F7;
-  --e38-a:#855298;
-  --e38-d:#4A3154;
-  --e39-t:#F6F2F7;
-  --e39-a:#835298;
-  --e39-d:#493154;
-  --e40-t:#F6F2F7;
-  --e40-a:#815298;
-  --e40-d:#483154;
-  --e41-t:#F6F2F7;
-  --e41-a:#7F5298;
-  --e41-d:#473154;
-  --e42-t:#F5F2F7;
-  --e42-a:#7E5298;
-  --e42-d:#463154;
-  --e43-t:#F5F2F7;
-  --e43-a:#7C5298;
-  --e43-d:#453154;
-  --e44-t:#F5F2F7;
-  --e44-a:#7A5298;
-  --e44-d:#453154;
-  --gap-bg:#E8E2D6;
-  --gap-ink:#6E665C}
-
-
-/* ================================================================
-   ABSOLUTE SKIN  (Settings > Layout > absolute)
-   The signature look. Deliberately not a list of cards: this is a
-   MANIFEST — a dossier readout with an index gutter, hairline rules,
-   bracketed status tokens instead of checkboxes, and full-bleed
-   inverted era bars. Structurally distinct from the tabbed skin
-   (rounded cards) and the classic skin (paper + notched banners).
-   Runs on data-layout="tabs", so rules must cover BOTH axes.
-   ================================================================ */
-html:root[data-skin="abs"]{
-  --radius:0px;
-  --abs-line:#2A0C16;
-  --abs-dim:#7A5560;
+:root[data-skin="pull"] {
+  /* Pull matches the reference tracker (John, 6 Oct): every value below is
+     measured from it at 393 px (test/layout/ref/), turned into inputs so each
+     colour derives exactly. Card, inset and line follow the paper, so the
+     paper swatches still tint them. Two reference colours fail a contrast rule
+     and stay accessible: the selected-tab underline (1.52:1 on the bar there;
+     here its navy hue at 3:1) and the search outline (1.53:1; here --edge).
+     --tab-fit keeps four uppercase tabs in the bar at 320 px with large text. */
+  --base-paper-h: 43.6364; --base-paper-s: 18.6441%; --l-paper: 88.4314%;
+  --card-h: calc(var(--paper-h) + 3.0303); --card-s: calc(var(--paper-s) * 1.37922); --l-card: 93.1373%;
+  --inset-h: calc(var(--paper-h) + .3636); --inset-s: calc(var(--paper-s) * .99327); --l-inset: 84.1176%; --inset-a: 1;
+  --line-h: calc(var(--paper-h) + 1.3636); --line-s: calc(var(--paper-s) * .83807); --l-line: 74.902%;
+  --field-h: var(--card-h); --field-s: var(--card-s); --l-field: var(--l-card);
+  --l-edge: 46%; --l-track: 81%; --mark-edge-s: var(--ink-s); --l-mark-edge: var(--l-ink);
+  --ink-h: 46.6667; --ink-s: 20%; --l-ink: 8.8235%;
+  --soft-h: 46.1538; --soft-s: 8.0745%; --l-soft: 31.5686%;
+  --bar-h: var(--ink-h); --bar-s: var(--ink-s); --l-bar: 8.8235%;
+  --bar-soft-h: 45; --bar-soft-s: 17.2414%; --l-bar-soft: 77.2549%; --l-bar-ink: 100%;
+  --accent-h: 212.7273; --accent-s: 54.0984%; --l-accent: 23.9216%; --l-wash: 92%; --l-bar-mark: 44%;
+  --era-tint-l: .93; --era-tint-c: .05; --era-ink-l: .38; --era-ink-c: .11; --era-mono-h: 20;
+  --font-meta: var(--font-mono); --display-case: uppercase; --display-weight: 700;
+  --title-size: 24px; --title-track: .5px; --title-lh: 1.45; --meta-size: 12px;
+  --name-font: var(--font-display); --name-weight: 400; --name-case: uppercase; --name-track: .4px;
+  --era-name-size: 19px; --era-meta-size: 11px; --intro-size: 12.5px; --intro-style: italic;
+  --arc-size: 13.5px; --arc-weight: 600; --row-size: 13px; --row-weight: 500; --search-size: 14px;
+  --tab-size: 12.5px; --tab-fit: 3.7vw; --tab-case: uppercase; --tab-track: .3px;
+  --radius: 8px;
 }
+:root[data-skin="night"] {
+  --base-paper-h: 220; --base-paper-s: 50%;
+  --l-paper: 7%; --l-card: 11%; --l-line: 22%; --l-edge: 49%; --l-track: 20%; --l-bar: 4%;
+  --ink-h: 216; --ink-s: 80%; --l-ink: 94%; --l-soft: 72%; --l-bar-ink: 94%; --l-bar-soft: 72%;
+  --accent-h: 41; --accent-s: 91%; --l-accent: 58%; --l-accent-ink: 8%; --l-wash: 14%; --l-bar-mark: 58%;
+  --l-good: 62%; --l-danger: 68%; --l-shadow: 0%;
+  --era-tint-l: .27; --era-tint-c: .045; --era-ink-l: .88; --era-ink-c: .07; --era-mono-h: 80;
+  --scheme: dark;
+}
+/* ---- paper swatches (S-4): seven, in every skin. The same declaration
+   colours the swatch button itself, so the values live in one place. ---- */
+.swatch[data-v="default"] { --paper-h: var(--base-paper-h); --paper-s: var(--base-paper-s); }
+:root[data-paper="warm"], .swatch[data-v="warm"] { --paper-h: 36; --paper-s: 45%; }
+:root[data-paper="grey"], .swatch[data-v="grey"] { --paper-h: 220; --paper-s: 6%; }
+:root[data-paper="rose"], .swatch[data-v="rose"] { --paper-h: 350; --paper-s: 38%; }
+:root[data-paper="mint"], .swatch[data-v="mint"] { --paper-h: 150; --paper-s: 28%; }
+:root[data-paper="sky"], .swatch[data-v="sky"] { --paper-h: 205; --paper-s: 42%; }
+:root[data-paper="lilac"], .swatch[data-v="lilac"] { --paper-h: 268; --paper-s: 32%; }
+/* ---- the other Look settings: tokens only, like the skins ---- */
+:root[data-eras="mono"] { --era-h0: var(--era-mono-h); --era-step: 0; }
+:root[data-text="s"] { --scale: .9; }
+:root[data-text="l"] { --scale: 1.15; }
+:root[data-density="compact"] { --row-pad: 4px; --gap: 6px; }
+:root[data-density="roomy"] { --row-pad: 13px; --gap: 14px; }
+:root[data-tap="compact"] { --tap: 26px; --tap-glyph: 16px; --b-min: 26px; }
+:root[data-tap="large"] { --tap: 44px; --tap-glyph: 22px; --b-min: 44px; --tap-dense: 44px; }
+:root[data-marks="dot"] { --mark-radius: 50%; }
+:root[data-dys="1"] { --font-body: 'Comic Sans MS', 'Trebuchet MS', Verdana, sans-serif; --body-track: .02em; --word-space: .08em; }
 
-/* ---- page: flat black, no card surfaces anywhere ---- */
-html:root[data-skin="abs"] body{background:#000}
-html:root[data-skin="abs"] .era,
-html:root[data-skin="abs"] .arc,
-html:root[data-skin="abs"] .period{background:none;border:0;border-radius:0;
-  box-shadow:none;margin:0;padding:0}
+/* [hidden] must win: an element that toggles `hidden` never sets its own
+   display (put layout on an inner wrapper). The harness checks every hidden
+   element computes to display:none against this real stylesheet. */
+[hidden] { display: none; }
+* { box-sizing: border-box; }
+html { color-scheme: var(--scheme); }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: var(--fs);
+  letter-spacing: var(--body-track); word-spacing: var(--word-space); }
+button { font: inherit; color: inherit; cursor: pointer; }
+.muted { color: var(--ink-soft); }
+.loading, .empty { padding: 24px 16px; color: var(--ink-soft); }
 
-/* ---- header: monolithic wordmark ---- */
-html:root[data-skin="abs"] .phead{background:#000;border-bottom:2px solid var(--accent);
-  border-radius:0;padding:14px 14px 10px}
-html:root[data-skin="abs"] .phead .ptitle,
-html:root[data-skin="abs"] #wordmark{font-family:var(--display),Anton,sans-serif;
-  text-transform:uppercase;letter-spacing:.06em;font-size:30px;line-height:1;color:var(--ink)}
-html:root[data-skin="abs"] .pmeta{font-family:var(--mark),monospace;font-size:10px;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--abs-dim)}
+/* ---- progress header ---- */
+.phead { padding: 16px 16px 8px; }
+.ptitle { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); text-transform: var(--display-case); letter-spacing: var(--title-track);
+  font-size: calc(var(--title-size) * var(--scale)); line-height: var(--title-lh); }
+.pmeta { margin: 4px 0 10px; color: var(--ink-soft); font-size: calc(var(--meta-size) * var(--scale)); font-family: var(--font-meta); }
+.pstats, .bstats { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: calc(13px * var(--scale)); color: var(--ink-soft); font-family: var(--font-meta); }
+.pstats { margin: 6px 0 0; }
+.pdone, .bdone { color: var(--good); font-weight: 600; }
+.ptools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tool, .linkbtn {
+  border: 1px solid var(--edge); background: var(--card); border-radius: 999px; padding: 6px 12px; font-size: calc(13px * var(--scale));
+}
+.linkbtn { border: 0; background: none; color: var(--accent); padding: 4px 6px; min-height: 24px; }   /* a target at least 24 px tall (WCAG 2.5.8) */
 
-/* ---- tab bar: mono strip, hard red underline ---- */
-html:root[data-skin="abs"][data-layout="tabs"] #tabs{background:#000;border-bottom:1px solid var(--abs-line);gap:0}
-html:root[data-skin="abs"][data-layout="tabs"] #tabs .tab{font-family:var(--mark),monospace;
-  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;border-radius:0;
-  background:none;color:var(--abs-dim);border:0;border-bottom:3px solid transparent;padding:11px 6px}
-html:root[data-skin="abs"][data-layout="tabs"] #tabs .tab[aria-selected="true"]{
-  color:var(--ink);border-bottom-color:var(--accent);background:none}
+progress.bar { display: block; width: 100%; height: 6px; border: 0; border-radius: 3px; background: var(--track); appearance: none; }
+progress.bar::-webkit-progress-bar { background: var(--track); border-radius: 3px; }
+progress.bar::-webkit-progress-value { background: var(--accent); border-radius: 3px; }
+progress.bar::-moz-progress-bar { background: var(--accent); border-radius: 3px; }
 
-/* ---- era: full-bleed inverted bar with an oversized index numeral ---- */
-html:root[data-skin="abs"] #app{counter-reset:absera absrow}
-html:root[data-skin="abs"] .era-head,
-html:root[data-skin="abs"][data-layout="tabs"] .era-head{
-  counter-increment:absera;background:var(--accent);color:#000;border-radius:0;border:0;
-  font-family:var(--display),Anton,sans-serif;text-transform:uppercase;letter-spacing:.09em;
-  font-size:17px;padding:9px 14px 9px 12px;margin:0;display:flex;align-items:baseline;gap:10px}
-html:root[data-skin="abs"] .era-head::before{
-  content:counter(absera,decimal-leading-zero);font-family:var(--mark),monospace;
-  font-size:26px;line-height:1;letter-spacing:0;opacity:.55;font-weight:700}
-html:root[data-skin="abs"] .era-head .cnt,
-html:root[data-skin="abs"] .era-head .ecount{margin-left:auto;font-family:var(--mark),monospace;
-  font-size:11px;letter-spacing:.08em;opacity:.8}
+/* ---- filter panel ---- */
+.fpanel { margin: 0 16px var(--gap); background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.fbar { display: flex; gap: 8px; align-items: center; padding: 10px; }
+.ftoggle { border: 1px solid var(--edge); background: var(--paper); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+.fcount { color: var(--accent); font-size: calc(13px * var(--scale)); }
+.search {
+  flex: 1; min-width: 0; height: 36px; padding: 0 10px; border: 1px solid var(--edge); border-radius: var(--radius-sm);
+  background: var(--field); color: var(--ink); font: inherit; font-size: calc(var(--search-size) * var(--scale));
+}
+.fshow { margin: 0; padding: 0 12px 10px; font-size: calc(13px * var(--scale)); color: var(--ink-soft); }
+.fhead { display: flex; align-items: center; padding: 0 12px; font-size: calc(13px * var(--scale)); color: var(--ink-soft); }
+.fhead .linkbtn { margin-left: auto; }
+.fchips { padding: 4px 12px 10px; }
 
-/* ---- arc: a mono slug rule, not a card header ---- */
-html:root[data-skin="abs"] .arc-head,
-html:root[data-skin="abs"][data-layout="tabs"] .arc-head{
-  background:none;border:0;border-top:1px solid var(--abs-line);border-radius:0;
-  font-family:var(--mark),monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--abs-dim);padding:14px 14px 6px;margin:0}
-html:root[data-skin="abs"] .arc-head::before{content:'// ';color:var(--accent)}
-html:root[data-skin="abs"] .blurb{background:none;border:0;border-left:2px solid var(--abs-line);
-  border-radius:0;margin:0 14px 8px;padding:2px 0 2px 10px;color:var(--abs-dim);font-size:12.5px}
+/* ---- one collapsible section: the filter panel's and Settings' (FP-11) ----
+   The body stays in the DOM and opens by animating its grid row from 0fr to
+   1fr, so nothing is measured; the inner wrapper clips while it moves. Its
+   duration scales with --motion, so reduced motion stops it (see the end). */
+.sec-head {
+  display: flex; gap: 10px; align-items: center; width: 100%; padding: 12px 14px; border: 0; background: none; text-align: left;
+}
+.sec-ico { color: var(--ink-soft); width: 1.2em; flex: none; text-align: center; }
+.sec-t { display: flex; flex-direction: column; min-width: 0; }
+.sec-name { font-weight: 600; }
+.sec-sum { font-size: calc(13px * var(--scale)); color: var(--ink); }
+.sec-chev { margin-left: auto; color: var(--ink-soft); transition: transform calc(.2s * var(--motion)) ease; }
+.sec.open .sec-chev { transform: rotate(180deg); }
+.sec-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows calc(.22s * var(--motion)) ease; }
+.sec.open > .sec-body { grid-template-rows: 1fr; }
+.sec-in { overflow: hidden; min-height: 0; }
+.fsec { border-top: 1px solid var(--line); }
+.fsec .sec-pad { padding: 2px 14px 14px 44px; }
+@media (max-width: 360px) {                       /* the smallest phones: width over the indent */
+  .fsec .sec-pad { padding-left: 12px; padding-right: 12px; }
+  .depthrow { gap: 4px; }
+  .depthrow .chip { padding-left: 6px; padding-right: 6px; }
+}
+.flabel { font-size: calc(12px * var(--scale)); color: var(--ink-soft); margin: 8px 0 6px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 4px; margin: 0 6px 6px 0; padding: 5px 11px; font-size: calc(13px * var(--scale));
+  border: 1px solid var(--edge); border-radius: 999px; background: none; color: var(--ink-soft);
+}
+.chip[aria-pressed="true"], .chip.on { background: var(--accent-wash); color: var(--accent); border-color: var(--accent); }
 
-/* ---- the manifest row: index gutter + two-line entry, hairline separated ---- */
-html:root[data-skin="abs"] .row{
-  counter-increment:absrow;
-  display:grid;grid-template-columns:38px 1fr;grid-template-rows:auto auto;
-  column-gap:10px;row-gap:2px;align-items:start;
-  background:none;border:0;border-bottom:1px solid var(--abs-line);border-radius:0;
-  padding:9px 14px 9px 8px;margin:0;position:relative}
-html:root[data-skin="abs"] .row:hover{background:rgba(232,18,60,.05)}
-html:root[data-skin="abs"] .row .mark{grid-column:1;grid-row:1/3;align-self:center;
-  background:none;border:0;box-shadow:none;padding:0;width:38px;min-width:0}
-html:root[data-skin="abs"] .row .title{grid-column:2;grid-row:1;
-  font-family:var(--display),Anton,sans-serif;text-transform:uppercase;letter-spacing:.03em;
-  font-size:15px;line-height:1.18;color:var(--ink)}
-html:root[data-skin="abs"] .row .arclab{grid-column:2;grid-row:2;
-  font-family:var(--mark),monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--abs-dim);background:none;border:0;padding:0}
-html:root[data-skin="abs"] .row .badges{grid-column:2;grid-row:2;justify-self:end;gap:6px}
-html:root[data-skin="abs"] .row .b{border-radius:0;font-family:var(--mark),monospace;
-  font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--abs-line);
-  background:none;color:var(--abs-dim);padding:2px 5px}
-html:root[data-skin="abs"] .row .b.core{border-color:var(--accent);color:var(--accent)}
-html:root[data-skin="abs"] .row .b.rv,
-html:root[data-skin="abs"] .row .b.bm{min-width:34px;min-height:34px;
-  display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+/* ---- bands, eras: goal banners ---- */
+.band, .era { margin: 0 16px var(--gap); }
+.band-body .era { margin: var(--gap) 0 0; }
+.band-head, .era-head {
+  display: grid; gap: 6px; width: 100%; padding: 12px 14px; text-align: left;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--card);
+}
+.band-head { border-width: 2px; }
+.era { --era-h: calc(var(--era-h0) + var(--ei, 0) * var(--era-step)); }
+.era-head { background: oklch(var(--era-tint-l) var(--era-tint-c) var(--era-h)); color: oklch(var(--era-ink-l) var(--era-ink-c) var(--era-h)); }
+.bhead { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.bname { font-family: var(--name-font); font-weight: var(--name-weight); text-transform: var(--name-case); letter-spacing: var(--name-track); font-size: calc(var(--era-name-size) * var(--scale)); }
+.band-head .bname { font-family: var(--font-display); font-weight: var(--display-weight); text-transform: var(--display-case); font-size: calc(22px * var(--scale)); letter-spacing: .02em; }
+.byears { color: var(--ink-soft); font-size: calc(var(--era-meta-size) * var(--scale)); font-family: var(--font-meta); }
+.era-head .bstats { font-size: calc(var(--era-meta-size) * var(--scale)); }
+.era-body { background: var(--inset); }
+.bfinish { color: var(--accent); }
+.bfiltered, .pfiltered {
+  padding: 0 8px; border: 1px dashed var(--accent); border-radius: 999px; color: var(--accent); font-size: calc(12px * var(--scale));
+}
+.buntimed, .puntimed { font-style: italic; }
+.band-intro, .era-intro { margin: 8px 4px; color: var(--ink-soft); font-size: calc(var(--intro-size) * var(--scale)); font-style: var(--intro-style); }
 
-/* the manifest index, running down the right edge */
-html:root[data-skin="abs"] .row::after{
-  content:counter(absrow,decimal-leading-zero);position:absolute;top:8px;right:6px;
-  font-family:var(--mark),monospace;font-size:9px;letter-spacing:.05em;
-  color:var(--abs-line);pointer-events:none}
+/* ---- arcs and rows ---- */
+.arc { margin: 10px 0 0; overflow: hidden; }   /* a swiped row slides under the card edge, not past it */
+.arc-head { padding: 4px 4px 6px; }
+.arc-head h3 { margin: 0; font-size: calc(var(--arc-size) * var(--scale)); font-weight: var(--arc-weight); }
+.arc-meta { font-family: var(--font-meta); }
+.arc-meta, .credits, .blurb { display: block; margin: 2px 0 0; font-size: calc(13px * var(--scale)); color: var(--ink-soft); }
+.row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding: var(--row-pad) 6px;
+  border-bottom: 1px solid var(--line); background: var(--card);
+}
+.row.inert { color: var(--ink-soft); font-style: italic; }
+.row.flash { outline: 2px solid var(--accent); outline-offset: -2px; }
+.mark, .mark-inert {
+  width: var(--tap); height: var(--tap); flex: none; border: 1px solid var(--mark-edge); border-radius: var(--mark-radius);
+  background: var(--paper); font-family: var(--font-mono); font-size: calc(var(--tap-glyph) * var(--scale)); line-height: 1;
+}
+.mark-inert { display: inline-flex; align-items: center; justify-content: center; border-style: dashed; }
+.row[data-s="read"] .mark { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.row[data-s="reading"] .mark { border-color: var(--accent); color: var(--accent); }
+.row[data-s="skip"] .title { color: var(--ink-soft); text-decoration: line-through; }
+.title { flex: 1 1 12em; min-width: 0; overflow-wrap: anywhere; }
+.row .title { font-size: calc(var(--row-size) * var(--scale)); font-weight: var(--row-weight); }
+.badges { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+.b {
+  min-height: var(--b-min); padding: 2px 8px; border: 1px solid var(--edge); border-radius: 999px;
+  background: none; font-size: calc(12px * var(--scale)); color: var(--ink-soft); text-decoration: none; display: inline-flex; align-items: center;
+  gap: .3em;     /* glyph and word: a flex item's edge space is trimmed, so the gap spaces them */
+}
+.b.core { color: var(--accent); border-color: var(--accent); }
+.b.bm { min-width: var(--b-min); justify-content: center; }
+.b.bm[aria-pressed="true"] { color: var(--accent); }
+.subnote, .notepop { flex-basis: 100%; margin: 0 0 0 calc(var(--tap) + 10px); font-size: calc(13px * var(--scale)); color: var(--ink-soft); }
+.notepop { margin: 0; padding: 6px 10px 8px calc(var(--tap) + 16px); background: var(--accent-wash); }
 
-/* ---- bracketed status tokens: a different KIND of checklist ---- */
-html:root[data-skin="abs"] .row .mark{font-size:0;color:transparent}
-html:root[data-skin="abs"] .row .mark::after{
-  font-family:var(--mark),monospace;font-size:15px;letter-spacing:0;
-  content:'[ ]';color:var(--abs-dim);display:inline-block}
-html:root[data-skin="abs"] .row[data-s="reading"] .mark::after{content:'[/]';color:var(--action)}
-html:root[data-skin="abs"] .row[data-s="read"] .mark::after{content:'[X]';color:var(--accent)}
-html:root[data-skin="abs"] .row[data-s="skip"] .mark::after{content:'[-]';color:var(--abs-line)}
-html:root[data-skin="abs"] .row[data-s="read"] .title{color:var(--abs-dim)}
-html:root[data-skin="abs"] .row[data-s="skip"] .title{color:var(--abs-line);text-decoration:line-through}
+/* ---- the sticky stack (F-58): tabs, banner and mini bar, pinned together. Full
+   width, so the paper behind it covers what scrolls under. Never give it (or
+   anything in it) position: relative: `top` then shifts instead of sticking. ---- */
+.stack { position: sticky; top: 0; z-index: 10; background: var(--paper); padding-bottom: var(--gap); }
+/* a jump (next unread, a bookmark, an era chip) lands below the stack, not under it */
+.row, .arc, .era, .band { scroll-margin-top: calc(var(--stack-h) + 8px); }
 
-/* ---- controls: square, mono, uppercase ---- */
-html:root[data-skin="abs"] .chip,
-html:root[data-skin="abs"] .seg button,
-html:root[data-skin="abs"] .rbtn{border-radius:0;font-family:var(--mark),monospace;
-  font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--abs-line);
-  background:none;color:var(--abs-dim)}
-html:root[data-skin="abs"] .chip[aria-pressed="true"],
-html:root[data-skin="abs"] .seg button[aria-pressed="true"]{
-  background:var(--accent);border-color:var(--accent);color:#000}
-html:root[data-skin="abs"] .filters,
-html:root[data-skin="abs"] .panel{background:#000;border-radius:0;border-color:var(--abs-line)}
-html:root[data-skin="abs"] .shead{color:var(--accent);letter-spacing:.2em}
-html:root[data-skin="abs"] input[type="search"],
-html:root[data-skin="abs"] input[type="text"]{border-radius:0;background:#0A0306;
-  border:1px solid var(--abs-line);color:var(--ink);font-family:var(--mark),monospace}
-html:root[data-skin="abs"] .mini,
-html:root[data-skin="abs"] .pstats{background:#000;border-radius:0;font-family:var(--mark),monospace;
-  font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--abs-dim)}
-html:root[data-skin="abs"] .pbar,
-html:root[data-skin="abs"] .pbar2{border-radius:0;background:var(--abs-line)}
-html:root[data-skin="abs"] .pbar i,
-html:root[data-skin="abs"] .pbar2 i{border-radius:0;background:var(--accent)}
+/* ---- tabs and panes ---- */
+.tabs { display: flex; gap: 0; margin: 0 16px; border-bottom: 1px solid var(--line); overflow-x: auto;
+  background: var(--bar); border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+.tab {
+  flex: 1 0 auto; padding: 10px 2px; border: 0; border-bottom: 3px solid transparent; background: none; color: var(--bar-soft);
+  font-weight: 600; white-space: nowrap; text-transform: var(--tab-case); letter-spacing: var(--tab-track);
+  font-size: min(calc(var(--tab-size) * var(--scale)), var(--tab-fit));   /* four tabs fit at 320 px, in every skin and text size */
+}
+.tab[aria-selected="true"] { color: var(--bar-ink); border-bottom-color: var(--bar-mark); }
 
-/* inert marker rows stay legible but recede */
-html:root[data-skin="abs"] .row.gap,
-html:root[data-skin="abs"] .row.renum{background:none;color:var(--abs-dim);font-style:normal}
-html:root[data-skin="abs"] .row.gap .title,
-html:root[data-skin="abs"] .row.renum .title{font-family:var(--mark),monospace;
-  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--abs-dim)}
+/* ---- pinned bookmarks bar (layout on the inner wrapper, so [hidden] wins) ---- */
+.pinbar-in { display: flex; gap: 6px; overflow-x: auto; margin: 0 16px var(--gap); padding-bottom: 2px; }
+.chip.pin { flex: none; margin: 0; color: var(--accent); border-color: var(--accent); white-space: nowrap; }
 
-/* Depth tiers are DEFERRED per the build spec (flat list). The control is
-   hidden with !important because [hidden] is a UA rule and loses to any
-   author display: value. Every f.depth branch stays wired underneath, so
-   tiers can be enabled later without a rebuild. #tally shares this row and
-   must stay visible. */
-#l-depth,#depthChips{display:none !important}
+/* ---- settings ---- */
+.settings { margin: 0 16px; }
+.sset { margin: 0 0 var(--gap); background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.seth { margin: 0; font-size: calc(17px * var(--scale)); font-weight: 400; }
+.sset .sec-pad { padding: 0 14px 12px; }
+.ssub { margin: 14px 0 6px; font-size: calc(14px * var(--scale)); color: var(--ink-soft); }
+/* A row is a label and one block of controls (srow in app.js). The block sits
+   beside the label when all of it fits on that line; otherwise the whole block
+   takes the next line and wraps inside itself, from the same left edge. A
+   control is never left beside the label while its siblings drop under it. */
+.srow { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; padding: 6px 0; }
+.slabel { min-width: 9em; font-size: calc(14px * var(--scale)); }
+.sctl { flex: 1 1 auto; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; min-width: 0; }
+.sctl .chip { margin: 0; }
+.sgrp { display: inline-flex; gap: 6px; align-items: center; }   /* "through" stays with the range's end */
+.seg { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+.segbtn { padding: 6px 12px; border: 1px solid var(--edge); border-radius: 999px; background: none; font-size: calc(13px * var(--scale)); color: var(--ink-soft); }
+.segbtn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.pace { margin: 4px 0 6px; font-size: calc(14px * var(--scale)); }
+.bmlist { margin: 0; padding-left: 1.4em; }
+.bmlist li { padding: 2px 0; }
+.confirm { margin: 8px 0; padding: 10px 12px; border: 1px solid var(--danger); border-radius: var(--radius-sm); }
+.confirm p { margin: 0 0 8px; }
+.confirm .tool { margin-right: 8px; }
+.tool.danger { border-color: var(--danger); color: var(--danger); }
+.about { margin: 4px 0; font-size: calc(14px * var(--scale)); }
+.buildhash { font-size: calc(11px * var(--scale)); color: var(--ink-soft); font-family: var(--font-meta); white-space: nowrap; }
+.legend { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; margin: 6px 0; font-size: calc(14px * var(--scale)); }
+.legend dd { margin: 0; color: var(--ink-soft); }
+.maint { margin: 6px 0; padding-left: 1.2em; font-size: calc(13px * var(--scale)); color: var(--ink-soft); }
+
+/* ---- display options ---- */
+/* Depth: one row that never wraps (T-95) and always fits. The chips shrink
+   together; a chip narrower than its one-line width puts its count under its
+   name. min-content is the floor; past it the row scrolls rather than clip. */
+.depthrow { display: flex; flex-wrap: nowrap; gap: 6px; overflow-x: auto; white-space: nowrap; margin-bottom: 6px; }
+.depthrow .chip { flex: 0 1 auto; min-width: min-content; margin: 0; flex-wrap: wrap; justify-content: center; column-gap: .35em; text-align: center; }
+.tcount { font-variant-numeric: tabular-nums; }
+.eranav-in { display: flex; gap: 6px; overflow-x: auto; margin: 0 16px var(--gap); }
+.eranav-in .chip { flex: none; margin: 0; white-space: nowrap; }
+.erasel { height: 36px; padding: 0 8px; border: 1px solid var(--edge); border-radius: var(--radius-sm); background: var(--card); color: var(--ink); font: inherit; }
+.arclabel { display: block; font-size: calc(12px * var(--scale)); color: var(--ink-soft); }
+:root[data-badges="0"] .badges { display: none; }
+/* combo badge: a row that is both bookmarked and read gets a filled star */
+:root[data-combo="1"] .row[data-s="read"] .bm[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+/* ---- offline ---- */
+.offstate { margin: 4px 0 6px; font-size: calc(14px * var(--scale)); }
+.offstate[data-ready="1"] { color: var(--good); font-weight: 600; }
+.netstate { color: var(--danger); font-weight: 600; }
+
+/* ---- the Look section: paper swatches show their own paper ---- */
+.swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+.swatch {
+  width: 40px; height: 40px; border: 1px solid var(--edge); border-radius: 50%;
+  background: hsl(var(--paper-h) var(--paper-s) var(--l-paper));
+}
+.swatch[aria-pressed="true"] { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ---- under the tab bar: the persistent banner (F-16) and the mini bar (F-17) ---- */
+.pbanner-in { display: grid; gap: 4px; margin: 0 16px; padding: 6px 12px 8px; background: var(--card);
+  border: 1px solid var(--line); border-top: 0; border-radius: 0 0 var(--radius-sm) var(--radius-sm); }   /* directly under the tabs */
+.pbl { display: flex; flex-wrap: wrap; gap: 0 10px; align-items: baseline; font-size: calc(13px * var(--scale)); color: var(--ink-soft);
+  font-family: var(--font-meta); }
+.pbl-name { font-weight: 600; color: var(--ink); min-width: 4.5em; }
+.pbl progress.bar { flex-basis: 100%; height: 4px; margin-top: 2px; }
+.mini { padding: 0 16px; }      /* the inset lives on the wrapper: the bar stays 100% of it */
+.mini-bar { height: 3px; }
+
+/* ---- table view (F-49, S-7): one line per issue, half the height (L-7),
+   never wider than the screen (L-8). Targets stay at least 24 px. ---- */
+:root[data-table="1"] .row { flex-wrap: nowrap; gap: 6px; padding-top: 0; padding-bottom: 0; }
+:root[data-table="1"] .row .mark { width: var(--tap-dense); height: var(--tap-dense); font-size: calc(14px * var(--scale)); }
+:root[data-table="1"] .title { flex: 1 1 auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+:root[data-table="1"] .subnote, :root[data-table="1"] .blurb, :root[data-table="1"] .era-intro, :root[data-table="1"] .band-intro { display: none; }
+:root[data-table="1"] .badges { flex: none; flex-wrap: nowrap; gap: 3px; }
+:root[data-table="1"] .row .b { min-height: var(--tap-dense); min-width: var(--tap-dense); padding: 0 5px; justify-content: center; }
+:root[data-table="1"] .row .b-t { display: none; }      /* badge words fold away; glyphs and accessible names stay */
+
+/* ---- reading tab ---- */
+.reader { margin: 0 16px; }
+.rcard { padding: 14px 16px 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.rcount { margin: 0; font-size: calc(13px * var(--scale)); color: var(--ink-soft); font-family: var(--font-meta); }
+.rpills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+.rpill { padding: 2px 10px; border-radius: 999px; background: var(--accent-wash); color: var(--accent); font-size: calc(12px * var(--scale)); }
+.rtitle { margin: 10px 0 4px; font-size: calc(22px * var(--scale)); line-height: 1.25; overflow-wrap: anywhere; }
+.rmeta, .rstate { margin: 0; font-size: calc(14px * var(--scale)); color: var(--ink-soft); }
+.rnote { margin: 10px 0 0; font-size: calc(15px * var(--scale)); }
+.rblurb { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid var(--line); font-size: calc(14px * var(--scale)); color: var(--ink-soft); }
+.racts { display: flex; gap: 10px; margin: 16px 0 0; }
+.rbtn { flex: 1; min-height: 44px; border-radius: var(--radius-sm); border: 1px solid var(--accent); font-weight: 600; }
+.rbtn.ghost { background: none; color: var(--accent); }
+.rbtn.solid { background: var(--accent); color: var(--accent-ink); }
+.rnav { display: flex; justify-content: space-between; gap: 8px; margin: 12px 0 0; }
+.rnav .linkbtn[disabled] { color: var(--ink-soft); cursor: default; }
+.rkeys { margin: 10px 0 0; font-size: calc(12px * var(--scale)); }
+@media (hover: none) { .rkeys { display: none; } }     /* the key hint is for keyboards */
+
+/* ---- reviews ---- */
+.arc-head h3 { display: inline; margin-right: 8px; }
+.b.rv { vertical-align: middle; }
+.review { margin: 4px 0 10px; padding: 10px 12px; background: var(--accent-wash); border-radius: var(--radius-sm); }
+.stars { display: flex; gap: 2px; }
+.star { width: var(--tap); height: var(--tap); border: 0; background: none; font-size: calc(22px * var(--scale)); color: var(--line); }
+.star[aria-pressed="true"] { color: var(--accent); }
+.rvtext { display: block; width: 100%; margin-top: 6px; padding: 8px; border: 1px solid var(--edge); border-radius: var(--radius-sm);
+  background: var(--card); color: var(--ink); font: inherit; resize: vertical; }
+.reviews { margin: 0 16px; }
+.pane-h { margin: 6px 0 10px; font-size: calc(20px * var(--scale)); }
+.revlist { margin: 0; padding: 0; list-style: none; }
+.rev-item { padding: 10px 12px; margin-bottom: 8px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.rev-top { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.rev-name { font-weight: 600; padding: 0; }
+.rev-era { font-size: calc(13px * var(--scale)); color: var(--ink-soft); }
+.rev-stars { color: var(--accent); letter-spacing: .05em; }
+.rev-t { margin: 6px 0 0; font-size: calc(14px * var(--scale)); white-space: pre-wrap; }
+
+/* ---- bulk marking and touch ---- */
+.arc-acts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.shelp { margin: 2px 0 6px; font-size: calc(13px * var(--scale)); }
+.row { transition: transform calc(.15s * var(--motion)) ease; }
+.row[data-swipe="read"], .row[data-swipe="read-go"] { transform: translateX(28px); box-shadow: inset 6px 0 var(--accent); }
+.row[data-swipe="skip"], .row[data-swipe="skip-go"] { transform: translateX(-28px); box-shadow: inset -6px 0 var(--ink-soft); }
+.row[data-swipe="read-go"] { background: var(--accent-wash); }
+.row[data-swipe="skip-go"] { background: var(--track); }
+
+/* ---- creators, events, presets ---- */
+.cname { padding: 0; border: 0; background: none; color: var(--accent); font: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.cpick { margin-top: 8px; }
+.cnt { font-size: calc(11px * var(--scale)); color: var(--ink-soft); }
+.evnote { margin: 4px 0 0; font-size: calc(13px * var(--scale)); color: var(--ink-soft); }
+.evnote .linkbtn { padding: 0; }
+.fpresets { padding: 4px 12px 12px; border-top: 1px solid var(--line); }
+.presetrow { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.preset { display: inline-flex; align-items: center; }
+.preset .chip { margin: 0; }
+.preset-form { display: flex; gap: 8px; }
+
+/* ---- sync and backup ---- */
+.syncbox { margin: 6px 0 10px; }
+.qrbox { width: min(260px, 100%); margin: 6px 0; padding: 8px; background: var(--qr-paper); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.qrbox svg { display: block; width: 100%; height: auto; }
+.synctext { display: block; width: 100%; margin: 6px 0; padding: 8px; border: 1px solid var(--edge); border-radius: var(--radius-sm);
+  background: var(--paper); color: var(--ink); font: calc(12px * var(--scale))/1.4 var(--font-mono); word-break: break-all; resize: vertical; }
+.syncbox .tool, .syncpend .tool, #set-backup > .tool { margin: 0 8px 6px 0; }
+.syncerr { margin: 6px 0; color: var(--danger); font-size: calc(14px * var(--scale)); }
+.filelabel { display: inline-block; position: relative; }
+.vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
+
+/* ---- per-format progress lines ---- */
+.pmedia { margin: 8px 0 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.pmed { display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; font-size: calc(13px * var(--scale)); color: var(--ink-soft); }
+.pmed-name { font-weight: 600; color: var(--ink); min-width: 5em; }
+.pmed progress.bar { flex-basis: 100%; height: 4px; }
+
+/* ---- toast ---- */
+.toast { position: fixed; left: 16px; right: 16px; bottom: 16px; }
+.toast-in {
+  display: flex; gap: 10px; align-items: center;
+  padding: 10px 14px; border-radius: var(--radius); background: var(--ink); color: var(--paper); box-shadow: 0 4px 16px var(--shadow);
+}
+.toast-act { margin-left: auto; border: 0; background: none; color: var(--accent-wash); font-weight: 600; }
+
+/* Reduced motion. A `* { transition: none }` rule can't do this: it has no
+   specificity, so any class rule that declares a transition beats it (measured
+   in Chromium, 5 Oct). Every duration scales with --motion instead, and a
+   guard checks that each transition and animation uses it. */
+@media (prefers-reduced-motion: reduce) { :root { --motion: 0; } }

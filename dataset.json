@@ -1,0 +1,4219 @@
+{
+  "$schema": "./schema/dataset.schema.json",
+  "schemaVersion": 1,
+  "franchise": {
+    "key": "absolute",
+    "wordmark": "Absolute",
+    "title": "Absolute Universe — Reading Order",
+    "strapline": "DC Absolute Universe reading tracker · 2024–2026",
+    "span": "2024–2026",
+    "theme": "#0D0616",
+    "background": "#0D0616",
+    "searchUrl": "https://dc.fandom.com/wiki/Special:Search?query=",
+    "versionStart": 8,
+    "strictCredits": true,
+    "storage": {
+      "legacy": {
+        "prefix": "absolute:v1:",
+        "format": "v2",
+        "qrPrefix": "ABSO1:",
+        "skins": {
+          "field": "layout",
+          "map": {
+            "abs": "signature",
+            "tabs": "signature",
+            "classic": "signature",
+            "compact": "signature",
+            "pull": "pull"
+          }
+        }
+      }
+    },
+    "signature": {
+      "name": "Absolute",
+      "tokens": {
+        "--base-paper-h": 0,
+        "--base-paper-s": "0%",
+        "--l-paper": "0%",
+        "--l-card": "0%",
+        "--line-h": 340,
+        "--line-s": "56%",
+        "--l-line": "11%",
+        "--l-edge": "46%",
+        "--l-track": "11%",
+        "--field-h": 334,
+        "--field-s": "54%",
+        "--l-field": "3%",
+        "--ink-h": 272,
+        "--ink-s": "46%",
+        "--l-ink": "93%",
+        "--soft-h": 342,
+        "--soft-s": "18%",
+        "--l-soft": "56%",
+        "--bar-h": 0,
+        "--bar-s": "0%",
+        "--l-bar": "0%",
+        "--l-bar-ink": "93%",
+        "--bar-soft-h": 342,
+        "--bar-soft-s": "18%",
+        "--l-bar-soft": "56%",
+        "--accent-h": 348,
+        "--accent-s": "86%",
+        "--l-accent": "49%",
+        "--l-accent-ink": "0%",
+        "--l-wash": "10%",
+        "--l-bar-mark": "49%",
+        "--l-good": "62%",
+        "--l-danger": "68%",
+        "--l-shadow": "0%",
+        "--era-tint-l": 0.27,
+        "--era-tint-c": 0.045,
+        "--era-ink-l": 0.88,
+        "--era-ink-c": 0.07,
+        "--era-mono-h": 20,
+        "--scheme": "dark",
+        "--radius": "0px",
+        "--radius-sm": "0px",
+        "--font-meta": "var(--font-mono)",
+        "--display-case": "uppercase",
+        "--title-size": "30px",
+        "--title-track": ".06em",
+        "--title-lh": 1,
+        "--meta-size": "10px",
+        "--name-font": "var(--font-display)",
+        "--name-weight": 400,
+        "--name-case": "uppercase",
+        "--name-track": ".09em",
+        "--era-name-size": "17px",
+        "--era-meta-size": "11px",
+        "--arc-size": "10.5px",
+        "--arc-weight": 500,
+        "--tab-size": "10.5px",
+        "--tab-fit": "3.2vw",
+        "--tab-case": "uppercase",
+        "--tab-track": ".2em"
+      },
+      "stylesheet": "signature.css"
+    }
+  },
+  "deliverables": {
+    "workbook": false
+  },
+  "eras": [
+    {
+      "id": "foundations",
+      "name": "Foundations",
+      "rank": 5000,
+      "intro": "October 2024 to late 2025. Darkseid remakes the world and takes something from every hero in it — the money, the mentor, the home. Six titles launch in two waves and the shape of a new universe comes into focus."
+    },
+    {
+      "id": "after-absolute-evil",
+      "name": "After Absolute Evil",
+      "rank": 5010,
+      "intro": "The villains take the stage. Absolute Evil turns the line toward its second year: heroes meet for the first time, a Gotham black site gives up its history, and two of the dead come back wearing someone else’s story."
+    }
+  ],
+  "strands": [
+    "Batman",
+    "Catwoman",
+    "Flash",
+    "Green Arrow",
+    "Green Lantern",
+    "Line-wide",
+    "Martian Manhunter",
+    "Superman",
+    "Wonder Woman"
+  ],
+  "types": [
+    "MAIN",
+    "EVENT",
+    "SOLO"
+  ],
+  "tiers": [
+    "Everything"
+  ],
+  "media": [
+    "comic"
+  ],
+  "creatorMononyms": [
+    "Bengal",
+    "Haining",
+    "Jock"
+  ],
+  "arcs": [
+    {
+      "id": "december-2024",
+      "name": "December 2024",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Line-wide",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2024",
+      "blurb": "The line opens — Darkseid remakes the world, and the founding titles arrive alongside the mandatory prologue. 3 issues: Batman, Wonder Woman, the All-In Special."
+    },
+    {
+      "id": "january-2025",
+      "name": "January 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "Superman launches. 3 issues: Batman, Superman, Wonder Woman."
+    },
+    {
+      "id": "february-2025",
+      "name": "February 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "3 issues: Batman, Superman, Wonder Woman."
+    },
+    {
+      "id": "march-2025",
+      "name": "March 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "3 issues: Batman, Superman, Wonder Woman."
+    },
+    {
+      "id": "april-2025",
+      "name": "April 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "3 issues: Batman, Superman, Wonder Woman."
+    },
+    {
+      "id": "may-2025",
+      "name": "May 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "Flash and Martian Manhunter launch. 5 issues: Batman, Flash, Martian Manhunter, Superman, Wonder Woman."
+    },
+    {
+      "id": "june-2025",
+      "name": "June 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "Green Lantern launches. 6 issues: Batman, Flash, Green Lantern, Martian Manhunter, Superman, Wonder Woman."
+    },
+    {
+      "id": "july-2025",
+      "name": "July 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Line-wide",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "The Free Comic Book Day special lands, teasing what the line is building toward. 7 issues: Batman, Flash, Green Lantern, Martian Manhunter, Superman, Wonder Woman, the Free Comic Book Day special."
+    },
+    {
+      "id": "august-2025",
+      "name": "August 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "6 issues: Batman, Flash, Green Lantern, Martian Manhunter, Superman, Wonder Woman."
+    },
+    {
+      "id": "september-2025",
+      "name": "September 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "6 issues: Batman, Flash, Green Lantern, Martian Manhunter, Superman, Wonder Woman."
+    },
+    {
+      "id": "october-2025",
+      "name": "October 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "5 issues: Batman, Flash, Green Lantern, Martian Manhunter, Superman."
+    },
+    {
+      "id": "november-2025",
+      "name": "November 2025",
+      "era": "foundations",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "6 issues: Batman, Flash, Green Lantern, Superman, Wonder Woman."
+    },
+    {
+      "id": "december-2025",
+      "name": "December 2025",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Line-wide",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2025",
+      "blurb": "Absolute Evil turns the line toward its second year: the villains take the stage, and Green Arrow will spin directly out of it. 7 issues: Batman, Flash, Green Lantern, Superman, Wonder Woman, Absolute Evil, the Batman Annual."
+    },
+    {
+      "id": "january-2026",
+      "name": "January 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "5 issues: Batman, Flash, Green Lantern, Superman, Wonder Woman."
+    },
+    {
+      "id": "february-2026",
+      "name": "February 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "6 issues: Batman, Flash, Green Lantern, Martian Manhunter, Superman, Wonder Woman."
+    },
+    {
+      "id": "march-2026",
+      "name": "March 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "The Ark M Special opens up the Gotham black site and its history. 8 issues: Batman, Flash, Green Lantern, Martian Manhunter, Superman, Wonder Woman, the Ark M Special, the Wonder Woman Annual."
+    },
+    {
+      "id": "april-2026",
+      "name": "April 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "5 issues: Batman, Green Lantern, Martian Manhunter, Superman, Wonder Woman."
+    },
+    {
+      "id": "may-2026",
+      "name": "May 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "7 issues: Batman, Flash, Green Lantern, Martian Manhunter, Superman, Wonder Woman."
+    },
+    {
+      "id": "june-2026",
+      "name": "June 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Lantern",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "5 issues: Batman, Flash, Green Lantern, Superman, Wonder Woman."
+    },
+    {
+      "id": "july-2026",
+      "name": "July 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Arrow",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "Green Arrow launches out of Absolute Evil. 7 issues: Batman, Flash, Green Arrow, Green Lantern, Martian Manhunter, Superman, Wonder Woman."
+    },
+    {
+      "id": "august-2026",
+      "name": "August 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Catwoman",
+        "Flash",
+        "Green Arrow",
+        "Green Lantern",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "Catwoman launches, picking up the threads left in Absolute Batman #14. 7 issues: Batman, Catwoman, Flash, Green Arrow, Green Lantern, Superman, Wonder Woman."
+    },
+    {
+      "id": "september-2026",
+      "name": "September 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Catwoman",
+        "Flash",
+        "Green Arrow",
+        "Green Lantern",
+        "Martian Manhunter",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "Martian Manhunter reaches the end of its twelve-issue run. 8 issues: Batman, Catwoman, Flash, Green Arrow, Green Lantern, Martian Manhunter, Superman, Wonder Woman."
+    },
+    {
+      "id": "october-2026",
+      "name": "October 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Catwoman",
+        "Flash",
+        "Green Arrow",
+        "Green Lantern",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "7 issues: Batman, Catwoman, Flash, Green Arrow, Green Lantern, Superman, Wonder Woman."
+    },
+    {
+      "id": "november-2026",
+      "name": "November 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Arrow",
+        "Green Lantern",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "6 issues: Batman, Flash, Green Arrow, Green Lantern, Superman, Wonder Woman."
+    }
+  ],
+  "rows": [
+    {
+      "id": "202412001",
+      "issueId": "dc-all-in-special-2024-1",
+      "series": "DC All-In Special",
+      "vol": "2024",
+      "num": "1",
+      "title": "DC All-In Special #1",
+      "era": "foundations",
+      "arc": "december-2024",
+      "type": "EVENT",
+      "mo": "M",
+      "core": true,
+      "date": {
+        "cover": "2024-12",
+        "onsale": "2024-10-02",
+        "source": "DC Database, \"DC All In Special Vol 1 1\" (rev 3918017, fetched 2026-10-06): cover date December 2024; published 2024-10-02 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Joshua Williamson",
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Daniel Sampere",
+          "Dan Mora",
+          "Wes Craig"
+        ]
+      },
+      "note": "Mandatory prologue — establishes the Absolute Universe."
+    },
+    {
+      "id": "202412002",
+      "issueId": "absolute-batman-2024-1",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "1",
+      "title": "Absolute Batman #1",
+      "era": "foundations",
+      "arc": "december-2024",
+      "type": "MAIN",
+      "mo": "M",
+      "core": true,
+      "date": {
+        "cover": "2024-12",
+        "onsale": "2024-10-09",
+        "source": "DC Database, \"Absolute Batman Vol 1 1\" (rev 3932566, fetched 2026-10-06): cover date December 2024; published 2024-10-09 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202412003",
+      "issueId": "absolute-wonder-woman-2024-1",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "1",
+      "title": "Absolute Wonder Woman #1",
+      "era": "foundations",
+      "arc": "december-2024",
+      "type": "MAIN",
+      "mo": "M",
+      "core": true,
+      "date": {
+        "cover": "2024-12",
+        "onsale": "2024-10-23",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 1\" (rev 3961245, fetched 2026-10-06): cover date December 2024; published 2024-10-23 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202501001",
+      "issueId": "absolute-batman-2024-2",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "2",
+      "title": "Absolute Batman #2",
+      "era": "foundations",
+      "arc": "january-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-01",
+        "onsale": "2024-11-13",
+        "source": "DC Database, \"Absolute Batman Vol 1 2\" (rev 3924889, fetched 2026-10-06): cover date January 2025; published 2024-11-13 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202501002",
+      "issueId": "absolute-wonder-woman-2024-2",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "2",
+      "title": "Absolute Wonder Woman #2",
+      "era": "foundations",
+      "arc": "january-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-01",
+        "onsale": "2024-11-27",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 2\" (rev 3961248, fetched 2026-10-06): cover date January 2025; published 2024-11-27 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202501003",
+      "issueId": "absolute-superman-2025-1",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "1",
+      "title": "Absolute Superman #1",
+      "era": "foundations",
+      "arc": "january-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": true,
+      "date": {
+        "cover": "2025-01",
+        "onsale": "2024-11-06",
+        "source": "DC Database, \"Absolute Superman Vol 1 1\" (rev 3924419, fetched 2026-10-06): cover date January 2025; published 2024-11-06 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202502001",
+      "issueId": "absolute-batman-2024-3",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "3",
+      "title": "Absolute Batman #3",
+      "era": "foundations",
+      "arc": "february-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-02",
+        "onsale": "2024-12-18",
+        "source": "DC Database, \"Absolute Batman Vol 1 3\" (rev 3924894, fetched 2026-10-06): cover date February 2025; published 2024-12-18 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202502002",
+      "issueId": "absolute-wonder-woman-2024-3",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "3",
+      "title": "Absolute Wonder Woman #3",
+      "era": "foundations",
+      "arc": "february-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-02",
+        "onsale": "2024-12-26",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 3\" (rev 3849168, fetched 2026-10-06): cover date February 2025; published 2024-12-26 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202502003",
+      "issueId": "absolute-superman-2025-2",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "2",
+      "title": "Absolute Superman #2",
+      "era": "foundations",
+      "arc": "february-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-02",
+        "onsale": "2024-12-04",
+        "source": "DC Database, \"Absolute Superman Vol 1 2\" (rev 3717584, fetched 2026-10-06): cover date February 2025; published 2024-12-04 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202503001",
+      "issueId": "absolute-batman-2024-4",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "4",
+      "title": "Absolute Batman #4",
+      "era": "foundations",
+      "arc": "march-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-03",
+        "onsale": "2025-01-08",
+        "source": "DC Database, \"Absolute Batman Vol 1 4\" (rev 3765123, fetched 2026-10-06): cover date March 2025; published 2025-01-08 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder",
+          "Nick Dragotta"
+        ],
+        "artists": [
+          "Gabriel Hernández Walta"
+        ]
+      }
+    },
+    {
+      "id": "202503002",
+      "issueId": "absolute-wonder-woman-2024-4",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "4",
+      "title": "Absolute Wonder Woman #4",
+      "era": "foundations",
+      "arc": "march-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-03",
+        "onsale": "2025-01-22",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 4\" (rev 3961250, fetched 2026-10-06): cover date March 2025; published 2025-01-22 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202503003",
+      "issueId": "absolute-superman-2025-3",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "3",
+      "title": "Absolute Superman #3",
+      "era": "foundations",
+      "arc": "march-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-03",
+        "onsale": "2025-01-01",
+        "source": "DC Database, \"Absolute Superman Vol 1 3\" (rev 3711988, fetched 2026-10-06): cover date March 2025; published 2025-01-01 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202504001",
+      "issueId": "absolute-batman-2024-5",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "5",
+      "title": "Absolute Batman #5",
+      "era": "foundations",
+      "arc": "april-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-04",
+        "onsale": "2025-02-12",
+        "source": "DC Database, \"Absolute Batman Vol 1 5\" (rev 3778934, fetched 2026-10-06): cover date April 2025; published 2025-02-12 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202504002",
+      "issueId": "absolute-wonder-woman-2024-5",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "5",
+      "title": "Absolute Wonder Woman #5",
+      "era": "foundations",
+      "arc": "april-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-04",
+        "onsale": "2025-02-26",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 5\" (rev 3961251, fetched 2026-10-06): cover date April 2025; published 2025-02-26 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202504003",
+      "issueId": "absolute-superman-2025-4",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "4",
+      "title": "Absolute Superman #4",
+      "era": "foundations",
+      "arc": "april-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-04",
+        "onsale": "2025-02-05",
+        "source": "DC Database, \"Absolute Superman Vol 1 4\" (rev 3806415, fetched 2026-10-06): cover date April 2025; published 2025-02-05 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202505001",
+      "issueId": "absolute-batman-2024-6",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "6",
+      "title": "Absolute Batman #6",
+      "era": "foundations",
+      "arc": "may-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-05",
+        "onsale": "2025-03-19",
+        "source": "DC Database, \"Absolute Batman Vol 1 6\" (rev 3898070, fetched 2026-10-06): cover date May 2025; published 2025-03-19 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202505002",
+      "issueId": "absolute-wonder-woman-2024-6",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "6",
+      "title": "Absolute Wonder Woman #6",
+      "era": "foundations",
+      "arc": "may-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-05",
+        "onsale": "2025-03-26",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 6\" (rev 3961252, fetched 2026-10-06): cover date May 2025; published 2025-03-26 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Mattia De Iulis",
+          "Dustin Nguyen"
+        ]
+      }
+    },
+    {
+      "id": "202505003",
+      "issueId": "absolute-superman-2025-5",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "5",
+      "title": "Absolute Superman #5",
+      "era": "foundations",
+      "arc": "may-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-05",
+        "onsale": "2025-03-12",
+        "source": "DC Database, \"Absolute Superman Vol 1 5\" (rev 3713503, fetched 2026-10-06): cover date May 2025; published 2025-03-12 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202505004",
+      "issueId": "absolute-flash-2025-1",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "1",
+      "title": "Absolute Flash #1",
+      "era": "foundations",
+      "arc": "may-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-05",
+        "onsale": "2025-03-19",
+        "source": "DC Database, \"Absolute Flash Vol 1 1\" (rev 3910252, fetched 2026-10-06): cover date May 2025; published 2025-03-19 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "id": "202505005",
+      "issueId": "absolute-martian-manhunter-2025-1",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "1",
+      "title": "Absolute Martian Manhunter #1",
+      "era": "foundations",
+      "arc": "may-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-05",
+        "onsale": "2025-03-26",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 1\" (rev 3921199, fetched 2026-10-06): cover date May 2025; published 2025-03-26 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      }
+    },
+    {
+      "id": "202506001",
+      "issueId": "absolute-batman-2024-7",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "7",
+      "title": "Absolute Batman #7",
+      "era": "foundations",
+      "arc": "june-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-06",
+        "onsale": "2025-04-09",
+        "source": "DC Database, \"Absolute Batman Vol 1 7\" (rev 3898068, fetched 2026-10-06): cover date June 2025; published 2025-04-09 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Marcos Martín"
+        ]
+      }
+    },
+    {
+      "id": "202506002",
+      "issueId": "absolute-wonder-woman-2024-7",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "7",
+      "title": "Absolute Wonder Woman #7",
+      "era": "foundations",
+      "arc": "june-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-06",
+        "onsale": "2025-04-23",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 7\" (rev 3898233, fetched 2026-10-06): cover date June 2025; published 2025-04-23 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Mattia De Iulis",
+          "Dustin Nguyen"
+        ]
+      }
+    },
+    {
+      "id": "202506003",
+      "issueId": "absolute-superman-2025-6",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "6",
+      "title": "Absolute Superman #6",
+      "era": "foundations",
+      "arc": "june-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-06",
+        "onsale": "2025-04-02",
+        "source": "DC Database, \"Absolute Superman Vol 1 6\" (rev 3919772, fetched 2026-10-06): cover date June 2025; published 2025-04-02 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Carmine Di Giandomenico"
+        ]
+      }
+    },
+    {
+      "id": "202506004",
+      "issueId": "absolute-flash-2025-2",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "2",
+      "title": "Absolute Flash #2",
+      "era": "foundations",
+      "arc": "june-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-06",
+        "onsale": "2025-04-16",
+        "source": "DC Database, \"Absolute Flash Vol 1 2\" (rev 3859351, fetched 2026-10-06): cover date June 2025; published 2025-04-16 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "id": "202506005",
+      "issueId": "absolute-green-lantern-2025-1",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "1",
+      "title": "Absolute Green Lantern #1",
+      "era": "foundations",
+      "arc": "june-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-06",
+        "onsale": "2025-04-02",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 1\" (rev 3845762, fetched 2026-10-06): cover date June 2025; published 2025-04-02 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "id": "202506006",
+      "issueId": "absolute-martian-manhunter-2025-2",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "2",
+      "title": "Absolute Martian Manhunter #2",
+      "era": "foundations",
+      "arc": "june-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-06",
+        "onsale": "2025-04-23",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 2\" (rev 3921200, fetched 2026-10-06): cover date June 2025; published 2025-04-23 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      }
+    },
+    {
+      "id": "202507001",
+      "issueId": "fcbd-2025-dc-all-in-absolute-universe-special-edition-2025-1",
+      "series": "FCBD 2025: DC All In / Absolute Universe Special Edition",
+      "vol": "2025",
+      "num": "1",
+      "title": "FCBD 2025: DC All In / Absolute Universe Special Edition #1",
+      "era": "foundations",
+      "arc": "july-2025",
+      "type": "EVENT",
+      "mo": "O",
+      "core": false,
+      "date": {
+        "cover": "2025-07",
+        "onsale": "2025-05-03",
+        "source": "DC Database, \"FCBD 2025: All In/Absolute Universe Special Edition Vol 1 1\" (rev 3958989, fetched 2026-10-06): cover date July 2025; published 2025-05-03 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Dan Slott",
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Rafael Albuquerque",
+          "Guiseppe Camuncoli"
+        ]
+      },
+      "note": "No printed cover date; placed Jul 2025 by the +2 convention so it sits beside its contemporaries. Derived."
+    },
+    {
+      "id": "202507002",
+      "issueId": "absolute-batman-2024-8",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "8",
+      "title": "Absolute Batman #8",
+      "era": "foundations",
+      "arc": "july-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-07",
+        "onsale": "2025-05-14",
+        "source": "DC Database, \"Absolute Batman Vol 1 8\" (rev 3898067, fetched 2026-10-06): cover date July 2025; published 2025-05-14 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Marcos Martín"
+        ]
+      }
+    },
+    {
+      "id": "202507003",
+      "issueId": "absolute-wonder-woman-2024-8",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "8",
+      "title": "Absolute Wonder Woman #8",
+      "era": "foundations",
+      "arc": "july-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-07",
+        "onsale": "2025-05-28",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 8\" (rev 3961253, fetched 2026-10-06): cover date July 2025; published 2025-05-28 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202507004",
+      "issueId": "absolute-superman-2025-7",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "7",
+      "title": "Absolute Superman #7",
+      "era": "foundations",
+      "arc": "july-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-07",
+        "onsale": "2025-05-07",
+        "source": "DC Database, \"Absolute Superman Vol 1 7\" (rev 3898232, fetched 2026-10-06): cover date July 2025; published 2025-05-07 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Carmine Di Giandomenico"
+        ]
+      }
+    },
+    {
+      "id": "202507005",
+      "issueId": "absolute-flash-2025-3",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "3",
+      "title": "Absolute Flash #3",
+      "era": "foundations",
+      "arc": "july-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-07",
+        "onsale": "2025-05-21",
+        "source": "DC Database, \"Absolute Flash Vol 1 3\" (rev 3898081, fetched 2026-10-06): cover date July 2025; published 2025-05-21 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "id": "202507006",
+      "issueId": "absolute-green-lantern-2025-2",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "2",
+      "title": "Absolute Green Lantern #2",
+      "era": "foundations",
+      "arc": "july-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-07",
+        "onsale": "2025-05-07",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 2\" (rev 3898207, fetched 2026-10-06): cover date July 2025; published 2025-05-07 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "id": "202507007",
+      "issueId": "absolute-martian-manhunter-2025-3",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "3",
+      "title": "Absolute Martian Manhunter #3",
+      "era": "foundations",
+      "arc": "july-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-07",
+        "onsale": "2025-05-28",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 3\" (rev 3921201, fetched 2026-10-06): cover date July 2025; published 2025-05-28 per the page"
+      },
+      "seq": 7,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      }
+    },
+    {
+      "id": "202508001",
+      "issueId": "absolute-batman-2024-9",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "9",
+      "title": "Absolute Batman #9",
+      "era": "foundations",
+      "arc": "august-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-08",
+        "onsale": "2025-06-11",
+        "source": "DC Database, \"Absolute Batman Vol 1 9\" (rev 3898066, fetched 2026-10-06): cover date August 2025; published 2025-06-11 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202508002",
+      "issueId": "absolute-wonder-woman-2024-9",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "9",
+      "title": "Absolute Wonder Woman #9",
+      "era": "foundations",
+      "arc": "august-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-08",
+        "onsale": "2025-06-25",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 9\" (rev 3958975, fetched 2026-10-06): cover date August 2025; published 2025-06-25 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202508003",
+      "issueId": "absolute-superman-2025-8",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "8",
+      "title": "Absolute Superman #8",
+      "era": "foundations",
+      "arc": "august-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-08",
+        "onsale": "2025-06-04",
+        "source": "DC Database, \"Absolute Superman Vol 1 8\" (rev 3898231, fetched 2026-10-06): cover date August 2025; published 2025-06-04 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202508004",
+      "issueId": "absolute-flash-2025-4",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "4",
+      "title": "Absolute Flash #4",
+      "era": "foundations",
+      "arc": "august-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-08",
+        "onsale": "2025-06-18",
+        "source": "DC Database, \"Absolute Flash Vol 1 4\" (rev 3898097, fetched 2026-10-06): cover date August 2025; published 2025-06-18 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "A.L. Kaplan"
+        ]
+      }
+    },
+    {
+      "id": "202508005",
+      "issueId": "absolute-green-lantern-2025-3",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "3",
+      "title": "Absolute Green Lantern #3",
+      "era": "foundations",
+      "arc": "august-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-08",
+        "onsale": "2025-06-04",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 3\" (rev 3898206, fetched 2026-10-06): cover date August 2025; published 2025-06-04 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "id": "202508006",
+      "issueId": "absolute-martian-manhunter-2025-4",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "4",
+      "title": "Absolute Martian Manhunter #4",
+      "era": "foundations",
+      "arc": "august-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-08",
+        "onsale": "2025-06-25",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 4\" (rev 3898211, fetched 2026-10-06): cover date August 2025; published 2025-06-25 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      }
+    },
+    {
+      "id": "202509001",
+      "issueId": "absolute-batman-2024-10",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "10",
+      "title": "Absolute Batman #10",
+      "era": "foundations",
+      "arc": "september-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-09",
+        "onsale": "2025-07-16",
+        "source": "DC Database, \"Absolute Batman Vol 1 10\" (rev 3930180, fetched 2026-10-06): cover date September 2025; published 2025-07-16 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202509002",
+      "issueId": "absolute-wonder-woman-2024-10",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "10",
+      "title": "Absolute Wonder Woman #10",
+      "era": "foundations",
+      "arc": "september-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-09",
+        "onsale": "2025-07-23",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 10\" (rev 3958976, fetched 2026-10-06): cover date September 2025; published 2025-07-23 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202509003",
+      "issueId": "absolute-superman-2025-9",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "9",
+      "title": "Absolute Superman #9",
+      "era": "foundations",
+      "arc": "september-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-09",
+        "onsale": "2025-07-09",
+        "source": "DC Database, \"Absolute Superman Vol 1 9\" (rev 3898230, fetched 2026-10-06): cover date September 2025; published 2025-07-09 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval",
+          "Fico Ossio"
+        ]
+      }
+    },
+    {
+      "id": "202509004",
+      "issueId": "absolute-flash-2025-5",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "5",
+      "title": "Absolute Flash #5",
+      "era": "foundations",
+      "arc": "september-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-09",
+        "onsale": "2025-07-16",
+        "source": "DC Database, \"Absolute Flash Vol 1 5\" (rev 3898109, fetched 2026-10-06): cover date September 2025; published 2025-07-16 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "A.L. Kaplan"
+        ]
+      }
+    },
+    {
+      "id": "202509005",
+      "issueId": "absolute-green-lantern-2025-4",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "4",
+      "title": "Absolute Green Lantern #4",
+      "era": "foundations",
+      "arc": "september-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-09",
+        "onsale": "2025-07-02",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 4\" (rev 3898205, fetched 2026-10-06): cover date September 2025; published 2025-07-02 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "id": "202509006",
+      "issueId": "absolute-martian-manhunter-2025-5",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "5",
+      "title": "Absolute Martian Manhunter #5",
+      "era": "foundations",
+      "arc": "september-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-09",
+        "onsale": "2025-07-23",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 5\" (rev 3919773, fetched 2026-10-06): cover date September 2025; published 2025-07-23 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      }
+    },
+    {
+      "id": "202510001",
+      "issueId": "absolute-batman-2024-11",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "11",
+      "title": "Absolute Batman #11",
+      "era": "foundations",
+      "arc": "october-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-10",
+        "onsale": "2025-08-20",
+        "source": "DC Database, \"Absolute Batman Vol 1 11\" (rev 3898064, fetched 2026-10-06): cover date October 2025; published 2025-08-20 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Clay Mann"
+        ]
+      }
+    },
+    {
+      "id": "202510003",
+      "issueId": "absolute-superman-2025-10",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "10",
+      "title": "Absolute Superman #10",
+      "era": "foundations",
+      "arc": "october-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-10",
+        "onsale": "2025-08-06",
+        "source": "DC Database, \"Absolute Superman Vol 1 10\" (rev 3927827, fetched 2026-10-06): cover date October 2025; published 2025-08-06 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Carmine Di Giandomenico"
+        ]
+      }
+    },
+    {
+      "id": "202510004",
+      "issueId": "absolute-flash-2025-6",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "6",
+      "title": "Absolute Flash #6",
+      "era": "foundations",
+      "arc": "october-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-10",
+        "onsale": "2025-08-20",
+        "source": "DC Database, \"Absolute Flash Vol 1 6\" (rev 3898121, fetched 2026-10-06): cover date October 2025; published 2025-08-20 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "id": "202510005",
+      "issueId": "absolute-green-lantern-2025-5",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "5",
+      "title": "Absolute Green Lantern #5",
+      "era": "foundations",
+      "arc": "october-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-10",
+        "onsale": "2025-08-06",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 5\" (rev 3898204, fetched 2026-10-06): cover date October 2025; published 2025-08-06 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "id": "202510006",
+      "issueId": "absolute-martian-manhunter-2025-6",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "6",
+      "title": "Absolute Martian Manhunter #6",
+      "era": "foundations",
+      "arc": "october-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-10",
+        "onsale": "2025-08-27",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 6\" (rev 3898213, fetched 2026-10-06): cover date October 2025; published 2025-08-27 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      }
+    },
+    {
+      "id": "202511001",
+      "issueId": "absolute-batman-2024-12",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "12",
+      "title": "Absolute Batman #12",
+      "era": "foundations",
+      "arc": "november-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-11",
+        "onsale": "2025-09-10",
+        "source": "DC Database, \"Absolute Batman Vol 1 12\" (rev 3898063, fetched 2026-10-06): cover date November 2025; published 2025-09-10 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202510002",
+      "issueId": "absolute-wonder-woman-2024-11",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "11",
+      "title": "Absolute Wonder Woman #11",
+      "era": "foundations",
+      "arc": "november-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-11",
+        "onsale": "2025-09-03",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 11\" (rev 3958977, fetched 2026-10-06): cover date November 2025; published 2025-09-03 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202511002",
+      "issueId": "absolute-wonder-woman-2024-12",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "12",
+      "title": "Absolute Wonder Woman #12",
+      "era": "foundations",
+      "arc": "november-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-11",
+        "onsale": "2025-09-24",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 12\" (rev 3958978, fetched 2026-10-06): cover date November 2025; published 2025-09-24 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202511003",
+      "issueId": "absolute-superman-2025-11",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "11",
+      "title": "Absolute Superman #11",
+      "era": "foundations",
+      "arc": "november-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-11",
+        "onsale": "2025-09-03",
+        "source": "DC Database, \"Absolute Superman Vol 1 11\" (rev 3919769, fetched 2026-10-06): cover date November 2025; published 2025-09-03 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Carmine Di Giandomenico"
+        ]
+      }
+    },
+    {
+      "id": "202511004",
+      "issueId": "absolute-flash-2025-7",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "7",
+      "title": "Absolute Flash #7",
+      "era": "foundations",
+      "arc": "november-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-11",
+        "onsale": "2025-09-17",
+        "source": "DC Database, \"Absolute Flash Vol 1 7\" (rev 3898136, fetched 2026-10-06): cover date November 2025; published 2025-09-17 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Travis Moore"
+        ]
+      }
+    },
+    {
+      "id": "202511005",
+      "issueId": "absolute-green-lantern-2025-6",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "6",
+      "title": "Absolute Green Lantern #6",
+      "era": "foundations",
+      "arc": "november-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-11",
+        "onsale": "2025-09-03",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 6\" (rev 3898203, fetched 2026-10-06): cover date November 2025; published 2025-09-03 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "id": "202512001",
+      "issueId": "absolute-evil-2025-1",
+      "series": "Absolute Evil",
+      "vol": "2025",
+      "num": "1",
+      "title": "Absolute Evil #1",
+      "era": "after-absolute-evil",
+      "arc": "december-2025",
+      "type": "EVENT",
+      "mo": "M",
+      "core": true,
+      "date": {
+        "cover": "2025-12",
+        "onsale": "2025-10-01",
+        "source": "DC Database, \"Absolute Evil Vol 1 1\" (rev 3941289, fetched 2026-10-06): cover date December 2025; published 2025-10-01 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Giuseppe Camuncoli"
+        ]
+      },
+      "note": "Sources quoted Oct vs Dec 2025 — same book on two date bases (on sale 1 Oct, cover Dec). Resolved."
+    },
+    {
+      "id": "202512002",
+      "issueId": "absolute-batman-2024-13",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "13",
+      "title": "Absolute Batman #13",
+      "era": "after-absolute-evil",
+      "arc": "december-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-12",
+        "onsale": "2025-10-08",
+        "source": "DC Database, \"Absolute Batman Vol 1 13\" (rev 3918634, fetched 2026-10-06): cover date December 2025; published 2025-10-08 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202512003",
+      "issueId": "absolute-batman-2025-annual-2025-1",
+      "series": "Absolute Batman 2025 Annual",
+      "vol": "2025",
+      "num": "1",
+      "title": "Absolute Batman 2025 Annual #1",
+      "era": "after-absolute-evil",
+      "arc": "december-2025",
+      "type": "SOLO",
+      "mo": "O",
+      "core": false,
+      "date": {
+        "cover": "2025-12",
+        "onsale": "2025-10-29",
+        "source": "DC Database, \"Absolute Batman 2025 Annual Vol 1 1\" (rev 3925227, fetched 2026-10-06): cover date December 2025; published 2025-10-29 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Daniel Warren Johnson",
+          "James Harren",
+          "Meredith McClaren"
+        ],
+        "artists": [
+          "Daniel Warren Johnson",
+          "James Harren",
+          "Meredith McClaren"
+        ]
+      }
+    },
+    {
+      "id": "202512004",
+      "issueId": "absolute-wonder-woman-2024-13",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "13",
+      "title": "Absolute Wonder Woman #13",
+      "era": "after-absolute-evil",
+      "arc": "december-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-12",
+        "onsale": "2025-10-22",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 13\" (rev 3961246, fetched 2026-10-06): cover date December 2025; published 2025-10-22 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Matías Bergara"
+        ]
+      }
+    },
+    {
+      "id": "202512005",
+      "issueId": "absolute-superman-2025-12",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "12",
+      "title": "Absolute Superman #12",
+      "era": "after-absolute-evil",
+      "arc": "december-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-12",
+        "onsale": "2025-10-01",
+        "source": "DC Database, \"Absolute Superman Vol 1 12\" (rev 3919768, fetched 2026-10-06): cover date December 2025; published 2025-10-01 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202512006",
+      "issueId": "absolute-flash-2025-8",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "8",
+      "title": "Absolute Flash #8",
+      "era": "after-absolute-evil",
+      "arc": "december-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-12",
+        "onsale": "2025-10-15",
+        "source": "DC Database, \"Absolute Flash Vol 1 8\" (rev 3941561, fetched 2026-10-06): cover date December 2025; published 2025-10-15 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Travis Moore"
+        ]
+      }
+    },
+    {
+      "id": "202512007",
+      "issueId": "absolute-green-lantern-2025-7",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "7",
+      "title": "Absolute Green Lantern #7",
+      "era": "after-absolute-evil",
+      "arc": "december-2025",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2025-12",
+        "onsale": "2025-10-01",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 7\" (rev 3898201, fetched 2026-10-06): cover date December 2025; published 2025-10-01 per the page"
+      },
+      "seq": 7,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jason Howard"
+        ]
+      }
+    },
+    {
+      "id": "202601001",
+      "issueId": "absolute-batman-2024-14",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "14",
+      "title": "Absolute Batman #14",
+      "era": "after-absolute-evil",
+      "arc": "january-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-01",
+        "onsale": "2025-11-26",
+        "source": "DC Database, \"Absolute Batman Vol 1 14\" (rev 3918635, fetched 2026-10-06): cover date January 2026; published 2025-11-26 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202601002",
+      "issueId": "absolute-wonder-woman-2024-14",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "14",
+      "title": "Absolute Wonder Woman #14",
+      "era": "after-absolute-evil",
+      "arc": "january-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-01",
+        "onsale": "2025-11-26",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 14\" (rev 3958981, fetched 2026-10-06): cover date January 2026; published 2025-11-26 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202601003",
+      "issueId": "absolute-superman-2025-13",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "13",
+      "title": "Absolute Superman #13",
+      "era": "after-absolute-evil",
+      "arc": "january-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-01",
+        "onsale": "2025-11-05",
+        "source": "DC Database, \"Absolute Superman Vol 1 13\" (rev 3898226, fetched 2026-10-06): cover date January 2026; published 2025-11-05 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202601004",
+      "issueId": "absolute-flash-2025-9",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "9",
+      "title": "Absolute Flash #9",
+      "era": "after-absolute-evil",
+      "arc": "january-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-01",
+        "onsale": "2025-11-19",
+        "source": "DC Database, \"Absolute Flash Vol 1 9\" (rev 3898161, fetched 2026-10-06): cover date January 2026; published 2025-11-19 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "id": "202601005",
+      "issueId": "absolute-green-lantern-2025-8",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "8",
+      "title": "Absolute Green Lantern #8",
+      "era": "after-absolute-evil",
+      "arc": "january-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-01",
+        "onsale": "2025-11-05",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 8\" (rev 3913988, fetched 2026-10-06): cover date January 2026; published 2025-11-05 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "id": "202602001",
+      "issueId": "absolute-batman-2024-15",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "15",
+      "title": "Absolute Batman #15",
+      "era": "after-absolute-evil",
+      "arc": "february-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-02",
+        "onsale": "2025-12-10",
+        "source": "DC Database, \"Absolute Batman Vol 1 15\" (rev 3898060, fetched 2026-10-06): cover date February 2026; published 2025-12-10 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Jock"
+        ]
+      }
+    },
+    {
+      "id": "202602002",
+      "issueId": "absolute-wonder-woman-2024-15",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "15",
+      "title": "Absolute Wonder Woman #15",
+      "era": "after-absolute-evil",
+      "arc": "february-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-02",
+        "onsale": "2025-12-24",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 15\" (rev 3898241, fetched 2026-10-06): cover date February 2026; published 2025-12-24 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      },
+      "note": "Story continues directly into Absolute Batman #16 — the line’s first crossover."
+    },
+    {
+      "id": "202602003",
+      "issueId": "absolute-superman-2025-14",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "14",
+      "title": "Absolute Superman #14",
+      "era": "after-absolute-evil",
+      "arc": "february-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-02",
+        "onsale": "2025-12-24",
+        "source": "DC Database, \"Absolute Superman Vol 1 14\" (rev 3919767, fetched 2026-10-06): cover date February 2026; published 2025-12-24 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202602004",
+      "issueId": "absolute-flash-2025-10",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "10",
+      "title": "Absolute Flash #10",
+      "era": "after-absolute-evil",
+      "arc": "february-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-02",
+        "onsale": "2025-12-17",
+        "source": "DC Database, \"Absolute Flash Vol 1 10\" (rev 3898171, fetched 2026-10-06): cover date February 2026; published 2025-12-17 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "id": "202602005",
+      "issueId": "absolute-green-lantern-2025-9",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "9",
+      "title": "Absolute Green Lantern #9",
+      "era": "after-absolute-evil",
+      "arc": "february-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-02",
+        "onsale": "2025-12-03",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 9\" (rev 3940818, fetched 2026-10-06): cover date February 2026; published 2025-12-03 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Sid Kotian"
+        ]
+      }
+    },
+    {
+      "id": "202602006",
+      "issueId": "absolute-martian-manhunter-2025-7",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "7",
+      "title": "Absolute Martian Manhunter #7",
+      "era": "after-absolute-evil",
+      "arc": "february-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-02",
+        "onsale": "2025-12-24",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 7\" (rev 3917625, fetched 2026-10-06): cover date February 2026; published 2025-12-24 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      },
+      "note": "Follows a real publication gap (Sep–Nov 2025), not a monthly cadence."
+    },
+    {
+      "id": "202603001",
+      "issueId": "absolute-batman-2024-16",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "16",
+      "title": "Absolute Batman #16",
+      "era": "after-absolute-evil",
+      "arc": "march-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-03",
+        "onsale": "2026-01-28",
+        "source": "DC Database, \"Absolute Batman Vol 1 16\" (rev 3898059, fetched 2026-10-06): cover date March 2026; published 2026-01-28 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder",
+          "Nick Dragotta"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202603002",
+      "issueId": "absolute-batman-ark-m-special-2026-1",
+      "series": "Absolute Batman: Ark M Special",
+      "vol": "2026",
+      "num": "1",
+      "title": "Absolute Batman: Ark M Special #1",
+      "era": "after-absolute-evil",
+      "arc": "march-2026",
+      "type": "SOLO",
+      "mo": "O",
+      "core": false,
+      "date": {
+        "cover": "2026-03",
+        "onsale": "2026-01-07",
+        "source": "DC Database, \"Absolute Batman: Ark M Vol 1 1\" (rev 3898751, fetched 2026-10-06): cover date March 2026; published 2026-01-07 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Scott Snyder",
+          "Frank Tieri"
+        ],
+        "artists": [
+          "Joshua Hixson"
+        ]
+      }
+    },
+    {
+      "id": "202604003",
+      "issueId": "absolute-wonder-woman-2026-annual-2026-1",
+      "series": "Absolute Wonder Woman 2026 Annual",
+      "vol": "2026",
+      "num": "1",
+      "title": "Absolute Wonder Woman 2026 Annual #1",
+      "era": "after-absolute-evil",
+      "arc": "march-2026",
+      "type": "SOLO",
+      "mo": "O",
+      "core": false,
+      "date": {
+        "cover": "2026-04",
+        "onsale": "2026-02-11",
+        "source": "DC Database, \"Absolute Wonder Woman 2026 Annual Vol 1 1\" (rev 3961244, fetched 2026-10-06): cover date April 2026; published 2026-02-11 per the page"
+      },
+      "sortDate": "2026-03",
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Mattia De Iulis"
+        ]
+      },
+      "note": "DC Database places this between AWW #15 and #16, not at its cover-date position."
+    },
+    {
+      "id": "202603003",
+      "issueId": "absolute-wonder-woman-2024-16",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "16",
+      "title": "Absolute Wonder Woman #16",
+      "era": "after-absolute-evil",
+      "arc": "march-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-03",
+        "onsale": "2026-01-28",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 16\" (rev 3961247, fetched 2026-10-06): cover date March 2026; published 2026-01-28 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202603004",
+      "issueId": "absolute-superman-2025-15",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "15",
+      "title": "Absolute Superman #15",
+      "era": "after-absolute-evil",
+      "arc": "march-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-03",
+        "onsale": "2026-01-07",
+        "source": "DC Database, \"Absolute Superman Vol 1 15\" (rev 3860692, fetched 2026-10-06): cover date March 2026; published 2026-01-07 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Juan Ferreyra"
+        ]
+      }
+    },
+    {
+      "id": "202603005",
+      "issueId": "absolute-flash-2025-11",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "11",
+      "title": "Absolute Flash #11",
+      "era": "after-absolute-evil",
+      "arc": "march-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-03",
+        "onsale": "2026-01-28",
+        "source": "DC Database, \"Absolute Flash Vol 1 11\" (rev 3898173, fetched 2026-10-06): cover date March 2026; published 2026-01-28 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "id": "202603006",
+      "issueId": "absolute-green-lantern-2025-10",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "10",
+      "title": "Absolute Green Lantern #10",
+      "era": "after-absolute-evil",
+      "arc": "march-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-03",
+        "onsale": "2026-01-07",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 10\" (rev 3900962, fetched 2026-10-06): cover date March 2026; published 2026-01-07 per the page"
+      },
+      "seq": 7,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Sid Kotian"
+        ]
+      }
+    },
+    {
+      "id": "202603007",
+      "issueId": "absolute-martian-manhunter-2025-8",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "8",
+      "title": "Absolute Martian Manhunter #8",
+      "era": "after-absolute-evil",
+      "arc": "march-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-03",
+        "onsale": "2026-01-28",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 8\" (rev 3898215, fetched 2026-10-06): cover date March 2026; published 2026-01-28 per the page"
+      },
+      "seq": 8,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      }
+    },
+    {
+      "id": "202604001",
+      "issueId": "absolute-batman-2024-17",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "17",
+      "title": "Absolute Batman #17",
+      "era": "after-absolute-evil",
+      "arc": "april-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-04",
+        "onsale": "2026-02-18",
+        "source": "DC Database, \"Absolute Batman Vol 1 17\" (rev 3898058, fetched 2026-10-06): cover date April 2026; published 2026-02-18 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Eric Canete"
+        ]
+      }
+    },
+    {
+      "id": "202604002",
+      "issueId": "absolute-wonder-woman-2024-17",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "17",
+      "title": "Absolute Wonder Woman #17",
+      "era": "after-absolute-evil",
+      "arc": "april-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-04",
+        "onsale": "2026-02-25",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 17\" (rev 3898243, fetched 2026-10-06): cover date April 2026; published 2026-02-25 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202604004",
+      "issueId": "absolute-superman-2025-16",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "16",
+      "title": "Absolute Superman #16",
+      "era": "after-absolute-evil",
+      "arc": "april-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-04",
+        "onsale": "2026-02-04",
+        "source": "DC Database, \"Absolute Superman Vol 1 16\" (rev 3898224, fetched 2026-10-06): cover date April 2026; published 2026-02-04 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Juan Ferreyra"
+        ]
+      }
+    },
+    {
+      "id": "202604006",
+      "issueId": "absolute-green-lantern-2025-11",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "11",
+      "title": "Absolute Green Lantern #11",
+      "era": "after-absolute-evil",
+      "arc": "april-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-04",
+        "onsale": "2026-02-04",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 11\" (rev 3940841, fetched 2026-10-06): cover date April 2026; published 2026-02-04 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "id": "202604007",
+      "issueId": "absolute-martian-manhunter-2025-9",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "9",
+      "title": "Absolute Martian Manhunter #9",
+      "era": "after-absolute-evil",
+      "arc": "april-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-04",
+        "onsale": "2026-02-25",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 9\" (rev 3898216, fetched 2026-10-06): cover date April 2026; published 2026-02-25 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      }
+    },
+    {
+      "id": "202605001",
+      "issueId": "absolute-batman-2024-18",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "18",
+      "title": "Absolute Batman #18",
+      "era": "after-absolute-evil",
+      "arc": "may-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-05",
+        "onsale": "2026-03-11",
+        "source": "DC Database, \"Absolute Batman Vol 1 18\" (rev 3898057, fetched 2026-10-06): cover date May 2026; published 2026-03-11 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Eric Canete"
+        ]
+      }
+    },
+    {
+      "id": "202605002",
+      "issueId": "absolute-wonder-woman-2024-18",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "18",
+      "title": "Absolute Wonder Woman #18",
+      "era": "after-absolute-evil",
+      "arc": "may-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-05",
+        "onsale": "2026-03-25",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 18\" (rev 3958983, fetched 2026-10-06): cover date May 2026; published 2026-03-25 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202605003",
+      "issueId": "absolute-superman-2025-17",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "17",
+      "title": "Absolute Superman #17",
+      "era": "after-absolute-evil",
+      "arc": "may-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-05",
+        "onsale": "2026-03-04",
+        "source": "DC Database, \"Absolute Superman Vol 1 17\" (rev 3898222, fetched 2026-10-06): cover date May 2026; published 2026-03-04 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Juan Ferreyra"
+        ]
+      }
+    },
+    {
+      "id": "202604005",
+      "issueId": "absolute-flash-2025-12",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "12",
+      "title": "Absolute Flash #12",
+      "era": "after-absolute-evil",
+      "arc": "may-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-05",
+        "onsale": "2026-03-04",
+        "source": "DC Database, \"Absolute Flash Vol 1 12\" (rev 3910255, fetched 2026-10-06): cover date May 2026; published 2026-03-04 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles",
+          "A.L. Kaplan"
+        ]
+      }
+    },
+    {
+      "id": "202605004",
+      "issueId": "absolute-flash-2025-13",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "13",
+      "title": "Absolute Flash #13",
+      "era": "after-absolute-evil",
+      "arc": "may-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-05",
+        "onsale": "2026-03-18",
+        "source": "DC Database, \"Absolute Flash Vol 1 13\" (rev 3898175, fetched 2026-10-06): cover date May 2026; published 2026-03-18 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Haining"
+        ]
+      }
+    },
+    {
+      "id": "202605005",
+      "issueId": "absolute-green-lantern-2025-12",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "12",
+      "title": "Absolute Green Lantern #12",
+      "era": "after-absolute-evil",
+      "arc": "may-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-05",
+        "onsale": "2026-03-11",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 12\" (rev 3900963, fetched 2026-10-06): cover date May 2026; published 2026-03-11 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "id": "202605006",
+      "issueId": "absolute-martian-manhunter-2025-10",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "10",
+      "title": "Absolute Martian Manhunter #10",
+      "era": "after-absolute-evil",
+      "arc": "may-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-05",
+        "onsale": "2026-03-25",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 10\" (rev 3897799, fetched 2026-10-06): cover date May 2026; published 2026-03-25 per the page"
+      },
+      "seq": 7,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      }
+    },
+    {
+      "id": "202606001",
+      "issueId": "absolute-batman-2024-19",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "19",
+      "title": "Absolute Batman #19",
+      "era": "after-absolute-evil",
+      "arc": "june-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-06",
+        "onsale": "2026-04-15",
+        "source": "DC Database, \"Absolute Batman Vol 1 19\" (rev 3915233, fetched 2026-10-06): cover date June 2026; published 2026-04-15 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202606002",
+      "issueId": "absolute-wonder-woman-2024-19",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "19",
+      "title": "Absolute Wonder Woman #19",
+      "era": "after-absolute-evil",
+      "arc": "june-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-06",
+        "onsale": "2026-04-22",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 19\" (rev 3898244, fetched 2026-10-06): cover date June 2026; published 2026-04-22 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202606003",
+      "issueId": "absolute-superman-2025-18",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "18",
+      "title": "Absolute Superman #18",
+      "era": "after-absolute-evil",
+      "arc": "june-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-06",
+        "onsale": "2026-04-01",
+        "source": "DC Database, \"Absolute Superman Vol 1 18\" (rev 3898220, fetched 2026-10-06): cover date June 2026; published 2026-04-01 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202606004",
+      "issueId": "absolute-flash-2025-14",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "14",
+      "title": "Absolute Flash #14",
+      "era": "after-absolute-evil",
+      "arc": "june-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-06",
+        "onsale": "2026-04-22",
+        "source": "DC Database, \"Absolute Flash Vol 1 14\" (rev 3898176, fetched 2026-10-06): cover date June 2026; published 2026-04-22 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Haining"
+        ]
+      }
+    },
+    {
+      "id": "202606005",
+      "issueId": "absolute-green-lantern-2025-13",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "13",
+      "title": "Absolute Green Lantern #13",
+      "era": "after-absolute-evil",
+      "arc": "june-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-06",
+        "onsale": "2026-04-08",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 13\" (rev 3940843, fetched 2026-10-06): cover date June 2026; published 2026-04-08 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Eleonora Carlini"
+        ]
+      }
+    },
+    {
+      "id": "202607001",
+      "issueId": "absolute-batman-2024-20",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "20",
+      "title": "Absolute Batman #20",
+      "era": "after-absolute-evil",
+      "arc": "july-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-07",
+        "onsale": "2026-05-13",
+        "source": "DC Database, \"Absolute Batman Vol 1 20\" (rev 3953984, fetched 2026-10-06): cover date July 2026; published 2026-05-13 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202607002",
+      "issueId": "absolute-wonder-woman-2024-20",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "20",
+      "title": "Absolute Wonder Woman #20",
+      "era": "after-absolute-evil",
+      "arc": "july-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-07",
+        "onsale": "2026-05-27",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 20\" (rev 3911489, fetched 2026-10-06): cover date July 2026; published 2026-05-27 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202607003",
+      "issueId": "absolute-superman-2025-19",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "19",
+      "title": "Absolute Superman #19",
+      "era": "after-absolute-evil",
+      "arc": "july-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-07",
+        "onsale": "2026-05-06",
+        "source": "DC Database, \"Absolute Superman Vol 1 19\" (rev 3913157, fetched 2026-10-06): cover date July 2026; published 2026-05-06 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202607004",
+      "issueId": "absolute-flash-2025-15",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "15",
+      "title": "Absolute Flash #15",
+      "era": "after-absolute-evil",
+      "arc": "july-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-07",
+        "onsale": "2026-05-20",
+        "source": "DC Database, \"Absolute Flash Vol 1 15\" (rev 3955548, fetched 2026-10-06): cover date July 2026; published 2026-05-20 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "id": "202607005",
+      "issueId": "absolute-green-lantern-2025-14",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "14",
+      "title": "Absolute Green Lantern #14",
+      "era": "after-absolute-evil",
+      "arc": "july-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-07",
+        "onsale": "2026-05-06",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 14\" (rev 3917651, fetched 2026-10-06): cover date July 2026; published 2026-05-06 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Sid Kotian"
+        ]
+      }
+    },
+    {
+      "id": "202607006",
+      "issueId": "absolute-martian-manhunter-2025-11",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "11",
+      "title": "Absolute Martian Manhunter #11",
+      "era": "after-absolute-evil",
+      "arc": "july-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-07",
+        "onsale": "2026-05-13",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 11\" (rev 3916037, fetched 2026-10-06): cover date July 2026; published 2026-05-13 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      },
+      "note": "Follows a real publication gap (Apr 2026)."
+    },
+    {
+      "id": "202607007",
+      "issueId": "absolute-green-arrow-2026-1",
+      "series": "Absolute Green Arrow",
+      "vol": "2026",
+      "num": "1",
+      "title": "Absolute Green Arrow #1",
+      "era": "after-absolute-evil",
+      "arc": "july-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-07",
+        "onsale": "2026-05-20",
+        "source": "DC Database, \"Absolute Green Arrow Vol 1 1\" (rev 3954084, fetched 2026-10-06): cover date July 2026; published 2026-05-20 per the page"
+      },
+      "seq": 7,
+      "credits": {
+        "writers": [
+          "Pornsak Pichetshote"
+        ],
+        "artists": [
+          "Rafael Albuquerque"
+        ]
+      },
+      "note": "Spins out of Absolute Evil #1."
+    },
+    {
+      "id": "202608001",
+      "issueId": "absolute-batman-2024-21",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "21",
+      "title": "Absolute Batman #21",
+      "era": "after-absolute-evil",
+      "arc": "august-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-08",
+        "onsale": "2026-06-17",
+        "source": "DC Database, \"Absolute Batman Vol 1 21\" (rev 3953987, fetched 2026-10-06): cover date August 2026; published 2026-06-17 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "id": "202608002",
+      "issueId": "absolute-wonder-woman-2024-21",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "21",
+      "title": "Absolute Wonder Woman #21",
+      "era": "after-absolute-evil",
+      "arc": "august-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-08",
+        "onsale": "2026-06-24",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 21\" (rev 3958990, fetched 2026-10-06): cover date August 2026; published 2026-06-24 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Dillon Snook"
+        ]
+      }
+    },
+    {
+      "id": "202608003",
+      "issueId": "absolute-superman-2025-20",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "20",
+      "title": "Absolute Superman #20",
+      "era": "after-absolute-evil",
+      "arc": "august-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-08",
+        "onsale": "2026-06-24",
+        "source": "DC Database, \"Absolute Superman Vol 1 20\" (rev 3944478, fetched 2026-10-06): cover date August 2026; published 2026-06-24 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval",
+          "Vicente Cifuentes"
+        ]
+      }
+    },
+    {
+      "id": "202608004",
+      "issueId": "absolute-flash-2025-16",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "16",
+      "title": "Absolute Flash #16",
+      "era": "after-absolute-evil",
+      "arc": "august-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-08",
+        "onsale": "2026-06-17",
+        "source": "DC Database, \"Absolute Flash Vol 1 16\" (rev 3912754, fetched 2026-10-06): cover date August 2026; published 2026-06-17 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Haining"
+        ]
+      }
+    },
+    {
+      "id": "202608005",
+      "issueId": "absolute-green-lantern-2025-15",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "15",
+      "title": "Absolute Green Lantern #15",
+      "era": "after-absolute-evil",
+      "arc": "august-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-08",
+        "onsale": "2026-06-03",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 15\" (rev 3928486, fetched 2026-10-06): cover date August 2026; published 2026-06-03 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Sid Kotian"
+        ]
+      }
+    },
+    {
+      "id": "202608006",
+      "issueId": "absolute-green-arrow-2026-2",
+      "series": "Absolute Green Arrow",
+      "vol": "2026",
+      "num": "2",
+      "title": "Absolute Green Arrow #2",
+      "era": "after-absolute-evil",
+      "arc": "august-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-08",
+        "onsale": "2026-06-17",
+        "source": "DC Database, \"Absolute Green Arrow Vol 1 2\" (rev 3954085, fetched 2026-10-06): cover date August 2026; published 2026-06-17 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Pornsak Pichetshote"
+        ],
+        "artists": [
+          "Rafael Albuquerque"
+        ]
+      }
+    },
+    {
+      "id": "202608007",
+      "issueId": "absolute-catwoman-2026-1",
+      "series": "Absolute Catwoman",
+      "vol": "2026",
+      "num": "1",
+      "title": "Absolute Catwoman #1",
+      "era": "after-absolute-evil",
+      "arc": "august-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-08",
+        "onsale": "2026-06-10",
+        "source": "DC Database, \"Absolute Catwoman Vol 1 1\" (rev 3950579, fetched 2026-10-06): cover date August 2026; published 2026-06-10 per the page"
+      },
+      "seq": 7,
+      "credits": {
+        "writers": [
+          "Scott Snyder",
+          "Che Grayson"
+        ],
+        "artists": [
+          "Bengal"
+        ]
+      },
+      "note": "Spins out of Absolute Batman #14."
+    },
+    {
+      "id": "202609001",
+      "issueId": "absolute-batman-2024-22",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "22",
+      "title": "Absolute Batman #22",
+      "era": "after-absolute-evil",
+      "arc": "september-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-09",
+        "onsale": "2026-07-08",
+        "source": "DC Database, \"Absolute Batman Vol 1 22\" (rev 3953989, fetched 2026-10-06): cover date September 2026; published 2026-07-08 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Werther Dell'Edera"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-wonder-woman-2024-22",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "22",
+      "title": "Absolute Wonder Woman #22",
+      "era": "after-absolute-evil",
+      "arc": "september-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-09",
+        "onsale": "2026-07-22",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 22\" (rev 3932585, fetched 2026-10-06): cover date September 2026; published 2026-07-22 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Dillon Snook"
+        ]
+      }
+    },
+    {
+      "id": "202609002",
+      "issueId": "absolute-superman-2025-21",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "21",
+      "title": "Absolute Superman #21",
+      "era": "after-absolute-evil",
+      "arc": "september-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-09",
+        "onsale": "2026-07-22",
+        "source": "DC Database, \"Absolute Superman Vol 1 21\" (rev 3944479, fetched 2026-10-06): cover date September 2026; published 2026-07-22 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Rafa Sandoval"
+        ]
+      }
+    },
+    {
+      "id": "202609003",
+      "issueId": "absolute-flash-2025-17",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "17",
+      "title": "Absolute Flash #17",
+      "era": "after-absolute-evil",
+      "arc": "september-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-09",
+        "onsale": "2026-07-15",
+        "source": "DC Database, \"Absolute Flash Vol 1 17\" (rev 3932604, fetched 2026-10-06): cover date September 2026; published 2026-07-15 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Haining"
+        ]
+      }
+    },
+    {
+      "id": "202609004",
+      "issueId": "absolute-green-lantern-2025-16",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "16",
+      "title": "Absolute Green Lantern #16",
+      "era": "after-absolute-evil",
+      "arc": "september-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-09",
+        "onsale": "2026-07-01",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 16\" (rev 3941705, fetched 2026-10-06): cover date September 2026; published 2026-07-01 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Sid Kotian"
+        ]
+      }
+    },
+    {
+      "id": "202609005",
+      "issueId": "absolute-martian-manhunter-2025-12",
+      "series": "Absolute Martian Manhunter",
+      "vol": "2025",
+      "num": "12",
+      "title": "Absolute Martian Manhunter #12",
+      "era": "after-absolute-evil",
+      "arc": "september-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-09",
+        "onsale": "2026-07-01",
+        "source": "DC Database, \"Absolute Martian Manhunter Vol 1 12\" (rev 3919774, fetched 2026-10-06): cover date September 2026; published 2026-07-01 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Deniz Camp"
+        ],
+        "artists": [
+          "Javier Rodríguez"
+        ]
+      },
+      "note": "Follows a real publication gap (Jun 2026). Final issue — series complete at 12."
+    },
+    {
+      "id": "202609006",
+      "issueId": "absolute-green-arrow-2026-3",
+      "series": "Absolute Green Arrow",
+      "vol": "2026",
+      "num": "3",
+      "title": "Absolute Green Arrow #3",
+      "era": "after-absolute-evil",
+      "arc": "september-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-09",
+        "onsale": "2026-07-15",
+        "source": "DC Database, \"Absolute Green Arrow Vol 1 3\" (rev 3955208, fetched 2026-10-06): cover date September 2026; published 2026-07-15 per the page"
+      },
+      "seq": 7,
+      "credits": {
+        "writers": [
+          "Pornsak Pichetshote"
+        ],
+        "artists": [
+          "Rafael Albuquerque"
+        ]
+      }
+    },
+    {
+      "id": "202609007",
+      "issueId": "absolute-catwoman-2026-2",
+      "series": "Absolute Catwoman",
+      "vol": "2026",
+      "num": "2",
+      "title": "Absolute Catwoman #2",
+      "era": "after-absolute-evil",
+      "arc": "september-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-09",
+        "onsale": "2026-07-08",
+        "source": "DC Database, \"Absolute Catwoman Vol 1 2\" (rev 3953536, fetched 2026-10-06): cover date September 2026; published 2026-07-08 per the page"
+      },
+      "seq": 8,
+      "credits": {
+        "writers": [
+          "Scott Snyder",
+          "Che Grayson"
+        ],
+        "artists": [
+          "Bengal"
+        ]
+      }
+    },
+    {
+      "id": "202610001",
+      "issueId": "absolute-batman-2024-23",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "23",
+      "title": "Absolute Batman #23",
+      "era": "after-absolute-evil",
+      "arc": "october-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-10",
+        "onsale": "2026-08-12",
+        "source": "DC Database, \"Absolute Batman Vol 1 23\" (rev 3955161, fetched 2026-10-06): cover date October 2026; published 2026-08-12 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-wonder-woman-2024-23",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "23",
+      "title": "Absolute Wonder Woman #23",
+      "era": "after-absolute-evil",
+      "arc": "october-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-10",
+        "onsale": "2026-08-26",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 23\" (rev 3957319, fetched 2026-10-06): cover date October 2026; published 2026-08-26 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "id": "202610002",
+      "issueId": "absolute-superman-2025-22",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "22",
+      "title": "Absolute Superman #22",
+      "era": "after-absolute-evil",
+      "arc": "october-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-10",
+        "onsale": "2026-08-05",
+        "source": "DC Database, \"Absolute Superman Vol 1 22\" (rev 3944480, fetched 2026-10-06): cover date October 2026; published 2026-08-05 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Juan Ferreyra"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-flash-2025-18",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "18",
+      "title": "Absolute Flash #18",
+      "era": "after-absolute-evil",
+      "arc": "october-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-10",
+        "onsale": "2026-08-19",
+        "source": "DC Database, \"Absolute Flash Vol 1 18\" (rev 3954486, fetched 2026-10-06): cover date October 2026; published 2026-08-19 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "id": "202610003",
+      "issueId": "absolute-green-lantern-2025-17",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "17",
+      "title": "Absolute Green Lantern #17",
+      "era": "after-absolute-evil",
+      "arc": "october-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-10",
+        "onsale": "2026-08-05",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 17\" (rev 3943277, fetched 2026-10-06): cover date October 2026; published 2026-08-05 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Sid Kotian"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-green-arrow-2026-4",
+      "series": "Absolute Green Arrow",
+      "vol": "2026",
+      "num": "4",
+      "title": "Absolute Green Arrow #4",
+      "era": "after-absolute-evil",
+      "arc": "october-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-10",
+        "onsale": "2026-08-19",
+        "source": "DC Database, \"Absolute Green Arrow Vol 1 4\" (rev 3954364, fetched 2026-10-06): cover date October 2026; published 2026-08-19 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Pornsak Pichetshote"
+        ],
+        "artists": [
+          "Rafael Albuquerque"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-catwoman-2026-3",
+      "series": "Absolute Catwoman",
+      "vol": "2026",
+      "num": "3",
+      "title": "Absolute Catwoman #3",
+      "era": "after-absolute-evil",
+      "arc": "october-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-10",
+        "onsale": "2026-08-26",
+        "source": "DC Database, \"Absolute Catwoman Vol 1 3\" (rev 3954133, fetched 2026-10-06): cover date October 2026; published 2026-08-26 per the page"
+      },
+      "seq": 7,
+      "credits": {
+        "writers": [
+          "Scott Snyder",
+          "Che Grayson"
+        ],
+        "artists": [
+          "Bengal"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-batman-2024-24",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "24",
+      "title": "Absolute Batman #24",
+      "era": "after-absolute-evil",
+      "arc": "november-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-11",
+        "onsale": "2026-09-23",
+        "source": "DC Database, \"Absolute Batman Vol 1 24\" (rev 3964037, fetched 2026-10-06): cover date November 2026; published 2026-09-23 per the page"
+      },
+      "seq": 1,
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-wonder-woman-2024-24",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "24",
+      "title": "Absolute Wonder Woman #24",
+      "era": "after-absolute-evil",
+      "arc": "november-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-11",
+        "onsale": "2026-09-23",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 24\" (rev 3961249, fetched 2026-10-06): cover date November 2026; published 2026-09-23 per the page"
+      },
+      "seq": 2,
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-superman-2025-23",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "23",
+      "title": "Absolute Superman #23",
+      "era": "after-absolute-evil",
+      "arc": "november-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-11",
+        "onsale": "2026-09-02",
+        "source": "DC Database, \"Absolute Superman Vol 1 23\" (rev 3944873, fetched 2026-10-06): cover date November 2026; published 2026-09-02 per the page"
+      },
+      "seq": 3,
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Juan Ferreyra"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-flash-2025-19",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "19",
+      "title": "Absolute Flash #19",
+      "era": "after-absolute-evil",
+      "arc": "november-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-11",
+        "onsale": "2026-09-23",
+        "source": "DC Database, \"Absolute Flash Vol 1 19\" (rev 3958902, fetched 2026-10-06): cover date November 2026; published 2026-09-23 per the page"
+      },
+      "seq": 4,
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Nick Robles"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-green-lantern-2025-18",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "18",
+      "title": "Absolute Green Lantern #18",
+      "era": "after-absolute-evil",
+      "arc": "november-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-11",
+        "onsale": "2026-09-02",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 18\" (rev 3944941, fetched 2026-10-06): cover date November 2026; published 2026-09-02 per the page"
+      },
+      "seq": 5,
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      }
+    },
+    {
+      "issueId": "absolute-green-arrow-2026-5",
+      "series": "Absolute Green Arrow",
+      "vol": "2026",
+      "num": "5",
+      "title": "Absolute Green Arrow #5",
+      "era": "after-absolute-evil",
+      "arc": "november-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-11",
+        "onsale": "2026-09-16",
+        "source": "DC Database, \"Absolute Green Arrow Vol 1 5\" (rev 3954365, fetched 2026-10-06): cover date November 2026; published 2026-09-16 per the page"
+      },
+      "seq": 6,
+      "credits": {
+        "writers": [
+          "Pornsak Pichetshote"
+        ],
+        "artists": [
+          "Rafael Albuquerque"
+        ]
+      }
+    }
+  ],
+  "legend": [
+    {
+      "term": "M",
+      "meaning": "Mandatory"
+    },
+    {
+      "term": "O",
+      "meaning": "Optional"
+    },
+    {
+      "term": "★",
+      "meaning": "Landmark"
+    }
+  ],
+  "maintenance": [
+    "Migrated from Absolute v7 (build v7, 17 Aug 2026) on 2026-10-06. Every date from the DC Database API, cited per row."
+  ]
+}
