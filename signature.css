@@ -1,0 +1,38 @@
+/* Absolute's own look: v7's "absolute" skin (flat black, a red rule under the
+   header, red era bars, mono uppercase labels, square controls), rebuilt from
+   tokens and look-only rules. Everything stays where the template puts it. */
+
+:root[data-skin="signature"] .phead { border-bottom: 2px solid var(--accent); }
+:root[data-skin="signature"] .pmeta { letter-spacing: .22em; text-transform: uppercase; }
+:root[data-skin="signature"] .pstats { letter-spacing: .08em; text-transform: uppercase; }
+
+/* the tab bar: a mono strip with a hard red underline */
+:root[data-skin="signature"] .tab { font-family: var(--font-mono); font-weight: 500; }
+
+/* era bars: red, with black type */
+:root[data-skin="signature"] .era-head { background-color: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+:root[data-skin="signature"] .era-head .byears,
+:root[data-skin="signature"] .era-head .bstats,
+:root[data-skin="signature"] .era-head .bdone,
+:root[data-skin="signature"] .era-head .bfinish { color: var(--accent-ink); }
+:root[data-skin="signature"] .era-head progress.bar { background-color: var(--paper); }
+:root[data-skin="signature"] .era-head progress.bar::-webkit-progress-bar { background-color: var(--paper); }
+:root[data-skin="signature"] .era-head progress.bar::-webkit-progress-value { background-color: var(--ink); }
+:root[data-skin="signature"] .era-head progress.bar::-moz-progress-bar { background-color: var(--ink); }
+
+/* arcs: a mono slug, not a card header */
+:root[data-skin="signature"] .arc-head h3 { font-family: var(--font-mono); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); }
+
+/* rows: display-face titles; read ones recede */
+:root[data-skin="signature"] .row .title { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .03em; }
+:root[data-skin="signature"] .row[data-s="read"] .title { color: var(--ink-soft); }
+
+/* controls: square, mono, uppercase; a pressed chip is solid red */
+:root[data-skin="signature"] .chip,
+:root[data-skin="signature"] .segbtn,
+:root[data-skin="signature"] .tool,
+:root[data-skin="signature"] .ftoggle,
+:root[data-skin="signature"] .b { border-radius: 0; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; }
+:root[data-skin="signature"] .chip[aria-pressed="true"],
+:root[data-skin="signature"] .chip.on { background-color: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+:root[data-skin="signature"] .search { font-family: var(--font-mono); }
