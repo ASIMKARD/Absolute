@@ -54,6 +54,10 @@ John approved v9 through a branch and one pull request, as for v8 (8 Oct).
   - v9 upgrades v8's per-month reviews once, from v7's untouched keys, as decided.
   - v8's per-month store is never written, so a rollback to v8 finds it as it was.
 - **Sync codes and backups are v4.** v8's (v3) and v7's (`ABSO1:`) still import.
+- **One plain reload shows a new build.** `index.html` links `styles.css`, `data.js` and
+  `app.js` at the build's hash (`?v=<build>`). The first v8 → v9 proof found that without it,
+  a reload within GitHub Pages' 10 minutes still showed v8: Chromium reused v8's scripts from
+  its memory cache. The fix is the template's (its `70-pwa` measures it).
 - **The Absolute skin brings back v7's five touches,** compared side by side with v7 in
   Research-Repo `sessions/2026-10-09-absolute-v9/screens/`:
   - big era numbers;
@@ -64,8 +68,8 @@ John approved v9 through a branch and one pull request, as for v8 (8 Oct).
 
 ### Checked on this data before the pull request
 - `python3 tools/verify_gate.py`: gate passed.
-- `node test/run.js`: 1538 assertions, 0 failed.
-- `npm run test:layout`: 352 checks, 0 failed (with 55-decor and 45-root on this skin).
+- `node test/run.js`: 1546 assertions, 0 failed.
+- `npm run test:layout`: 354 checks, 0 failed (with 55-decor and 45-root on this skin).
 - The v8 → v9 in-place proof: Research-Repo `sessions/2026-10-09-absolute-v9/upgrade-proof/`.
 
 ### Next
