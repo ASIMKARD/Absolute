@@ -91,7 +91,8 @@
         "--tab-size": "10.5px",
         "--tab-fit": "3.2vw",
         "--tab-case": "uppercase",
-        "--tab-track": ".2em"
+        "--tab-track": ".2em",
+        "--row-gutter": "26px"
       },
       "stylesheet": "signature.css"
     }

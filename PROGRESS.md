@@ -43,3 +43,31 @@ and the next open is v8 with everything intact. After those 10 minutes it opens 
 ### Next
 After the merge: verify every served file against `main` by sha256 at
 https://asimkard.github.io/Absolute/, and check the removed v7 files return 404.
+
+## v9: per-issue reviews and v7's five touches (session 6, 9 Oct 2026)
+
+John approved v9 through a branch and one pull request, as for v8 (8 Oct).
+
+### What changes from v8
+- **Reviews are per issue again,** as v7 kept them, with a ✎ on every row. The Reviews tab
+  lists them in reading order.
+  - v9 upgrades v8's per-month reviews once, from v7's untouched keys, as decided.
+  - v8's per-month store is never written, so a rollback to v8 finds it as it was.
+- **Sync codes and backups are v4.** v8's (v3) and v7's (`ABSO1:`) still import.
+- **The Absolute skin brings back v7's five touches,** compared side by side with v7 in
+  Research-Repo `sessions/2026-10-09-absolute-v9/screens/`:
+  - big era numbers;
+  - the row-number gutter;
+  - `[ ] [/] [X] [-]` marks;
+  - `//` arc prefixes;
+  - full-width era bars.
+
+### Checked on this data before the pull request
+- `python3 tools/verify_gate.py`: gate passed.
+- `node test/run.js`: 1538 assertions, 0 failed.
+- `npm run test:layout`: 352 checks, 0 failed (with 55-decor and 45-root on this skin).
+- The v8 → v9 in-place proof: Research-Repo `sessions/2026-10-09-absolute-v9/upgrade-proof/`.
+
+### Next
+After the merge: verify every served file against `main` by sha256, and check that the header
+reads v9.
