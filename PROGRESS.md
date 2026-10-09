@@ -43,3 +43,47 @@ and the next open is v8 with everything intact. After those 10 minutes it opens 
 ### Next
 After the merge: verify every served file against `main` by sha256 at
 https://asimkard.github.io/Absolute/, and check the removed v7 files return 404.
+
+## v9: per-issue reviews and v7's five touches (session 6, 9 Oct 2026)
+
+John approved v9 through a branch and one pull request, as for v8 (8 Oct).
+
+### What changes from v8
+- **Reviews are per issue again,** as v7 kept them, with a ✎ on every row. The Reviews tab
+  lists them in reading order.
+  - v9 upgrades v8's per-month reviews once, from v7's untouched keys, as decided.
+  - v8's per-month store is never written, so a rollback to v8 finds it as it was.
+- **Sync codes and backups are v4.** v8's (v3) and v7's (`ABSO1:`) still import.
+- **One plain reload shows a new build.** `index.html` links `styles.css`, `data.js` and
+  `app.js` at the build's hash (`?v=<build>`). The first v8 → v9 proof found that without it,
+  a reload within GitHub Pages' 10 minutes still showed v8: Chromium reused v8's scripts from
+  its memory cache. The fix is the template's (its `70-pwa` measures it).
+- **The Absolute skin brings back v7's five touches,** compared side by side with v7 in
+  Research-Repo `sessions/2026-10-09-absolute-v9/screens/`:
+  - big era numbers;
+  - the row-number gutter;
+  - `[ ] [/] [X] [-]` marks;
+  - `//` arc prefixes;
+  - full-width era bars.
+
+### Checked on this data before the pull request
+- `python3 tools/verify_gate.py`: gate passed.
+- `node test/run.js`: 1546 assertions, 0 failed.
+- `npm run test:layout`: 354 checks, 0 failed (with 55-decor and 45-root on this skin).
+- The v8 → v9 in-place proof (Research-Repo `sessions/2026-10-09-absolute-v9/upgrade-proof/`): 28 of 28,
+  twice, on `main` (`36fd088`) and this branch (`44f3abc`), behind a server with Pages' headers.
+  - One plain reload opens v9, and marks, the bookmark and the Night skin are intact.
+  - The reviews come back per issue, as John decided:
+    - December, left as migrated: v7's originals, exactly;
+    - January, edited in v8: the originals, plus the edit on the first issue;
+    - February, deleted: stays deleted;
+    - March, written in v8: on its first issue.
+  - v8's stores and v7's keys are byte for byte unchanged.
+  - v9's worker takes over in 2.8 s, and v8's cache is gone; other trackers' caches stay.
+  - It opens offline, and v8's sync code imports on a second device.
+  - The first run (20 of 28) found the reload that still showed v8. The template's stamped
+    links fixed it.
+
+### Next
+After the merge: verify every served file against `main` by sha256, and check that the header
+reads v9.

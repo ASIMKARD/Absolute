@@ -36,3 +36,45 @@
 :root[data-skin="signature"] .chip[aria-pressed="true"],
 :root[data-skin="signature"] .chip.on { background-color: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 :root[data-skin="signature"] .search { font-family: var(--font-mono); }
+
+/* v7's five touches (John, 8 Oct), as decorations: content on ::before and ::after
+   only, never moving a control. The build adds pointer-events: none and an empty
+   alternative for screen readers to every one. */
+
+/* 1. the big era numbers */
+:root[data-skin="signature"] .era-head .bname::before {
+  content: attr(data-n) " ";
+  font-family: var(--font-mono); font-weight: 500; font-size: calc(26px * var(--scale)); letter-spacing: 0;
+  color: var(--line);
+}
+
+/* 2. the row-number gutter, down the right edge (not in table view, where the row is one tight line) */
+:root[data-skin="signature"] .row::after {
+  content: attr(data-n);
+  position: absolute; top: var(--row-pad); right: 6px;
+  font-family: var(--font-mono); font-size: calc(9px * var(--scale)); line-height: 1.6; letter-spacing: .05em;
+  color: var(--ink-soft);
+}
+:root[data-skin="signature"][data-table="1"] .row::after { content: none; }
+
+/* 3. bracketed marks: the glyph is the mark, so the box goes */
+:root[data-skin="signature"] .row .mark,
+:root[data-skin="signature"] .row[data-s="reading"] .mark,
+:root[data-skin="signature"] .row[data-s="read"] .mark {
+  font-size: 0; background-color: transparent; border-color: transparent; color: var(--ink-soft);
+}
+:root[data-skin="signature"] .row .mark::after {
+  content: "[ ]";
+  font-family: var(--font-mono); font-size: calc(13px * var(--scale)); letter-spacing: -.04em; white-space: nowrap;
+}
+:root[data-skin="signature"] .row[data-s="reading"] .mark { color: var(--ink); }
+:root[data-skin="signature"] .row[data-s="reading"] .mark::after { content: "[/]"; }
+:root[data-skin="signature"] .row[data-s="read"] .mark { color: var(--accent); }
+:root[data-skin="signature"] .row[data-s="read"] .mark::after { content: "[X]"; }
+:root[data-skin="signature"] .row[data-s="skip"] .mark::after { content: "[-]"; }
+
+/* 4. the arc prefix */
+:root[data-skin="signature"] .arc-head h3::before { content: "// "; color: var(--accent); }
+
+/* 5. full-width era bars: the bar carries on to both edges of the screen */
+:root[data-skin="signature"] .era-head { box-shadow: -16px 0 0 var(--accent), 16px 0 0 var(--accent); }

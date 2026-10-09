@@ -42,7 +42,7 @@ python3 tools/build.py --check  # generated files fresh
 | Path | What it is |
 |---|---|
 | `dataset.json` | the master — **edit this** (and `signature.css` for the look) |
-| `data.js`, `sw.js`, `manifest.json` | **generated** by `tools/build.py` — never hand-edit |
+| `data.js`, `sw.js`, `manifest.json`, the `?v=` stamps in `index.html` | **generated** by `tools/build.py` — never hand-edit |
 | `index.html`, `app.js`, `styles.css`, `qrcode.js`, `fonts/` | the template's app shell |
 | `icons/` | Absolute's own icons |
 | `tools/`, `schema/`, `test/` | the template's build, gate, schema and suites |
@@ -250,7 +250,7 @@ it. Add the setting and the code that acts on it in the same change, or not at a
   everyone's.
 
 ### GitHub Pages caches every file for 10 minutes — [applies]
-Pages sends `max-age=600`. The Absolute upgrade proof (session 5) caught three
+Pages sends `max-age=600`. The Absolute upgrade proofs (sessions 5 and 6) caught four
 consequences, and a test server that sends `no-store` had hidden all of them:
 - **A new worker can precache the old deploy.** `addAll` goes through the
   browser's HTTP cache, so the worker stored v7's files under v8's cache name.
@@ -262,11 +262,20 @@ consequences, and a test server that sends `no-store` had hidden all of them:
   and the stylesheet's `--skin-ok` before anything reads them. On a mismatch it
   loads both again at `?r=<time>` and starts over, once; if they're still stale
   it says so and never loops.
-- **Within those minutes, the first reopen can still show the old build.** The
-  old worker serves its own page from the HTTP cache. The new worker takes over
-  behind it, and the next open is the new build. Nothing a new worker does can
-  reach that page; `WindowClient.navigate()` closes it in headless Chromium, so
-  it isn't used.
+- **A reload can show the whole old build** (the v8 → v9 proof, session 6). The
+  page was fresh, but Chromium reused v8's `app.js` and `data.js` from its memory
+  cache, and with the same data shape the check above can't tell. The build now
+  stamps `index.html`'s links to `styles.css`, `data.js` and `app.js` with its hash
+  (`?v=<build>`), so every build has new addresses. `70-pwa` measures one reload,
+  and the same reload without the stamps (it shows the old build). Offline, the
+  worker answers a stamped address from the copy it stored without one
+  (`ignoreSearch`). Never hand-edit a stamp: `--check` catches a stale one.
+- **From a v2 worker, the first reopen can still show the old build.** Within
+  those minutes v7's worker served its own page from the HTTP cache. The new
+  worker takes over behind it, and the next open is the new build. Nothing a new
+  worker does can reach that page; `WindowClient.navigate()` closes it in headless
+  Chromium, so it isn't used. A v3 worker checks the page with the server, so
+  from v8 on one reload shows the new build (the v8 → v9 proof, 28 of 28).
 
 Test with `serve(dir, { pages: true })` (`test/layout/lib.js`), which sends
 Pages' headers. `page.waitForFunction` doesn't wait for an async check: its
