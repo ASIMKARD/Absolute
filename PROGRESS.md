@@ -35,14 +35,16 @@ Within 10 minutes of using v7, the first reopen of the app can still show v7. Gi
 the browser keep v7's page that long, and v7's worker serves it. v8's worker takes over behind it,
 and the next open is v8 with everything intact. After those 10 minutes it opens straight into v8.
 
-### Open (John)
+### Open (John) — resolved in v9
 - **The signature skin couldn't carry** the big era numerals, the row-number gutter, the bracketed
   `[X]` marks, the `//` arc prefix or full-width era bars. Each one would move things, which skins
-  may not do.
+  may not do. John allowed decorations on 8 Oct, and v9 brings all five back (below).
 
-### Next
-After the merge: verify every served file against `main` by sha256 at
-https://asimkard.github.io/Absolute/, and check the removed v7 files return 404.
+### Live (8 Oct)
+Merged as `36fd088` (ASIMKARD/Absolute#1):
+- every served file matched `main` by sha256 (180 files);
+- the removed v7 files returned 404;
+- Chromium read v8.
 
 ## v9: per-issue reviews and v7's five touches (session 6, 9 Oct 2026)
 
@@ -84,6 +86,14 @@ John approved v9 through a branch and one pull request, as for v8 (8 Oct).
   - The first run (20 of 28) found the reload that still showed v8. The template's stamped
     links fixed it.
 
-### Next
-After the merge: verify every served file against `main` by sha256, and check that the header
-reads v9.
+### Live and verified (9 Oct)
+Merged as `2c03d99` (ASIMKARD/Absolute#2). Pages served v9's worker within 25 s of the merge.
+- **Every file by hash:** all 182 files on `main` match https://asimkard.github.io/Absolute/ by
+  sha256, and the bare address serves `index.html`. The 5 dot-files are skipped, since Pages
+  doesn't serve them.
+- **v7's 5 removed files** still return 404.
+- **The live `data.js`** is version 9, and the cache is `absolute-bd988f4e80f7`.
+- **Real Chromium on the live site,** with TLS verification on, reads "v9" in the header, in the
+  Absolute skin, with no errors.
+- **The record:** Research-Repo `sessions/2026-10-09-absolute-v9/live-verify.txt`, with the
+  script `verify-live.sh`.
