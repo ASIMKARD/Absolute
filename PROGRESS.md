@@ -125,3 +125,29 @@ John approved v10 (29 Oct), in place, through a branch and one pull request, as 
   - 0 differences in 982 elements over 15 views (landing, an era open, an arc's rows, scrolled, Reading × 320, 390,
     1024 px);
   - every differing pixel is inside the version label (v9 → v10), and 0 outside it in all 15 views.
+
+### Commit 2: the 8 issues released since v9
+- **The rows follow the change report John approved (30 Oct):** Research-Repo
+  `sessions/2026-10-29-absolute-v10/change-report.md`. `add_rows.py` from that folder wrote them, and the dataset now
+  equals the approved draft, but for the frame and accent lines. 142 rows (v9: 134):
+  - **December 2026, a new arc:** Absolute Batman #25, Wonder Woman #25, Superman #24, Flash #20, Green Lantern #19 and
+    Green Arrow #6, then DC All In Saga: Darkseid vs. the World #1 (EVENT, optional; John, 29 Oct).
+  - **November 2026:** Absolute Cassandra Cain: The Shadow's Hand #1 (SOLO, optional, the Catwoman strand; John, 29 Oct).
+  - Every date is cited to its DC Database page and revision, fetched 29 Oct, as v8 and v9 cite theirs.
+  - v9's 134 rows keep their positions; the new ones are 135–142. No id is removed.
+  - The compact QR code is tied to the list, so v9's compact codes stop importing, as at every data update. The full
+    code and the backup file still import.
+- **`frame-ref.json` is now v9's own shell on this data:** `27dca56`, with this `dataset.json` (without the two lines v9
+  doesn't know), built by its own `build.py` and captured. 47-frame-v9 compares v10 with exactly "v9's look, today's
+  issues", so a data update can't trip it.
+- **The build is v10** (`git show 27dca56:data.js > data.js`, then one build).
+
+**Checked:**
+- **The gate:** 142 rows, 0 failures, 0 warnings.
+- **Harness:** 1719 assertions, 0 failed. **Layout:** 477 checks, 0 failed.
+- **The Absolute skin against v9's shell on the same data:**
+  - 0 differences in the inventory, 15 views;
+  - **0 pixels differ** in all 15 views (both read v10).
+- **Against live v9 itself** (390 px), only the figures the new rows change differ: 133 → 141 to read, 1.4 → 1.5 days
+  left, 134 → 142 issues, After Absolute Evil 78 → 86.
+- **"One colour" in Pull** draws both eras in `#C90030`, and 45-root measures every text on them at 4.5:1 or more.
