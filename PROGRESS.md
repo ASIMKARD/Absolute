@@ -151,3 +151,17 @@ John approved v10 (29 Oct), in place, through a branch and one pull request, as 
 - **Against live v9 itself** (390 px), only the figures the new rows change differ: 133 → 141 to read, 1.4 → 1.5 days
   left, 134 → 142 issues, After Absolute Evil 78 → 86.
 - **"One colour" in Pull** draws both eras in `#C90030`, and 45-root measures every text on them at 4.5:1 or more.
+
+### The in-place upgrade proof, v9 → v10
+Research-Repo `sessions/2026-10-29-absolute-v10/upgrade-proof/`, in real Chromium on a profile kept on disk, behind a
+server with Pages' headers. v9 is `main` (`27dca56`), and v10 is this branch at `6fd322b`.
+- **24 of 24 with Pull picked** (the x frame) and **24 of 24 with the Absolute skin** (the v9 frame). One plain reload:
+  - opens v10 on the skin's frame;
+  - keeps every mark, the bookmark, the review and the skin;
+  - shows all 142 rows, the 8 new ones unread at 135–142;
+  - leaves every stored key but the settings byte for byte as v9 left them.
+- **The handover:** v10's worker is in control in 2.8 s. v9's cache is gone, v10's 22 files match byte for byte, and other
+  trackers' caches stay.
+- **Offline** it opens as v10. **On a second device,** v9's full sync code brings every mark, the bookmark and each
+  review.
+- Served v9 as if it were v10, the same proof fails 5 checks, so it can tell.
