@@ -9,6 +9,7 @@
     "span": "2024–2026",
     "theme": "#0D0616",
     "background": "#0D0616",
+    "accent": "#E8123C",
     "searchUrl": "https://dc.fandom.com/wiki/Special:Search?query=",
     "versionStart": 8,
     "strictCredits": true,
@@ -94,7 +95,8 @@
         "--tab-track": ".2em",
         "--row-gutter": "26px"
       },
-      "stylesheet": "signature.css"
+      "stylesheet": "signature.css",
+      "frame": "v9"
     }
   },
   "deliverables": {

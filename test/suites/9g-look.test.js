@@ -6,7 +6,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const { ROOT, build, boot, wait, basic, loadData, copyFixture, readJSON, writeJSON, openSettings } = require('../lib/helpers');
+const { ROOT, FIX, build, boot, wait, basic, loadData, copyFixture, readJSON, writeJSON, openSettings, openCards } = require('../lib/helpers');
 
 const ATTRS = ['data-skin', 'data-paper', 'data-eras', 'data-text', 'data-density', 'data-tap', 'data-marks', 'data-dys'];
 
@@ -70,6 +70,7 @@ module.exports = async function (t) {
   // ------------------------------------------------ mark styles change the glyphs (S-5, XM-17)
   $('#tab-list').click();
   $('.era-head').click();
+  openCards($('.era'));
   const row = $('.row:not(.inert)'), mark = () => row.querySelector('.mark').textContent;
   const glyphs = {};
   for (const style of ['box', 'dot', 'tick']) {
@@ -82,8 +83,19 @@ module.exports = async function (t) {
     glyphs[style].push($('.row[data-i="' + row.dataset.i + '"] .mark').textContent);
     $('.row[data-i="' + row.dataset.i + '"] .mark').click();                                // back to unread
   }
-  t.eq('box, dot and tick-and-cross marks: unread / read / skipped glyphs', glyphs, { box: ['☐', '✓', '⊘'], dot: ['○', '●', '⊘'], tick: ['', '✓', '✗'] });
+  t.eq('box, dot and tick-and-cross marks: unread / read / skipped glyphs (the x frame\'s box is the reference tracker\'s: empty, ✓, ―)', glyphs,
+       { box: ['', '✓', '―'], dot: ['○', '●', '⊘'], tick: ['', '✓', '✗'] });
   t.ok('…the label for screen readers still names the state', /— Unread$/.test($('.row[data-i="' + row.dataset.i + '"] .mark').getAttribute('aria-label')));
+  {   // the v9 frame keeps its own Box glyphs (John, 25 Oct)
+    const v9 = build(path.join(FIX, 'sig-v9', 'dataset.json'), { label: 'look-v9' }), a9 = boot(v9.out, { storage: {} });
+    await wait(20);
+    const d9 = a9.document, m9 = () => d9.querySelector('.row[data-i="' + i9 + '"] .mark');
+    d9.querySelector('[data-act="expand-all"]').click();
+    const i9 = d9.querySelector('.row:not(.inert)').dataset.i, seen = [m9().textContent];
+    m9().click(); m9().click(); seen.push(m9().textContent); m9().click(); seen.push(m9().textContent);
+    t.eq('…the v9 frame keeps its Box glyphs: ☐, ✓, ⊘', [d9.documentElement.getAttribute('data-frame')].concat(seen), ['v9', '☐', '✓', '⊘']);
+    a9.window.close();
+  }
 
   // ------------------------------------------------ the one store, and the next visit
   await wait(450);
@@ -152,4 +164,31 @@ module.exports = async function (t) {
   await wait(20);
   t.ok('…and so is a stylesheet with no beacon at all', /out of date \(missing\)/.test(app.document.querySelector('#toastMsg').textContent));
   app.window.close();
+
+  // ------------------------------------------------ era colours (session 7): each era hands the stylesheet its numbers
+  app = boot(b.out, { storage: seen });
+  await wait(20);
+  const tokens = el => Object.fromEntries((el.getAttribute('style') || '').split(';').filter(Boolean).map(x => x.split(':').map(y => y.trim())));
+  const secs = [...app.document.querySelectorAll('section.era')].map(s => [+s.dataset.e, tokens(s)]);
+  const six = (k, p) => [[k['--' + p + '-l'], k['--' + p + '-c'], k['--' + p + '-h']].map(Number), [k['--' + p + '-sl'], k['--' + p + '-sc'], k['--' + p + '-sh']].map(Number)];
+  t.eq('every era section carries its index and, for Pull, the colour it is drawn in (--ec…) and the one "One colour" draws (--em…), tab and strip, as numbers from data.js',
+       secs.filter(([e, k]) => k['--ei'] !== String(e) || k['--ec'] !== '1' || JSON.stringify(six(k, 'ec')) !== JSON.stringify([D.eras[e].pull.tab, D.eras[e].pull.strip]) ||
+         JSON.stringify(six(k, 'em')) !== JSON.stringify([D.pullMono.tab, D.pullMono.strip])).map(([e]) => e), []);
+  t.eq('…an era with a tracker colour is drawn in it, the others in the palette by index', D.eras.map(e => e.pull.hex),
+       D.eras.map((e, i) => e.colour ? e.colour.hex : JSON.parse(require('child_process').spawnSync('python3', [path.join(ROOT, 'tools', 'build.py'), '--pull-palette'], { encoding: 'utf8' }).stdout)[i % 11].hex));
+  app.window.close();
+  {
+    // an older data.js, from before Pull's colours (a stale mix within Pages' 10 minutes): loaded again, never drawn half-done
+    const out = path.join(copyFixture('basic', 'old-data'), 'out');
+    fs.cpSync(b.out, out, { recursive: true });
+    const OD = loadData(out);
+    OD.eras.forEach(e => { delete e.pull; delete e.colour; });
+    delete OD.pullMono;
+    fs.writeFileSync(path.join(out, 'data.js'), 'window.TRACKER_DATA=' + JSON.stringify(OD) + ';\n');
+    app = boot(out, { storage: { [OD.franchise.key + ':v3:settings']: JSON.stringify({ v: 3, migrated: { format: 'v2' } }) } });
+    await wait(20);
+    t.ok('an older data.js without Pull\'s colours is caught as a stale mix: loaded again where no cache holds it, before anything is drawn',
+         !!app.document.querySelector('script[src^="./data.js?r="]') && /Updating to the latest version/.test(app.document.getElementById('app').textContent));
+    app.window.close();
+  }
 };

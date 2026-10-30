@@ -97,3 +97,31 @@ Merged as `2c03d99` (ASIMKARD/Absolute#2). Pages served v9's worker within 25 s 
   Absolute skin, with no errors.
 - **The record:** Research-Repo `sessions/2026-10-09-absolute-v9/live-verify.txt`, with the
   script `verify-live.sh`.
+
+## v10: the template's session 8 work, and the issues since v9 (session 8, 29–30 Oct 2026)
+
+John approved v10 (29 Oct), in place, through a branch and one pull request, as v8 and v9 were. `main` was tagged
+`v9-final` (`27dca56`) first; that tag is the one-step rollback.
+
+### Commit 1: the template, with v9's data
+- **The template is copied in** from its merged `main` (`b8d9da5`; PR #9): every file it tracks, except its own
+  `PROGRESS.md`, `FEATURE-INVENTORY.md`, demo `dataset.json`, `README.md`, `CLAUDE.md`, `icons/` and `workbook.xlsx`.
+  Absolute's own files stay, and none of them is removed. The copy brings `.github/workflows/version-tag.yml`, so a merge
+  that changes the version is tagged `vN`.
+- **The dataset gains two lines** and nothing else:
+  - `"frame": "v9"` in the signature block: Absolute's own skin keeps v9's arrangement exactly (John, 25 Oct);
+  - `franchise.accent` `#E8123C`, v7's crimson: "One colour" in Pull draws it as `#C90030` (John, 29 Oct).
+- **`frame-ref.json`** is the Absolute skin as v9 (`27dca56`) draws it, captured with
+  `node test/layout/ref/capture-frame.js --dir <27dca56> --out frame-ref.json`. 47-frame-v9 holds the skin to it on
+  every push.
+- **`CLAUDE.md`:** in place is the standard route, the rollback tags, the v9 frame and its reference, and the accent.
+  The rules it shares with the template are re-synced from the template's.
+- **The build is v10** (from v9's `data.js`).
+
+**Checked:**
+- **The gate:** 134 rows, 0 failures, 0 warnings.
+- **Harness:** 1719 assertions, 0 failed. **Layout:** 477 checks, 0 failed, 47-frame-v9's run on this data included.
+- **The skin against v9 itself** (`27dca56`, served with Pages' headers):
+  - 0 differences in 982 elements over 15 views (landing, an era open, an arc's rows, scrolled, Reading × 320, 390,
+    1024 px);
+  - every differing pixel is inside the version label (v9 → v10), and 0 outside it in all 15 views.
