@@ -97,3 +97,71 @@ Merged as `2c03d99` (ASIMKARD/Absolute#2). Pages served v9's worker within 25 s 
   Absolute skin, with no errors.
 - **The record:** Research-Repo `sessions/2026-10-09-absolute-v9/live-verify.txt`, with the
   script `verify-live.sh`.
+
+## v10: the template's session 8 work, and the issues since v9 (session 8, 29–30 Oct 2026)
+
+John approved v10 (29 Oct), in place, through a branch and one pull request, as v8 and v9 were. `main` was tagged
+`v9-final` (`27dca56`) first; that tag is the one-step rollback.
+
+### Commit 1: the template, with v9's data
+- **The template is copied in** from its merged `main` (`b8d9da5`; PR #9): every file it tracks, except its own
+  `PROGRESS.md`, `FEATURE-INVENTORY.md`, demo `dataset.json`, `README.md`, `CLAUDE.md`, `icons/` and `workbook.xlsx`.
+  Absolute's own files stay, and none of them is removed. The copy brings `.github/workflows/version-tag.yml`, so a merge
+  that changes the version is tagged `vN`.
+- **The dataset gains two lines** and nothing else:
+  - `"frame": "v9"` in the signature block: Absolute's own skin keeps v9's arrangement exactly (John, 25 Oct);
+  - `franchise.accent` `#E8123C`, v7's crimson: "One colour" in Pull draws it as `#C90030` (John, 29 Oct).
+- **`frame-ref.json`** is the Absolute skin as v9 (`27dca56`) draws it, captured with
+  `node test/layout/ref/capture-frame.js --dir <27dca56> --out frame-ref.json`. 47-frame-v9 holds the skin to it on
+  every push.
+- **`CLAUDE.md`:** in place is the standard route, the rollback tags, the v9 frame and its reference, and the accent.
+  The rules it shares with the template are re-synced from the template's.
+- **The build is v10** (from v9's `data.js`).
+
+**Checked:**
+- **The gate:** 134 rows, 0 failures, 0 warnings.
+- **Harness:** 1719 assertions, 0 failed. **Layout:** 477 checks, 0 failed, 47-frame-v9's run on this data included.
+- **The skin against v9 itself** (`27dca56`, served with Pages' headers):
+  - 0 differences in 982 elements over 15 views (landing, an era open, an arc's rows, scrolled, Reading × 320, 390,
+    1024 px);
+  - every differing pixel is inside the version label (v9 → v10), and 0 outside it in all 15 views.
+
+### Commit 2: the 8 issues released since v9
+- **The rows follow the change report John approved (30 Oct):** Research-Repo
+  `sessions/2026-10-29-absolute-v10/change-report.md`. `add_rows.py` from that folder wrote them, and the dataset now
+  equals the approved draft, but for the frame and accent lines. 142 rows (v9: 134):
+  - **December 2026, a new arc:** Absolute Batman #25, Wonder Woman #25, Superman #24, Flash #20, Green Lantern #19 and
+    Green Arrow #6, then DC All In Saga: Darkseid vs. the World #1 (EVENT, optional; John, 29 Oct).
+  - **November 2026:** Absolute Cassandra Cain: The Shadow's Hand #1 (SOLO, optional, the Catwoman strand; John, 29 Oct).
+  - Every date is cited to its DC Database page and revision, fetched 29 Oct, as v8 and v9 cite theirs.
+  - v9's 134 rows keep their positions; the new ones are 135–142. No id is removed.
+  - The compact QR code is tied to the list, so v9's compact codes stop importing, as at every data update. The full
+    code and the backup file still import.
+- **`frame-ref.json` is now v9's own shell on this data:** `27dca56`, with this `dataset.json` (without the two lines v9
+  doesn't know), built by its own `build.py` and captured. 47-frame-v9 compares v10 with exactly "v9's look, today's
+  issues", so a data update can't trip it.
+- **The build is v10** (`git show 27dca56:data.js > data.js`, then one build).
+
+**Checked:**
+- **The gate:** 142 rows, 0 failures, 0 warnings.
+- **Harness:** 1719 assertions, 0 failed. **Layout:** 477 checks, 0 failed.
+- **The Absolute skin against v9's shell on the same data:**
+  - 0 differences in the inventory, 15 views;
+  - **0 pixels differ** in all 15 views (both read v10).
+- **Against live v9 itself** (390 px), only the figures the new rows change differ: 133 → 141 to read, 1.4 → 1.5 days
+  left, 134 → 142 issues, After Absolute Evil 78 → 86.
+- **"One colour" in Pull** draws both eras in `#C90030`, and 45-root measures every text on them at 4.5:1 or more.
+
+### The in-place upgrade proof, v9 → v10
+Research-Repo `sessions/2026-10-29-absolute-v10/upgrade-proof/`, in real Chromium on a profile kept on disk, behind a
+server with Pages' headers. v9 is `main` (`27dca56`), and v10 is this branch at `6fd322b`.
+- **24 of 24 with Pull picked** (the x frame) and **24 of 24 with the Absolute skin** (the v9 frame). One plain reload:
+  - opens v10 on the skin's frame;
+  - keeps every mark, the bookmark, the review and the skin;
+  - shows all 142 rows, the 8 new ones unread at 135–142;
+  - leaves every stored key but the settings byte for byte as v9 left them.
+- **The handover:** v10's worker is in control in 2.8 s. v9's cache is gone, v10's 22 files match byte for byte, and other
+  trackers' caches stay.
+- **Offline** it opens as v10. **On a second device,** v9's full sync code brings every mark, the bookmark and each
+  review.
+- Served v9 as if it were v10, the same proof fails 5 checks, so it can tell.

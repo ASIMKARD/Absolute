@@ -8,25 +8,38 @@ the first section is Absolute's own.
 
 - **`main` is live** (GitHub Pages, https://asimkard.github.io/Absolute/). Nothing
   reaches it except through a pull request John merges, and only once it all passes
-  on this repo's data: the harness, the layout suite, the verify gate and CI.
-- **Never edit any repo without John's explicit say-so.** John approved upgrading
-  this repo in place for the v8 pilot (8 Oct 2026), a one-off. Any later change here
-  needs his say-so again. Every other repo is read-only unless he says otherwise
-  (the template's `CLAUDE.md` holds the full repo-safety rule).
-- **Rollback:** `v7-final` tags v7 (`7304f82`). Reverting `main` to it restores v7
-  exactly; v8 never wrote v7's saved progress, so v7 reads it as it was.
+  on this repo's data: the harness, the layout suite, the verify gate, the in-place
+  upgrade proof and CI.
+- **Never edit any repo without John's explicit say-so,** given per update. Updates go
+  in place, on this repo, through a branch and a pull request John merges: the standard
+  route for every tracker (John, 23 Oct; the template's `CLAUDE.md`). He approved v8
+  (8 Oct), v9 (9 Oct) and v10 (29 Oct). Every other repo is read-only unless he says
+  otherwise.
+- **Rollback:** John tags `main` before each update. `v9-final` (`27dca56`) is v10's
+  one-step rollback; `v8-final` (`36fd088`) and `v7-final` (`7304f82`) are the earlier
+  ones. Reverting `main` to a tag restores that version exactly: no version writes an
+  older one's saved progress.
+- **Absolute's own skin keeps the v9 frame** (`"frame": "v9"` in `franchise.signature`;
+  John, 25 Oct): the template's arrangement as it was up to v9, exactly. Pull and the
+  other shared skins take the X-Men tracker's layout. `test/layout/47-frame-v9.test.js`
+  measures this skin against `frame-ref.json` on every push: v9's own shell (`27dca56`)
+  built on this repo's data. Re-capture it only after John has seen a difference
+  (`MIGRATING.md` §5).
+- **"One colour" in Pull** draws Absolute's crimson, `franchise.accent` `#E8123C`,
+  darkened by the build to `#C90030` (John, 29 Oct). Absolute's own skin doesn't use it.
 - **Template changes go to the template first.** The app shell (`index.html`,
   `app.js`, `styles.css`), `tools/`, `schema/` and `test/` are the template's; fix
   them there, prove them there, then copy them here. Absolute's own files are
-  `dataset.json`, `signature.css`, `icons/`, `README.md`, this file and `PROGRESS.md`.
+  `dataset.json`, `signature.css`, `frame-ref.json`, `icons/`, `README.md`, this file
+  and `PROGRESS.md`.
 - Each session works on its own branch and pushes it. Commit everything: sessions
   start from a fresh container. Report the **assertion count** of both suites.
   Update `PROGRESS.md` at the end of every step. Stop cleanly: every step ends
   committed, pushed and green.
 - **Every date is fetched and cited, never recalled.** Each row's `date.source`
-  names the DC Database page and revision. The research (the API caches, the
-  change report John approved) is in Research-Repo
-  `sessions/2026-10-06-absolute/`.
+  names the DC Database page and revision. The research (the API caches and the
+  change reports John approved) is in Research-Repo: `sessions/2026-10-06-absolute/`
+  (v8) and `sessions/2026-10-29-absolute-v10/` (v10).
 
 ## The loop
 
@@ -43,10 +56,12 @@ python3 tools/build.py --check  # generated files fresh
 |---|---|
 | `dataset.json` | the master — **edit this** (and `signature.css` for the look) |
 | `data.js`, `sw.js`, `manifest.json`, the `?v=` stamps in `index.html` | **generated** by `tools/build.py` — never hand-edit |
+| `frame-ref.json` | Absolute's skin as v9 draws it on this data, which `test/layout/47-frame-v9` holds it to |
 | `index.html`, `app.js`, `styles.css`, `qrcode.js`, `fonts/` | the template's app shell |
 | `icons/` | Absolute's own icons |
 | `tools/`, `schema/`, `test/` | the template's build, gate, schema and suites |
 | `README.md`, `BUILD-NOTES.md`, `MIGRATING.md`, `.claude/skills/comic-tracker-build/` | this tracker; conventions; migrating; the Skill |
+| `.github/workflows/harness.yml`, `.github/workflows/version-tag.yml` | CI on every push; a merge into `main` that changes the readable version is tagged `vN` |
 
 ## Data rules (v3)
 - **`id` is the progress key and never changes.** Migrated trackers keep their old
@@ -65,6 +80,9 @@ python3 tools/build.py --check  # generated files fresh
   interpolate, never write series data from memory.
 - **Events state their era** in `dataset.json` (`events: [{id, era}]`); chapters
   the tracker doesn't have are placed inside that era by date then event order.
+- **An era's own colour** (`eras[].colour`, `#RRGGBB`, optional) is drawn exactly
+  as given in Pull (John, 12 Oct), and ignored by every other skin. The build warns,
+  never fails, when white text on it is under 4.5:1.
 - **Credits**: full canonical names, never surnames alone. Missing credits warn
   (coverage %), and fail only under `strictCredits`.
 - **Durations (per format), whole minutes.**
@@ -84,6 +102,12 @@ python3 tools/build.py --check  # generated files fresh
   ids listed, or every later position shifts.
 
 ## UI rules (v3)
+- **Two frames (John, 25 Oct).** The shared skins use the x frame, the X-Men
+  tracker's arrangement. A signature skin may keep the v9 frame (`"frame": "v9"`),
+  the template's arrangement as it was up to v9, exactly; Absolute's own skin
+  does. Scope every x-only rule to `:root[data-frame="x"]` and split a render path
+  only where the structure differs; `test/layout/47-frame-v9` fails on any change
+  to the v9 frame. Within a frame, a skin never moves a control.
 - **Data-driven visibility: a rule, not a one-off (decided 4 Oct).** A control or
   section renders only when the dataset gives it something to do. The data
   decides this, never a setting or a skin; skins never hide a control.
@@ -153,6 +177,14 @@ and Settings rows split their buttons. The page never got wider, so the sweep pa
 page overflow" is not "it fits": `10-sweep` now checks every control against every box
 that clips it.
 
+### CI draws text with full hinting — [applies]
+GitHub's Ubuntu runner hints text fully by default, which rounds every glyph to whole
+pixels. A text-sized box measured in a session moved by 1 or 2 px in CI (47-frame-v9,
+28 Oct). `test/layout/lib.js` launches Chromium without hinting on every machine, so
+measure anything exact through it, never through a browser of your own. Symbols the
+vendored fonts lack (★ ✎ ↗ ✓) come from each machine's own fonts; anything measured to
+the pixel draws them from one face (`test/layout/ref/frame-map.js`).
+
 ### grep can't see multi-line CSS selectors — [applies]
 A grouped rule spanning lines won't match `grep '\.tabs.*{'`. Ask the browser:
 iterate `document.styleSheets` and test `el.matches(rule.selectorText)`.
@@ -208,7 +240,8 @@ v2: base `:root`, seven `data-bg` swatches, the signature-skin palette, the
 `--eN-t/-a/-d` era ramp per scheme, and `.era[data-e=N]` rules that stopped at
 era 25 while the ramp went to 34 — rows past the lowest ceiling went unstyled.
 v3: one colour-token block; ramps generated, no cap (60+ eras), and a guard
-asserts exactly one token block. Era tints are pale washes.
+asserts exactly one token block. Era tints are pale washes, except in Pull, whose
+era boxes are solid with white text (John, 9 Oct; `BUILD-NOTES.md`, "Era colours").
 **Design dark skins against the surface.** The first dark skin had 39 of 54
 era colours failing WCAG AA (worst 1.35:1). Measure contrast; don't eyeball.
 **How v3 holds this (session 4):**
@@ -222,6 +255,15 @@ era colours failing WCAG AA (worst 1.35:1). Measure contrast; don't eyeball.
 - `test/layout/40-look` measures contrast for every skin × paper and for 64 eras.
   Its first run caught Night's control outlines at 2.95:1 on the warm and mint
   papers: at the same HSL lightness, a yellowish hue is brighter.
+- **Session 7:** a text is measured as drawn (its alpha blended in), against what
+  is painted behind it. That is an opaque background, or Pull's folder tab, whose
+  colour is a background layer.
+  - A browser draws "85 %" at 8-bit alpha (217/255); the build blends the same.
+  - Chromium reports computed colours to 7 figures. At the very edge of the gamut that
+    rounding stepped outside it (by 3e-8): judge a colour by the pixels it draws, or keep a
+    step in hand.
+  - Pull's default era colours are the X-Men tracker's eleven, each nudged darker only as
+    far as it must to pass (John, 13 Oct; `BUILD-NOTES.md`, "Era colours").
 - Every control must be at least 24 × 24 px (WCAG 2.5.8). Creator names inside a
   line of credits are the inline exception.
 
@@ -306,5 +348,6 @@ Never synthetic elements. Boot the real `index.html` + generated `data.js`.
 2. `python3 tools/verify_gate.py` — gate passed.
 3. `node test/run.js` and `npm run test:layout` — 0 failures, counts reported.
 4. Manifest and icons are Absolute's own.
-5. After a merge, verify the deploy **by hash**, every file, not HTTP 200; GitHub
+5. `test/layout/47-frame-v9` passes against `frame-ref.json`: Absolute's own skin is v9's, exactly.
+6. After a merge, verify the deploy **by hash**, every file, not HTTP 200; GitHub
    Pages takes ~100 s.

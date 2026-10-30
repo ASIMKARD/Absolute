@@ -94,6 +94,14 @@ module.exports = async function (t) {
   refuse('a property that isn\'t a look (cursor, transition)', styled(SCOPE + ' .a { cursor: pointer; }'), /\{ cursor \}: not a look property/);
   refuse('a transition (motion stays with the reduced-motion token)', styled(SCOPE + ' .a { transition: color 1s; }'), /\{ transition \}: not a look property/);
   refuse('a setting-owned token in a rule', styled(SCOPE + ' .a { --row-pad: 2px; }'), /\{ --row-pad \}: not a known input token/);
+  // Pull's layout exception (John, 9 Oct): only Pull sets these, so a signature skin keeps the template's layout
+  const pullOnly = (fs.readFileSync(path.join(ROOT, 'tools', 'build.py'), 'utf8').match(/^PULL_ONLY = \{([^}]*)\}/m) || ['', ''])[1].match(/--[\w-]+/g) || [];
+  t.ok('the build names Pull\'s layout tokens (' + pullOnly.join(', ') + ')', pullOnly.includes('--tabs-inset'));
+  for (const tok of pullOnly) {
+    refuse('Pull\'s layout token ' + tok + ' as a signature token', withSig('sig-x', sig({ tokens: { [tok]: '0px' } })),
+           new RegExp(tok + ' is Pull\'s layout \\(John, 9 Oct\\): every other skin keeps the template\'s'));
+    refuse('…and in a signature rule', styled(SCOPE + ' .a { ' + tok + ': 0px; }'), new RegExp('\\{ ' + tok + ' \\}: is Pull\'s layout'));
+  }
   refuse('an image that isn\'t in the repo', styled(SCOPE + ' .a { background-image: url(./images/nope.png); }'), /must name a file in fonts\/, icons\/, images\//);
   refuse('url() outside background-image', styled(SCOPE + ' .a { border-image: url(./icons/icon-192.png); }'), /border-image \}: not a look property/);
   refuse('a legacy skin map pointing at a skin the tracker doesn\'t offer',
@@ -150,7 +158,7 @@ module.exports = async function (t) {
   t.ok('the app adds the signature CSS once, as it came from the build', styles.length === 1 && styles[0].textContent === css);
   t.eq('…and opens in it on a first visit', d.documentElement.getAttribute('data-skin'), 'signature');
   t.ok('…without tripping the stale-styles beacon (it only reads the page\'s own stylesheet)', !/out of date/.test(d.querySelector('#toastMsg').textContent));
-  d.querySelector('.ptools [data-act="expand-all"]').click();
+  d.querySelector('[data-act="expand-all"]').click();
   const padTo = (n, w) => String(n).padStart(w, '0'), rw = Math.max(2, String(D.issues.length).length);
   const rowsN = [...d.querySelectorAll('.row[data-i]')];
   t.ok('every row carries its reading position for decorations (data-n, zero-padded to the list\'s width), inert rows too',

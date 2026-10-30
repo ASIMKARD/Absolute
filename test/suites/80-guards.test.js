@@ -101,7 +101,12 @@ function stripDerived(body) {
       out += body.slice(i, m.index) + 'DERIVED'; i = j; re.lastIndex = j;
     }
   }
-  return out + body.slice(i);
+  out += body.slice(i);
+  /* a mix of derived colours and tokens is derived too (an arc type's badge tint, mixed into the card, session 8):
+     color-mix(in <space>, <colour> [<share>], <colour> [<share>]) where every colour is a token or DERIVED and every
+     share is made of tokens. A literal colour or share anywhere in it is not. */
+  return out.replace(/\bcolor-mix\(in [\w-]+((?:,\s*(?:DERIVED|var\(--[\w-]+\))(?:\s+calc\(var\(--[\w-]+\) \* 100%\))?)+)\)/g,
+    (m, args) => args.split(',').filter(a => a.trim()).length === 2 ? 'DERIVED' : m);
 }
 
 function makeSwContext(existing) {
@@ -188,9 +193,13 @@ module.exports = async function (t) {
   const derived = cssBlocks(css).filter(b => b.sel !== ':root' && COLOUR.test(b.body)).map(b => b.sel);
   t.ok('derived colours outside :root are drawn from tokens only (' + derived.join(', ') + ')', derived.length >= 2);
   const caught = x => COLOUR.test(stripDerived(x));
-  t.ok('the derived-colour exemption still catches literals: hsl(200 50% 50%), a literal alpha, a partly literal hsl, #fff, rgb()',
+  t.ok('the derived-colour exemption still catches literals: hsl(200 50% 50%), a literal alpha, a partly literal hsl, #fff, rgb(), a literal in a mix',
        caught('a: hsl(200 50% 50%)') && caught('a: hsl(var(--h) var(--s) var(--l) / .5)') && caught('a: hsl(var(--h) 50% 50%)') &&
-       caught('a: #fff') && caught('a: rgb(var(--r) var(--g) var(--b))') && caught('a: oklch(.9 .03 var(--h))'));
+       caught('a: #fff') && caught('a: rgb(var(--r) var(--g) var(--b))') && caught('a: oklch(.9 .03 var(--h))') &&
+       caught('a: color-mix(in srgb, #fff 10%, var(--card))') && caught('a: color-mix(in srgb, oklch(var(--a) var(--b) var(--c)) 13%, var(--card))') &&
+       caught('a: color-mix(in srgb, oklch(var(--a) .1 var(--c)) calc(var(--t) * 100%), var(--card))'));
+  t.ok('…and lets a mix of token-only colours through (a type badge\'s tint in its card)',
+       !caught('a: color-mix(in srgb, oklch(var(--a) var(--b) var(--c)) calc(var(--t) * 100%), var(--card))'));
   t.ok('…and lets a token-only formula through (an era wash from its index)',
        !caught('background: oklch(var(--a) var(--c) calc(var(--h0) + var(--ei, 0) * var(--step)))') && !caught('b: hsl(var(--h) var(--s) var(--l))'));
   t.ok('that block is :root (the single token source)', coloured.length === 1 && coloured[0].sel === ':root');
@@ -206,6 +215,17 @@ module.exports = async function (t) {
        lookBlocks.every(b => decls(b).every(d => /^--[\w-]+\s*:/.test(d))), lookBlocks.filter(b => !decls(b).every(d => /^--[\w-]+\s*:/.test(d))).map(b => b.sel).join(' | '));
   const tokenOnly = b => decls(b).every(d => /^--[\w-]+\s*:/.test(d));
   t.ok('the token-only check sees a real declaration', !tokenOnly({ body: '--a: 1; position: relative' }) && tokenOnly({ body: '--a: 1; --b: var(--c)' }));
+  // ---- Pull's layout exception (John, 9 Oct): its tokens have the template's layout in :root and only Pull's block changes them ----
+  const pullOnly = (read('tools/build.py').match(/^PULL_ONLY = \{([^}]*)\}/m) || ['', ''])[1].match(/--[\w-]+/g) || [];
+  const setsAny = (b, toks) => decls(b).filter(d => toks.includes(d.split(':')[0].trim())).map(d => d.split(':')[0].trim());
+  const strays = cssText => cssBlocks(cssText).filter(b => b.sel !== ':root' && b.sel !== ':root[data-skin="pull"]' && setsAny(b, pullOnly).length)
+    .map(b => b.sel + ' sets ' + setsAny(b, pullOnly).join(', '));
+  t.ok('Pull\'s layout tokens are named in the build (' + pullOnly.join(', ') + ')', pullOnly.length >= 1);
+  const rootBlock = cssBlocks(css).find(b => b.sel === ':root'), pullBlock = cssBlocks(css).find(b => b.sel === ':root[data-skin="pull"]');
+  t.eq('…each has the template\'s layout in :root, and Pull\'s block changes it', pullOnly.filter(k => !setsAny(rootBlock, [k]).length || !setsAny(pullBlock, [k]).length), []);
+  t.eq('…and no other block in styles.css sets one', strays(css), []);
+  t.ok('…the check sees a skin that sets one (Night with ' + (pullOnly[0] || '?') + ')',
+       strays(':root { ' + pullOnly[0] + ': 16px; } :root[data-skin="night"] { ' + pullOnly[0] + ': 0px; }').length === 1);
   const buildSkins = (read('tools/build.py').match(/^SKINS = \[([^\]]+)\]/m) || ['', ''])[1].match(/'([\w-]+)'/g).map(x => x.slice(1, -1));
   const appSkins = Object.keys(JSON.parse(appJs.match(/var SKIN_NAMES = (\{[^}]+\})/)[1].replace(/(\w+):/g, '"$1":').replace(/'/g, '"')));
   t.eq('the build and app.js know the same skins, base first', appSkins, buildSkins);

@@ -9,6 +9,7 @@
     "span": "2024–2026",
     "theme": "#0D0616",
     "background": "#0D0616",
+    "accent": "#E8123C",
     "searchUrl": "https://dc.fandom.com/wiki/Special:Search?query=",
     "versionStart": 8,
     "strictCredits": true,
@@ -94,7 +95,8 @@
         "--tab-track": ".2em",
         "--row-gutter": "26px"
       },
-      "stylesheet": "signature.css"
+      "stylesheet": "signature.css",
+      "frame": "v9"
     }
   },
   "deliverables": {
@@ -547,6 +549,7 @@
       "era": "after-absolute-evil",
       "strands": [
         "Batman",
+        "Catwoman",
         "Flash",
         "Green Arrow",
         "Green Lantern",
@@ -557,7 +560,26 @@
       "mo": "M",
       "tier": "Everything",
       "year": "2026",
-      "blurb": "6 issues: Batman, Flash, Green Arrow, Green Lantern, Superman, Wonder Woman."
+      "blurb": "7 issues: Batman, Flash, Green Arrow, Green Lantern, Superman, Wonder Woman, the Cassandra Cain one-shot."
+    },
+    {
+      "id": "december-2026",
+      "name": "December 2026",
+      "era": "after-absolute-evil",
+      "strands": [
+        "Batman",
+        "Flash",
+        "Green Arrow",
+        "Green Lantern",
+        "Line-wide",
+        "Superman",
+        "Wonder Woman"
+      ],
+      "type": "MAIN",
+      "mo": "M",
+      "tier": "Everything",
+      "year": "2026",
+      "blurb": "7 issues: Batman, Flash, Green Arrow, Green Lantern, Superman, Wonder Woman, the DC All In Saga one-shot."
     }
   ],
   "rows": [
@@ -4198,6 +4220,218 @@
           "Rafael Albuquerque"
         ]
       }
+    },
+    {
+      "issueId": "absolute-cassandra-cain-the-shadows-hand-2026-1",
+      "series": "Absolute Cassandra Cain: The Shadow's Hand",
+      "vol": "2026",
+      "num": "1",
+      "title": "Absolute Cassandra Cain: The Shadow's Hand #1",
+      "era": "after-absolute-evil",
+      "arc": "november-2026",
+      "type": "SOLO",
+      "mo": "O",
+      "core": false,
+      "date": {
+        "cover": "2026-11",
+        "onsale": "2026-09-16",
+        "source": "DC Database, \"Absolute Cassandra Cain: The Shadow's Hand Vol 1 1\" (rev 3982500, fetched 2026-10-29): cover date November 2026; published 2026-09-16 per the page"
+      },
+      "credits": {
+        "writers": [
+          "Che Grayson"
+        ],
+        "artists": [
+          "Matías Bergara"
+        ]
+      },
+      "note": "Her story continues in Absolute Catwoman #4.",
+      "seq": 7
+    },
+    {
+      "issueId": "absolute-batman-2024-25",
+      "series": "Absolute Batman",
+      "vol": "2024",
+      "num": "25",
+      "title": "Absolute Batman #25",
+      "era": "after-absolute-evil",
+      "arc": "december-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-12",
+        "onsale": "2026-10-28",
+        "source": "DC Database, \"Absolute Batman Vol 1 25\" (rev 3982701, fetched 2026-10-29): cover date December 2026; published 2026-10-28 per the page"
+      },
+      "credits": {
+        "writers": [
+          "Scott Snyder"
+        ],
+        "artists": [
+          "Nick Dragotta"
+        ]
+      },
+      "seq": 1
+    },
+    {
+      "issueId": "absolute-wonder-woman-2024-25",
+      "series": "Absolute Wonder Woman",
+      "vol": "2024",
+      "num": "25",
+      "title": "Absolute Wonder Woman #25",
+      "era": "after-absolute-evil",
+      "arc": "december-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-12",
+        "onsale": "2026-10-28",
+        "source": "DC Database, \"Absolute Wonder Woman Vol 1 25\" (rev 3982524, fetched 2026-10-29): cover date December 2026; published 2026-10-28 per the page"
+      },
+      "credits": {
+        "writers": [
+          "Kelly Thompson"
+        ],
+        "artists": [
+          "Hayden Sherman"
+        ]
+      },
+      "seq": 2
+    },
+    {
+      "issueId": "absolute-superman-2025-24",
+      "series": "Absolute Superman",
+      "vol": "2025",
+      "num": "24",
+      "title": "Absolute Superman #24",
+      "era": "after-absolute-evil",
+      "arc": "december-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-12",
+        "onsale": "2026-10-07",
+        "source": "DC Database, \"Absolute Superman Vol 1 24\" (rev 3969155, fetched 2026-10-29): cover date December 2026; published 2026-10-07 per the page"
+      },
+      "credits": {
+        "writers": [
+          "Jason Aaron"
+        ],
+        "artists": [
+          "Juan Ferreyra"
+        ]
+      },
+      "seq": 3
+    },
+    {
+      "issueId": "absolute-flash-2025-20",
+      "series": "Absolute Flash",
+      "vol": "2025",
+      "num": "20",
+      "title": "Absolute Flash #20",
+      "era": "after-absolute-evil",
+      "arc": "december-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-12",
+        "onsale": "2026-10-21",
+        "source": "DC Database, \"Absolute Flash Vol 1 20\" (rev 3980088, fetched 2026-10-29): cover date December 2026; published 2026-10-21 per the page"
+      },
+      "credits": {
+        "writers": [
+          "Jeff Lemire"
+        ],
+        "artists": [
+          "Haining"
+        ]
+      },
+      "seq": 4
+    },
+    {
+      "issueId": "absolute-green-lantern-2025-19",
+      "series": "Absolute Green Lantern",
+      "vol": "2025",
+      "num": "19",
+      "title": "Absolute Green Lantern #19",
+      "era": "after-absolute-evil",
+      "arc": "december-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-12",
+        "onsale": "2026-10-07",
+        "source": "DC Database, \"Absolute Green Lantern Vol 1 19\" (rev 3974619, fetched 2026-10-29): cover date December 2026; published 2026-10-07 per the page"
+      },
+      "credits": {
+        "writers": [
+          "Al Ewing"
+        ],
+        "artists": [
+          "Jahnoy Lindsay"
+        ]
+      },
+      "seq": 5
+    },
+    {
+      "issueId": "absolute-green-arrow-2026-6",
+      "series": "Absolute Green Arrow",
+      "vol": "2026",
+      "num": "6",
+      "title": "Absolute Green Arrow #6",
+      "era": "after-absolute-evil",
+      "arc": "december-2026",
+      "type": "MAIN",
+      "mo": "M",
+      "core": false,
+      "date": {
+        "cover": "2026-12",
+        "onsale": "2026-10-21",
+        "source": "DC Database, \"Absolute Green Arrow Vol 1 6\" (rev 3978416, fetched 2026-10-29): cover date December 2026; published 2026-10-21 per the page"
+      },
+      "credits": {
+        "writers": [
+          "Pornsak Pichetshote"
+        ],
+        "artists": [
+          "Rafael Albuquerque"
+        ]
+      },
+      "seq": 6
+    },
+    {
+      "issueId": "dc-all-in-saga-darkseid-vs-the-world-2026-1",
+      "series": "DC All In Saga: Darkseid vs. the World",
+      "vol": "2026",
+      "num": "1",
+      "title": "DC All In Saga: Darkseid vs. the World #1",
+      "era": "after-absolute-evil",
+      "arc": "december-2026",
+      "type": "EVENT",
+      "mo": "O",
+      "core": false,
+      "date": {
+        "cover": "2026-12",
+        "onsale": "2026-10-28",
+        "source": "DC Database, \"DC All In Saga: Darkseid vs. the World Vol 1 1\" (rev 3982698, fetched 2026-10-29): cover date December 2026; published 2026-10-28 per the page"
+      },
+      "credits": {
+        "writers": [
+          "Scott Snyder",
+          "Joshua Williamson"
+        ],
+        "artists": [
+          "Sanford Greene",
+          "Yasmine Putri"
+        ]
+      },
+      "note": "Optional: Darkseid's origin. The DC Database files it under the main DC Universe (Prime Earth), not the Absolute line.",
+      "seq": 7
     }
   ],
   "legend": [
@@ -4215,6 +4449,7 @@
     }
   ],
   "maintenance": [
-    "Migrated from Absolute v7 (build v7, 17 Aug 2026) on 2026-10-06. Every date from the DC Database API, cited per row."
+    "Migrated from Absolute v7 (build v7, 17 Aug 2026) on 2026-10-06. Every date from the DC Database API, cited per row.",
+    "v10 (2026-10-29): 8 issues added from the DC Database (fetched 2026-10-29), each date cited per row: the next issue of six ongoing series, the Cassandra Cain one-shot and the DC All In Saga one-shot (John, 29 Oct)."
   ]
 }
