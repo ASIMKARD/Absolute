@@ -165,3 +165,20 @@ server with Pages' headers. v9 is `main` (`27dca56`), and v10 is this branch at 
 - **Offline** it opens as v10. **On a second device,** v9's full sync code brings every mark, the bookmark and each
   review.
 - Served v9 as if it were v10, the same proof fails 5 checks, so it can tell.
+
+### Live and verified (30 Oct)
+Merged as `ec34fa9` (ASIMKARD/Absolute#4, 05:10Z). Its tree is `513267e`, the same as the PR's head `2c832ec`. On the merge
+commit, the harness, the Pages deploy and the version-tag run all passed.
+- **Every file by hash:** all 201 files on `main` match https://asimkard.github.io/Absolute/ by sha256, and the bare
+  address serves `index.html`. The 6 dot-files are skipped, since Pages doesn't serve them. v7's 5 removed files still
+  return 404.
+- **The live `data.js`** is version 10, and the cache is `absolute-d74b8cc2e931`.
+- **The `v10` tag** is annotated, on `ec34fa9`: "Readable version v10 (build d74b8cc2e931)". It was made by the workflow's
+  first run here. `v7-final`, `v8-final` and `v9-final` are untouched, and `v9-final` is still the one-step rollback.
+- **Real Chromium on the live site,** with TLS verification on, and no errors either way:
+  - a first visit opens v10 in the Absolute skin on the v9 frame;
+  - with Pull picked, it opens on the x frame;
+  - both show 142 rows, with "One colour" `#C90030`.
+- **Live Absolute in Pull against live X-Men** (390 px): the era box has X-Men's folder-tab shape (the cut at .89 and .94,
+  the hatch .4). It is 72.8 px against 90.8, because Absolute's eras give no years.
+- **The record:** Research-Repo `sessions/2026-10-29-absolute-v10/live-verify.txt` and `screens/pull-vs-xmen-live/`.
